@@ -1,6 +1,6 @@
 ## AAB Website
 
-This store is built and made for Harvard AAB
+This store is built and made for Harvard AAB.
 
 ## Technical Overview
 
