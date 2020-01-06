@@ -11,18 +11,20 @@ class Navbar extends Component {
         <Col md={1}>
           <Logo></Logo>
         </Col>
+        <div className="text">
         <Col md={{offset : 5}}>
           ABOUT
         </Col>
-        <Col md={1}>
+        <Col>
           MEMBERS
         </Col>
-        <Col md={1}>
+        <Col>
           CONTACT
         </Col>
-        <Col md={1}>
+        <Col>
           GALLERY
         </Col>
+        </div>
       </Row>
      );
   }
