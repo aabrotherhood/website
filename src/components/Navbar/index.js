@@ -12,20 +12,20 @@ class Navbar extends Component {
           <Link className="link" to="/"><Logo></Logo></Link>
         </Col>
         <Col md={{ span : 1, offset : 3}}>
-          ABOUT
+          <Link className = "link" to="/">ABOUT</Link>
         </Col>
         <Col md={1}>
-          MEMBERS
+          <Link className = "link" to="/">MEMBERS</Link>
         </Col>
         <Col md={1}>
-          CONTACT
+          <Link className = "link" to="/">CONTACT</Link>
         </Col>
         <Col md={1}>
-          GALLERY
+          <Link className = "link" to="/">GALLERY</Link>
         </Col>
       </Row>
      );
 }
 };
 
-export default withRouter(Navbar);
+export default Navbar;
