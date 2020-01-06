@@ -9,8 +9,8 @@ class NavBar extends Compenent {
     return (
       <Row>
         <Col>
-          
-        <\Col>
+          <Link className="link" to="/"><Logo></Logo></Link>
+        </Col>
       </Row>
       <div className="App">
         <header className="App-header">
