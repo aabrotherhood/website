@@ -11,21 +11,23 @@ class Navbar extends Component {
         <Col md={1}>
           <Logo></Logo>
         </Col>
-        <Col md={{ span : 1, offset : 5}}>
-          ABOUT
-        </Col>
-        <Col md={{span : 1, offset : 0.66}}>
-          MEMBERS
-        </Col>
-        <Col md={{span : 1, offset : 0.66}}>
-          CONTACT
-        </Col>
-        <Col md={{span : 1, offset : 0.66}}>
-          GALLERY
-        </Col>
+        <ul className="wordsInLine">
+          <Col md={{ span : 1, offset : 5}}>
+            ABOUT
+          </Col>
+          <Col md={{span : 1, offset : 0.66}}>
+            MEMBERS
+          </Col>
+          <Col md={{span : 1, offset : 0.66}}>
+            CONTACT
+          </Col>
+          <Col md={{span : 1, offset : 0.66}}>
+            GALLERY
+          </Col>
+        </ul>
       </Row>
      );
-}
+  }
 };
 
 export default Navbar;
