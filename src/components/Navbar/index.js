@@ -11,7 +11,7 @@ class Navbar extends Compenent {
         <Col md={1}>
           <Link className="link" to="/"><Logo></Logo></Link>
         </Col>
-        <Col md={{ span = 1, offset = 3}}>
+        <Col md={{ span : 1, offset : 3}}>
           ABOUT
         <Col>
         <Col md={1}>
