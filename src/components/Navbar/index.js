@@ -9,23 +9,23 @@ class Navbar extends Component {
     return (
       <Row>
         <Col md={1}>
-          <Link className="link" to="/"><Logo></Logo></Link>
+          <Logo></Logo>
         </Col>
         <Col md={{ span : 1, offset : 3}}>
-          <Link className="link" to="/">ABOUT</Link>
+          ABOUT
         </Col>
         <Col md={1}>
-          <Link className="link" to="/">MEMBERS</Link>
+          MEMBERS
         </Col>
         <Col md={1}>
-          <Link className="link" to="/">CONTACT</Link>
+          CONTACT
         </Col>
         <Col md={1}>
-          <Link className="link" to="/">GALLERY</Link>
+          GALLERY
         </Col>
       </Row>
      );
 }
 };
 
-export default withRouter(Navbar);
+export default Navbar;
