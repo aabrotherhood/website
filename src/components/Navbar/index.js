@@ -13,16 +13,16 @@ class Navbar extends Compenent {
         </Col>
         <Col md={{ span : 1, offset : 3}}>
           ABOUT
-        <Col>
+        </Col>
         <Col md={1}>
           MEMBERS
-        <Col>
+        </Col>
         <Col md={1}>
           CONTACT
-        <Col>
+        </Col>
         <Col md={1}>
           GALLERY
-        <Col>
+        </Col>
       </Row>
      );
 }
