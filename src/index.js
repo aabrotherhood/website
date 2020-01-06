@@ -9,7 +9,6 @@ import 'bootstrap/dist/css/bootstrap.min.css';
 ReactDOM.render(
   <Router>
     <App>
-      <Route exact path="/" render={Home}/>
     </App>
   </Router>, document.getElementById('root'));
 
