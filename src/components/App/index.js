@@ -1,9 +1,10 @@
-import React from 'react';
+import React, {Component} from 'react';
 import logo from '../../logo.svg';
 import Navbar from '../Navbar/index';
 import './styles.scss';
 
-function App() {
+class App extends Component {
+  render () {
   return (
     <div className="App">
       <Navbar></Navbar>
@@ -23,6 +24,7 @@ function App() {
       </header>
     </div>
   );
+}
 }
 
 export default App;
