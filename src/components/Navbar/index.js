@@ -11,7 +11,6 @@ class Navbar extends Component {
         <Col md={1}>
           <Logo></Logo>
         </Col>
-        <div className="text">
         <Col md={{offset : 5}}>
           ABOUT
         </Col>
@@ -24,7 +23,6 @@ class Navbar extends Component {
         <Col>
           GALLERY
         </Col>
-        </div>
       </Row>
      );
   }
