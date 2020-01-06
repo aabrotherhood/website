@@ -4,7 +4,7 @@ import {ReactComponent as Logo} from '../../aabT.svg';
 import {Row, Col} from 'react-bootstrap';
 import './styles.scss';
 
-class Navbar extends Compenent {
+class Navbar extends Component {
   render () {
     return (
       <Row>
