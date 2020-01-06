@@ -11,7 +11,7 @@ class Navbar extends Component {
         <Col md={1}>
           <Logo></Logo>
         </Col>
-        <ul className="wordsInLine">
+        <div className="wordsInLine">
           <Col md={{ span : 1, offset : 5}}>
             ABOUT
           </Col>
@@ -24,7 +24,7 @@ class Navbar extends Component {
           <Col md={{span : 1, offset : 0.66}}>
             GALLERY
           </Col>
-        </ul>
+        </div>
       </Row>
      );
   }
