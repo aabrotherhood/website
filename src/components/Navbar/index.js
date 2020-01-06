@@ -8,20 +8,20 @@ class Navbar extends Component {
   render () {
     return (
       <Row>
-        <Col md={1}>
+        <Col>
           <Logo></Logo>
         </Col>
         <div className="wordsInLine">
-          <Col md={{ span : 1, offset : 5}}>
+          <Col md={{offset : 5}}>
             ABOUT
           </Col>
-          <Col md={{span : 1, offset : 0.66}}>
+          <Col>
             MEMBERS
           </Col>
-          <Col md={{span : 1, offset : 0.66}}>
+          <Col>
             CONTACT
           </Col>
-          <Col md={{span : 1, offset : 0.66}}>
+          <Col>
             GALLERY
           </Col>
         </div>
