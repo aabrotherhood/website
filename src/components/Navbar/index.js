@@ -11,7 +11,7 @@ class Navbar extends Component {
         <Col md={1}>
           <Logo></Logo>
         </Col>
-        <Col md={{ span : 1, offset : 3}}>
+        <Col md={{ span : 1, offset : 7}}>
           ABOUT
         </Col>
         <Col md={1}>
