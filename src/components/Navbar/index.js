@@ -1,5 +1,7 @@
 import React, {Component} from 'react';
-import {ReactComponent as Logo} from '../../aab_logo.svg';
+import Img from 'react-image';
+import Preloader from '../Preloader/index';
+import Logo from '../../assets/aab_logo.svg';
 import {Row, Col} from 'react-bootstrap';
 import './styles.scss';
 
@@ -7,10 +9,10 @@ class Navbar extends Component {
   render () {
     return (
       <Row>
-        <Col md={1}>
-          <Logo></Logo>
+        <Col sm={2}>
+          <Img className='navbarLogo' src={Logo} loader={<Preloader/>} alt='AAB logo'/>
         </Col>
-        <Col md={{offset : 5}} className="navBarText">
+        <Col className="navBarText">
           ABOUT
         </Col>
         <Col className="navBarText">
