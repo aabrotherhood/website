@@ -10,6 +10,13 @@ For Mobile
       font-size: 1rem;
     }
   }
+  .navBarText {
+      font-size: 0.1rem;
+    }
+    .navbarLogo {
+      max-width: 15%;
+      float: center;
+  }
 }
 
 /*
@@ -24,6 +31,14 @@ For Tablet
       font-size: 1.5rem;
     }
   }
+  .navBarText {
+    font-size: .9rem;
+  }
+  .navbarLogo {
+      padding-top: 0.5rem;
+      max-width: 100%;
+      float: left;
+    }
 }
 
 /*
@@ -34,6 +49,12 @@ For Small Laptops
 @media screen and (min-width: 769px) and (max-width: 1024px) {
   .homeText {
     font-size: 2rem;
+  }
+  .navBarText {
+    font-size: 1rem;
+  }
+  .navbarLogo {
+    float: left;
   }
 }
 
