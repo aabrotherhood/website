@@ -16,6 +16,13 @@ For Mobile
     .navbarLogo {
       max-width: 15%;
       float: center;
+  .mission {
+    .missionTitle {
+      font-size: .8rem;
+    }
+    .missionDetails {
+      font-size: .7rem;
+    }
   }
 }
 
@@ -39,6 +46,14 @@ For Tablet
       max-width: 100%;
       float: left;
     }
+  .mission {
+    .missionTitle {
+      font-size: 1rem;
+    }
+    .missionDetails {
+      font-size: .8rem;
+    }
+  }
 }
 
 /*
