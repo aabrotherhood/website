@@ -10,6 +10,14 @@ For Mobile
       font-size: 1rem;
     }
   }
+  .mission {
+    .missionTitle {
+      font-size: .8rem;
+    }
+    .missionDetails {
+      font-size: .7rem;
+    }
+  }
 }
 
 /*
@@ -22,6 +30,14 @@ For Tablet
     width: 100% !important;
     .homeText {
       font-size: 1.5rem;
+    }
+  }
+  .mission {
+    .missionTitle {
+      font-size: 1rem;
+    }
+    .missionDetails {
+      font-size: .8rem;
     }
   }
 }
