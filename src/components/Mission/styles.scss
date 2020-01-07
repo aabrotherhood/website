@@ -1,0 +1,13 @@
+@import '../../styles/variables.scss';
+
+.mission {
+  font-family: "Lantinghei TC", sans-serif;
+  background-color: $red;
+  color: white;
+  padding: 1rem 0;
+  margin: 5rem 0;
+  .missionTitle {
+    font-size: 1.5rem;
+    font-weight: 500;
+  }
+}
