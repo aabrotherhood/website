@@ -1,0 +1,60 @@
+/*
+====================
+For Mobile
+====================
+*/
+@media screen and (max-width: 425px) {
+  .homeCol {
+    width: 100% !important;
+    .homeText {
+      font-size: 1rem;
+    }
+  }
+}
+
+/*
+====================
+For Tablet
+====================
+*/
+@media screen and (min-width: 426px) and (max-width: 768px) {
+  .homeCol {
+    width: 100% !important;
+    .homeText {
+      font-size: 1.5rem;
+    }
+  }
+}
+
+/*
+====================
+For Small Laptops
+====================
+*/
+@media screen and (min-width: 769px) and (max-width: 1024px) {
+  .homeText {
+    font-size: 2rem;
+  }
+}
+
+/*
+====================
+For Large Laptops
+====================
+*/
+@media screen and (min-width: 1025px) and (max-width: 1440px) {
+
+}
+
+
+/*
+====================
+For 4k and above
+====================
+*/
+@media screen and (min-width: 1441px) {
+  .homeCol {
+    width: 100% !important;
+  }
+
+}

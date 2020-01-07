@@ -1,0 +1,30 @@
+@import '../../styles/variables.scss';
+
+.homeCol {
+  width: 80% !important;
+  margin: auto;
+  .homeText {
+    background-color: $red;
+    padding: 0 1rem;
+    color: white;
+    margin: 0;
+    text-transform: uppercase;
+  }
+  
+  .homeTextTop {
+    margin-bottom: -1rem;
+    z-index: 2;
+  }
+  
+  .homeTextBottom {
+    margin-top: -5rem;
+    padding-top: 5rem;
+    z-index: -1;
+  }
+  
+  .homeHeroPic {
+    width: 95%;
+    z-index: 1;
+    max-height: 70%;
+  }
+}
