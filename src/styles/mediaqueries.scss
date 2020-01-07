@@ -7,9 +7,15 @@ For Mobile
   .homeCol {
     width: 100% !important;
     .homeText {
-      font-size: 1rem;
+      font-size: 0.75rem;
     }
   }
+  .navBarText {
+      font-size: 0.1rem;
+    }
+    .navbarLogo {
+      max-width: 15%;
+      float: center;
   .mission {
     .missionTitle {
       font-size: .8rem;
@@ -32,6 +38,14 @@ For Tablet
       font-size: 1.5rem;
     }
   }
+  .navBarText {
+    font-size: .9rem;
+  }
+  .navbarLogo {
+      padding-top: 0.5rem;
+      max-width: 100%;
+      float: left;
+    }
   .mission {
     .missionTitle {
       font-size: 1rem;
@@ -49,7 +63,13 @@ For Small Laptops
 */
 @media screen and (min-width: 769px) and (max-width: 1024px) {
   .homeText {
-    font-size: 2rem;
+    font-size: 1.75rem;
+  }
+  .navBarText {
+    font-size: 1rem;
+  }
+  .navbarLogo {
+    float: left;
   }
 }
 
@@ -61,6 +81,12 @@ For Large Laptops
 @media screen and (min-width: 1025px) and (max-width: 1440px) {
   .homeText {
     font-size: 2rem;
+  }
+  .navBarText {
+    font-size: 1rem;
+  }
+  .navbarLogo {
+    float: left;
   }
 }
 
