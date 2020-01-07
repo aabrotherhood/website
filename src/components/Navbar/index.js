@@ -1,5 +1,4 @@
 import React, {Component} from 'react';
-import {withRouter, Link} from 'react-router-dom';
 import {ReactComponent as Logo} from '../../aab_logo.svg';
 import {Row, Col} from 'react-bootstrap';
 import './styles.scss';
