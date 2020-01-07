@@ -7,7 +7,7 @@ For Mobile
   .homeCol {
     width: 100% !important;
     .homeText {
-      font-size: 1rem;
+      font-size: 0.75rem;
     }
   }
   .navBarText {
@@ -48,7 +48,7 @@ For Small Laptops
 */
 @media screen and (min-width: 769px) and (max-width: 1024px) {
   .homeText {
-    font-size: 2rem;
+    font-size: 1.75rem;
   }
   .navBarText {
     font-size: 1rem;
@@ -64,7 +64,15 @@ For Large Laptops
 ====================
 */
 @media screen and (min-width: 1025px) and (max-width: 1440px) {
-
+  .homeText {
+    font-size: 2rem;
+  }
+  .navBarText {
+    font-size: 1rem;
+  }
+  .navbarLogo {
+    float: left;
+  }
 }
 
 
