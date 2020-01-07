@@ -11,10 +11,7 @@
     "react": "^16.12.0",
     "react-bootstrap": "^1.0.0-beta.16",
     "react-dom": "^16.12.0",
-<<<<<<< HEAD
-=======
     "react-image": "^2.2.2",
->>>>>>> a6a020458e4c7c72b7083f14b2e43c53d7cb95f5
     "react-router-dom": "^5.1.2",
     "react-scripts": "3.3.0",
     "serialize-javascript": "^2.1.2"
