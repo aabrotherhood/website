@@ -12,16 +12,45 @@ For Mobile
   }
   .navBarText {
       font-size: 0.1rem;
+      padding-top: 0.5rem;
     }
     .navbarLogo {
       max-width: 15%;
       float: center;
+      padding-top: 1rem;
+    }
   .mission {
+    margin: 3rem 0;
+    padding: 0.5rem 0;
     .missionTitle {
       font-size: .8rem;
     }
     .missionDetails {
-      font-size: .7rem;
+      font-size: .65rem;
+    }
+  }
+  .broCol{
+    .bro1 {
+      width: 50%;
+    }
+    .stripes {
+      margin: -0.4rem 0 0 -1.75rem;
+      width: 50%
+    }
+    .bro2 {
+      width: 80%;
+      margin: -1.5rem 0 0 -13rem;
+    }
+    .brotherhoodText {
+      margin: -13rem 0 5rem 16rem;
+      .brotherhoodTitle {
+        margin-top: 1rem;
+        font-size: 0.6rem;
+      }
+      .brotherhoodDetails {
+        font-size: 0.4rem;
+        padding-left: 0.2rem;
+      }
     }
   }
 }
@@ -48,10 +77,30 @@ For Tablet
     }
   .mission {
     .missionTitle {
-      font-size: 1rem;
+      font-size: 1.25rem;
     }
     .missionDetails {
-      font-size: .8rem;
+      font-size: 1rem;
+    }
+  }
+  .broCol{
+    .stripes {
+      width: 70%;
+      margin: -1rem 0 10rem 6rem;
+    }
+    .bro2 {
+      margin: -7rem 2rem 0 0;
+    }
+    .brotherhoodText {
+      margin: -4rem 0 10rem -1rem;
+      .brotherhoodTitle {
+        margin-top: 1.25rem;
+        font-size: 0.9rem;
+      }
+      .brotherhoodDetails {
+        font-size: 0.8rem;
+        padding-left: 0.2rem;
+      }
     }
   }
 }
@@ -71,6 +120,26 @@ For Small Laptops
   .navbarLogo {
     float: left;
   }
+  .broCol{
+    .stripes {
+      width: 70%;
+      margin: -1rem 0 10rem 7.5rem;
+    }
+    .bro2 {
+      margin: -10rem 5rem 0 0;
+    }
+    .brotherhoodText {
+      margin: -4rem 0 10rem -1rem;
+      .brotherhoodTitle {
+        margin-top: 1.25rem;
+        font-size: 1.2rem;
+      }
+      .brotherhoodDetails {
+        font-size: 1rem;
+        padding-left: 0.2rem;
+      }
+    }
+  }
 }
 
 /*
@@ -88,6 +157,18 @@ For Large Laptops
   .navbarLogo {
     float: left;
   }
+  .brotherhoodText {
+    margin-top: -7rem;
+    margin-bottom: 5rem;
+    .brotherhoodTitle {
+      margin-top: 2rem;
+      font-size: 1.5rem;
+    }
+    .brotherhoodDetails {
+      font-size: 1.25rem;
+      padding-left: 1.5rem;
+    }
+  }
 }
 
 
@@ -100,5 +181,4 @@ For 4k and above
   .homeCol {
     width: 100% !important;
   }
-
 }
