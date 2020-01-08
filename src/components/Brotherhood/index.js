@@ -12,14 +12,14 @@ class Brotherhood extends Component {
 		return (
 			<Col className="broCol">
 				<Row>
-					<Img className='bro1' src={Bro1} loader={<Preloader/>} alt='Brotherhood_1'/>
+					<Img className='bro1' src={Bro1} loader={<Preloader/>} alt='2018 Name Day'/>
 				</Row>
 				<Row className='justify-content-end'>
 					<Col>
 						<Img className='stripes' src={Stripes} loader={<Preloader/>} />
 					</Col>
 					<Col>
-						<Img className='bro2' src={Bro2} loader={<Preloader/>} />
+						<Img className='bro2' src={Bro2} loader={<Preloader/>} alt='2018 Senior Retreat'/>
 					</Col>
 					<Col className='brotherhoodText'>
 						<p className='brotherhoodTitle'>BROTHERHOOD</p>
