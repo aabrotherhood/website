@@ -1,0 +1,41 @@
+@import '../../styles/variables.scss';
+
+.actRow {
+	margin: auto;
+	font-family: "Lantinghei TC", sans-serif;
+	color: white;
+}
+
+.actText {
+	background-color: $red;
+	width: 100%;
+	margin: 5rem -50rem 51rem 5rem;
+	z-index: 3;
+	.actTitle {
+		font-weight: bold;
+		float: center;
+		padding-top: 1rem;
+		font-size: 1.5rem;
+	}
+	.actDetails {
+		font-weight: extralight;
+		text-align: left;
+		padding-left: 1rem;
+		font-size: 1.25rem;
+	}
+}
+
+.activism {
+	width: 120%;
+	margin: 7rem 0 0 15rem;
+	position: relative;
+	z-index: 2;
+}
+
+.greybox {
+	width: 100%;
+	height: 34%;
+	margin: 20rem -25rem 0 -40rem;
+	position: relative;
+	z-index: 1;
+}
