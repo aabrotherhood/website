@@ -4,6 +4,8 @@ import Navbar from '../Navbar/index';
 import {Container} from 'react-bootstrap';
 import HomeHero from '../HomeHero/index';
 import Mission from'../Mission/index';
+import Brotherhood from '../Brotherhood/index';
+import Activism from '../Activism/index';
 import '../../styles/global.scss';
 import './styles.scss';
 
@@ -14,6 +16,8 @@ class App extends Component {
       <Navbar/>
      <HomeHero/>
      <Mission/>
+     <Brotherhood/>
+     <Activism/>
     </Container>
   );
 }

@@ -12,17 +12,71 @@ For Mobile
   }
   .navBarText {
       font-size: 0.1rem;
+      padding-top: 0.5rem;
     }
     .navbarLogo {
       max-width: 15%;
       float: center;
+      padding-top: 1rem;
+    }
   .mission {
+    margin: 3rem 0;
+    padding: 0.5rem 0;
     .missionTitle {
       font-size: .8rem;
     }
     .missionDetails {
-      font-size: .7rem;
+      font-size: .65rem;
     }
+  }
+  .broCol{
+    .bro1 {
+      width: 40%;
+    }
+    .stripes {
+      width: 50%;
+      top: 5.5rem;
+      left: 5rem;
+    }
+    .bro2 {
+      width: 80%;
+      top: 2.5rem;
+    }
+    .brotherhoodText {
+      top: 1rem;
+      .brotherhoodTitle {
+        margin-top: 1rem;
+        font-size: 0.6rem;
+      }
+      .brotherhoodDetails {
+        font-size: 0.4rem;
+        padding-left: 0.2rem;
+      }
+    }
+  }
+  .actText {
+    min-width: 15rem;
+    top: 4rem;
+    left: 2rem;
+    .actTitle {
+      padding-top: 1rem;
+      font-size: 0.6rem;
+    }
+    .actDetails {
+      padding-left: 0.2rem;
+      font-size: 0.4rem;
+    }
+  }
+  .activism {
+    width: 350%;
+    top: 8.5rem;
+    left: -11rem;
+  }
+  .greybox {
+    width: 300%;
+    height: 75%;
+    left: -11rem;
+    top: 15rem;
   }
 }
 
@@ -48,11 +102,55 @@ For Tablet
     }
   .mission {
     .missionTitle {
-      font-size: 1rem;
+      font-size: 1.25rem;
     }
     .missionDetails {
-      font-size: .8rem;
+      font-size: 1rem;
     }
+  }
+  .broCol{
+    .stripes {
+      width: 70%;
+      top: 11rem;
+      left: 5.5rem;
+    }
+    .bro2 {
+      top: 3.25rem;
+    }
+    .brotherhoodText {
+      top: 7rem;
+      .brotherhoodTitle {
+        margin-top: 1.25rem;
+        font-size: 0.9rem;
+      }
+      .brotherhoodDetails {
+        font-size: 0.8rem;
+        padding-left: 0.2rem;
+      }
+    }
+  }
+  .actText {
+    min-width: 25rem;
+    top: 17rem;
+    .actTitle {
+      padding-top: 1.25rem;
+      font-size: 0.9rem;
+    }
+    .actDetails {
+      padding-left: 0.2rem;
+      font-size: 0.8rem;
+    }
+  }
+  .activism {
+    width: 275%;
+    top: 20rem;
+    left: -18rem;
+  }
+  .greybox {
+    top: 30rem;
+    left: -20rem;
+    width: 250%;
+    height: 130%;
   }
 }
 
@@ -71,6 +169,43 @@ For Small Laptops
   .navbarLogo {
     float: left;
   }
+  .broCol{
+    .stripes {
+      width: 70%;
+      top: 15rem;
+      left: 7rem;
+    }
+    .bro2 {
+    }
+    .brotherhoodText {
+      .brotherhoodTitle {
+        margin-top: 1.25rem;
+        font-size: 1.2rem;
+      }
+      .brotherhoodDetails {
+        font-size: 1rem;
+        padding-left: 1rem;
+      }
+    }
+  }
+  .actText {
+    min-width: 35rem;
+    .actTitle {
+      padding-top: 1.25rem;
+      font-size: 1.2rem;
+    }
+    .actDetails {
+      padding-left: 0.2rem;
+      font-size: 1rem;
+    }
+  }
+  .activism {
+    width: 300%;
+  }
+  .greybox {
+    width: 300%;
+    height: 170%;
+  }
 }
 
 /*
@@ -88,6 +223,16 @@ For Large Laptops
   .navbarLogo {
     float: left;
   }
+  .brotherhoodText {
+    .brotherhoodTitle {
+      margin-top: 2rem;
+      font-size: 1.5rem;
+    }
+    .brotherhoodDetails {
+      font-size: 1.25rem;
+      padding-left: 1.5rem;
+    }
+  }
 }
 
 
@@ -100,5 +245,4 @@ For 4k and above
   .homeCol {
     width: 100% !important;
   }
-
 }

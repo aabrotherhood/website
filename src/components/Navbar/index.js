@@ -8,7 +8,7 @@ import './styles.scss';
 class Navbar extends Component {
   render () {
     return (
-      <Row>
+      <Row className='navbar'>
         <Col sm={2}>
           <Img className='navbarLogo' src={Logo} loader={<Preloader/>} alt='AAB logo'/>
         </Col>

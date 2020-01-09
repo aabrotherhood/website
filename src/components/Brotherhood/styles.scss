@@ -1,0 +1,45 @@
+@import '../../styles/variables.scss';
+
+.broCol {
+	width: 90%;
+	margin: auto;
+	font-family: "Lantinghei TC", sans-serif;
+	color: white;
+}
+
+.bro1 {
+	position: absolute;
+	width: 40%;
+	float: left;
+	z-index: 4;
+}
+
+.stripes {
+	position: absolute;
+	top: 18rem;
+	left: 10.5rem;
+	width: 60%;
+	z-index: 1;
+}
+
+.bro2 {
+	position: absolute;
+	top: 5rem;
+	left: 1rem;
+	width: 90%;
+	z-index: 2;
+}
+
+.brotherhoodText {
+	position: absolute;
+	top: 10rem;
+	background-color: $red;
+	.brotherhoodTitle {
+		font-weight: bold;
+		float: center;
+	}
+	.brotherhoodDetails {
+		font-weight: extralight;
+		text-align: left;
+	}
+}
