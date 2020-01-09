@@ -8,26 +8,31 @@
 }
 
 .bro1 {
+	position: absolute;
 	width: 40%;
 	float: left;
 	z-index: 4;
 }
 
 .stripes {
+	position: absolute;
+	top: 18rem;
+	left: 10.5rem;
 	width: 60%;
-	margin-left: 11rem;
-	margin-top: -1rem;
 	z-index: 1;
 }
 
 .bro2 {
+	position: absolute;
+	top: 5rem;
+	left: 1rem;
 	width: 90%;
 	z-index: 2;
-	margin-top: -12rem;
-	margin-left: -2rem;
 }
 
 .brotherhoodText {
+	position: absolute;
+	top: 10rem;
 	background-color: $red;
 	.brotherhoodTitle {
 		font-weight: bold;
