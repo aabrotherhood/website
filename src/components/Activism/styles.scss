@@ -4,42 +4,38 @@
 	margin: auto;
 	font-family: "Lantinghei TC", sans-serif;
 	color: white;
-}
-
-.actText {
-	background-color: $red;
-	position: absolute;
-	top: 25rem;
-	left: 5rem;
-	min-width: 45rem;
-	z-index: 3;
-	.actTitle {
-		font-weight: bold;
-		float: center;
-		padding-top: 1rem;
-		font-size: 1.5rem;
+	position: relative;
+	margin-top: 5rem;
+	.actText {
+		background-color: $red;
+		width: 60%;
+		z-index: 3;
+		padding: 1rem 1rem;
+		.actTitle {
+			font-weight: 600;
+			float: center;
+			font-size: 1.5rem;
+		}
+		.actDetails {
+			font-weight: extralight;
+			font-size: 1.25rem;
+		}
 	}
-	.actDetails {
-		font-weight: extralight;
-		text-align: left;
-		padding-left: 1rem;
-		font-size: 1.25rem;
+	
+	.activism {
+		position: absolute;
+		width: 70%;
+		z-index: 2;
+		top: 30%;
+		left: 20%;
+	}
+	
+	.greybox {
+		position: absolute;
+		width: 70%;
+		right: 0;
+		z-index: 1;
+		margin-top: 1rem;
 	}
 }
 
-.activism {
-	position: absolute;
-	top: 27rem;
-	right: 3rem;
-	width: 325%;
-	z-index: 2;
-}
-
-.greybox {
-	width: 320%;
-	height: 175%;
-	position: absolute;
-	top: 40rem;
-	right: 6rem;
-	z-index: 1;
-}

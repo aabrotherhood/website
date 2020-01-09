@@ -4,6 +4,11 @@ For Mobile
 ====================
 */
 @media screen and (max-width: 425px) {
+  .App {
+    .spacer {
+      height: 12rem !important;
+    }
+  }
   .homeCol {
     width: 100% !important;
     .homeText {
@@ -30,87 +35,53 @@ For Mobile
     }
   }
   .broCol{
-    .bro1 {
-      width: 40%;
-    }
     .stripes {
-      width: 50%;
-      top: 5.5rem;
-      left: 5rem;
+      top: 3rem;
     }
-    .bro2 {
-      width: 80%;
-      top: 2.5rem;
+    .bro1 {
+      width: 45%;
     }
     .brotherhoodText {
-      top: 1rem;
+      top: 3rem;
+      padding: 1rem 0.5rem;
+      width: 40%;
       .brotherhoodTitle {
-        margin-top: 1rem;
         font-size: 0.6rem;
       }
       .brotherhoodDetails {
         font-size: 0.4rem;
-        padding-left: 0.2rem;
       }
     }
   }
-  .actText {
-    min-width: 15rem;
-    top: 4rem;
-    left: 2rem;
-    .actTitle {
-      padding-top: 1rem;
-      font-size: 0.6rem;
+  .actRow {
+    .actText {
+      .actTitle {
+        font-size: 0.6rem;
+      }
+      .actDetails {
+        font-size: 0.4rem;
+      }
     }
-    .actDetails {
-      padding-left: 0.2rem;
-      font-size: 0.4rem;
+    .activism {
+      top: 45%;
+      left: 15%;
     }
   }
-  .activism {
-    width: 350%;
-    top: 8.5rem;
-    left: -11rem;
-  }
-  .greybox {
-    width: 300%;
-    height: 75%;
-    left: -11rem;
-    top: 15rem;
-  }
-  .serv1 {
-    width: 32%;
-    top: 66rem;
-    left: 15rem;
-  }
-
-  .serv2 {
-    width: 30%;
-    top: 74rem;
-    left: 1rem;
-  }
-
-  .goldBox {
-    width: 15rem;
-    top: 69rem;
-    left: 4rem;
-  }
-
-  .servText {
-    background-color: $red;
-    color: white;
-    font-family: "Lantinghei TC", sans-serif;
-    top: 70rem;
-    left: 6.5rem;
-    width: 10rem;
-    height: 8rem;
-    .servTitle {
-      padding-top: 1rem;
-      font-size: 0.6rem;
+  .servCol {
+    margin-top: 0;
+    .stripes {
+      bottom: 5%;
     }
-    .servDetails {
-      padding-left: 0.5rem;
-      font-size: 0.4rem;
+    .servText {
+      top: 5%;
+      .servTitle {
+        font-size: 0.6rem;
+        
+      }
+      .servDetails {
+        font-size: 0.4rem;
+        margin-bottom: 0;
+      }
     }
   }
 }
@@ -144,82 +115,38 @@ For Tablet
     }
   }
   .broCol{
-    .stripes {
-      width: 70%;
-      top: 11rem;
-      left: 5.5rem;
-    }
-    .bro2 {
-      top: 3.25rem;
-    }
     .brotherhoodText {
-      top: 7rem;
+      top: 8rem;
       .brotherhoodTitle {
-        margin-top: 1.25rem;
-        font-size: 0.9rem;
+        font-size: 1rem;
       }
       .brotherhoodDetails {
         font-size: 0.8rem;
-        padding-left: 0.2rem;
       }
     }
   }
-  .actText {
-    min-width: 25rem;
-    top: 17rem;
-    .actTitle {
-      padding-top: 1.25rem;
-      font-size: 0.9rem;
+  .actRow {
+    .actText {
+      .actTitle {
+        font-size: 1rem;
+      }
+      .actDetails {
+        font-size: 0.8rem;
+      }
     }
-    .actDetails {
-      padding-left: 0.2rem;
-      font-size: 0.8rem;
+    .activism {
+      left: 15%;
     }
   }
-  .activism {
-    width: 275%;
-    top: 20rem;
-    left: -18rem;
-  }
-  .greybox {
-    top: 30rem;
-    left: -20rem;
-    width: 250%;
-    height: 130%;
-  }
-  .serv1 {
-    width: 30%;
-    top: 107rem;
-    left: 31rem;
-  }
-
-  .serv2 {
-    width: 30%;
-    top: 118rem;
-    left: 3rem;
-  }
-
-  .goldBox {
-    width: 28rem;
-    top: 111rem;
-    left: 10rem;
-  }
-
-  .servText {
-    background-color: $red;
-    color: white;
-    font-family: "Lantinghei TC", sans-serif;
-    top: 115rem;
-    left: 14rem;
-    width: 20rem;
-    height: 10rem;
-    .servTitle {
-      padding-top: 1rem;
-      font-size: 0.9rem;
-    }
-    .servDetails {
-      padding-left: 1rem;
-      font-size: 0.8rem;
+  .servCol {
+    margin-top: 0;
+    .servText {
+      .servTitle {
+        font-size: 1.0rem;
+      }
+      .servDetails {
+        font-size: 0.8rem;
+      }
     }
   }
 }
@@ -239,78 +166,6 @@ For Small Laptops
   .navbarLogo {
     float: left;
   }
-  .broCol{
-    .stripes {
-      width: 70%;
-      top: 15rem;
-      left: 7rem;
-    }
-    .bro2 {
-    }
-    .brotherhoodText {
-      .brotherhoodTitle {
-        margin-top: 1.25rem;
-        font-size: 1.2rem;
-      }
-      .brotherhoodDetails {
-        font-size: 1rem;
-        padding-left: 1rem;
-      }
-    }
-  }
-  .actText {
-    min-width: 35rem;
-    .actTitle {
-      padding-top: 1.25rem;
-      font-size: 1.2rem;
-    }
-    .actDetails {
-      padding-left: 0.2rem;
-      font-size: 1rem;
-    }
-  }
-  .activism {
-    width: 300%;
-  }
-  .greybox {
-    width: 300%;
-    height: 170%;
-  }
-  .serv1 {
-    width: 30%;
-    top: 132rem;
-    left: 40rem;
-  }
-
-  .serv2 {
-    width: 30%;
-    top: 147rem;
-    left: 5rem;
-  }
-
-  .goldBox {
-    width: 40rem;
-    top: 137rem;
-    left: 15rem;
-  }
-
-  .servText {
-    background-color: $red;
-    color: white;
-    font-family: "Lantinghei TC", sans-serif;
-    top: 142rem;
-    left: 22rem;
-    width: 25rem;
-    height: 15rem;
-    .servTitle {
-      padding-top: 1rem;
-      font-size: 1.5rem;
-    }
-    .servDetails {
-      padding-left: 1rem;
-      font-size: 1.25rem;
-    }
-  }
 }
 
 /*
@@ -319,6 +174,11 @@ For Large Laptops
 ====================
 */
 @media screen and (min-width: 1025px) and (max-width: 1440px) {
+  .App {
+    .spacer {
+      height: 30rem !important;
+    }
+  }
   .homeText {
     font-size: 2rem;
   }
@@ -330,12 +190,15 @@ For Large Laptops
   }
   .brotherhoodText {
     .brotherhoodTitle {
-      margin-top: 2rem;
       font-size: 1.5rem;
     }
     .brotherhoodDetails {
       font-size: 1.25rem;
-      padding-left: 1.5rem;
+    }
+  }
+  .actRow {
+    .greybox {
+      margin-top: 5rem;
     }
   }
 }

@@ -1,48 +1,46 @@
 @import '../../styles/variables.scss';
 
-.serv1 {
-	position: absolute;
-	width: 25%;
-	top: 145rem;
-	left: 45rem;
-	z-index: 2;
-}
+.servCol {
+	position: relative;
+	text-align: left;
 
-.serv2 {
-	position: absolute;
-	width: 23%;
-	top: 158rem;
-	left: 12rem;
-	z-index: 2;
-}
-
-.goldBox {
-	width: 40rem;
-	position: absolute;
-	top: 150rem;
-	left: 20rem;
-	z-index: 1;
-}
-
-.servText {
-	background-color: $red;
-	color: white;
-	font-family: "Lantinghei TC", sans-serif;
-	z-index: 3;
-	top: 155rem;
-	left: 27rem;
-	width: 25rem;
-	height: 15rem;
-	position: absolute;
-	.servTitle {
-		font-weight: bold;
-		padding-top: 1rem;
-		font-size: 1.5rem;
+	margin-top: 5rem;
+	.servText {
+		background-color: $gold;
+		color: white;
+		font-family: "Lantinghei TC", sans-serif;
+		z-index: 3;
+		width: 50%;
+		margin: auto;
+		padding: 1rem 1rem;
+		text-align: center;
+		position: absolute;
+		top: 15%;
+		left: 40%;
+		.redBox {
+			background-color: $red;
+			z-index: 1;
+			padding: 1rem 1rem;
+		}
+		.servTitle {
+			font-weight: 600;
+			font-size: 1.5rem;
+		}
+		.servDetails {
+			font-weight: extralight;
+			font-size: 1.25rem;
+		}
 	}
-	.servDetails {
-		font-weight: extralight;
-		text-align: left;
-		padding-left: 1rem;
-		font-size: 1.25rem;
+	.serv2 {
+		width: 45%;
+		z-index: 2;
+		position: relative;
+		left: 0;
+	}
+	.stripes {
+		width: 30%;
+		position: absolute;
+		bottom: 10%;
+		right: 30%;
 	}
 }

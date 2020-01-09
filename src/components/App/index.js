@@ -1,5 +1,4 @@
 import React, {Component} from 'react';
-import logo from '../../logo.svg';
 import Navbar from '../Navbar/index';
 import {Container} from 'react-bootstrap';
 import HomeHero from '../HomeHero/index';
@@ -14,12 +13,13 @@ class App extends Component {
   render () {
   return (
     <Container className="App">
-      <Navbar/>
-     <HomeHero/>
-     <Mission/>
-     <Brotherhood/>
-     <Activism/>
-     <Service/>
+      <Navbar/> 
+      <HomeHero/>
+      <Mission/>
+      <Brotherhood/>
+      <Activism/>
+      <div className="spacer"></div>
+      <Service/>
     </Container>
   );
 }
