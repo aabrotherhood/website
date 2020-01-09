@@ -1,0 +1,48 @@
+@import '../../styles/variables.scss';
+
+.serv1 {
+	position: absolute;
+	width: 25%;
+	top: 145rem;
+	left: 45rem;
+	z-index: 2;
+}
+
+.serv2 {
+	position: absolute;
+	width: 23%;
+	top: 158rem;
+	left: 12rem;
+	z-index: 2;
+}
+
+.goldBox {
+	width: 40rem;
+	position: absolute;
+	top: 150rem;
+	left: 20rem;
+	z-index: 1;
+}
+
+.servText {
+	background-color: $red;
+	color: white;
+	font-family: "Lantinghei TC", sans-serif;
+	z-index: 3;
+	top: 155rem;
+	left: 27rem;
+	width: 25rem;
+	height: 15rem;
+	position: absolute;
+	.servTitle {
+		font-weight: bold;
+		padding-top: 1rem;
+		font-size: 1.5rem;
+	}
+	.servDetails {
+		font-weight: extralight;
+		text-align: left;
+		padding-left: 1rem;
+		font-size: 1.25rem;
+	}
+}

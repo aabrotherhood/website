@@ -78,6 +78,41 @@ For Mobile
     left: -11rem;
     top: 15rem;
   }
+  .serv1 {
+    width: 32%;
+    top: 66rem;
+    left: 15rem;
+  }
+
+  .serv2 {
+    width: 30%;
+    top: 74rem;
+    left: 1rem;
+  }
+
+  .goldBox {
+    width: 15rem;
+    top: 69rem;
+    left: 4rem;
+  }
+
+  .servText {
+    background-color: $red;
+    color: white;
+    font-family: "Lantinghei TC", sans-serif;
+    top: 70rem;
+    left: 6.5rem;
+    width: 10rem;
+    height: 8rem;
+    .servTitle {
+      padding-top: 1rem;
+      font-size: 0.6rem;
+    }
+    .servDetails {
+      padding-left: 0.5rem;
+      font-size: 0.4rem;
+    }
+  }
 }
 
 /*
@@ -152,6 +187,41 @@ For Tablet
     width: 250%;
     height: 130%;
   }
+  .serv1 {
+    width: 30%;
+    top: 107rem;
+    left: 31rem;
+  }
+
+  .serv2 {
+    width: 30%;
+    top: 118rem;
+    left: 3rem;
+  }
+
+  .goldBox {
+    width: 28rem;
+    top: 111rem;
+    left: 10rem;
+  }
+
+  .servText {
+    background-color: $red;
+    color: white;
+    font-family: "Lantinghei TC", sans-serif;
+    top: 115rem;
+    left: 14rem;
+    width: 20rem;
+    height: 10rem;
+    .servTitle {
+      padding-top: 1rem;
+      font-size: 0.9rem;
+    }
+    .servDetails {
+      padding-left: 1rem;
+      font-size: 0.8rem;
+    }
+  }
 }
 
 /*
@@ -205,6 +275,41 @@ For Small Laptops
   .greybox {
     width: 300%;
     height: 170%;
+  }
+  .serv1 {
+    width: 30%;
+    top: 132rem;
+    left: 40rem;
+  }
+
+  .serv2 {
+    width: 30%;
+    top: 147rem;
+    left: 5rem;
+  }
+
+  .goldBox {
+    width: 40rem;
+    top: 137rem;
+    left: 15rem;
+  }
+
+  .servText {
+    background-color: $red;
+    color: white;
+    font-family: "Lantinghei TC", sans-serif;
+    top: 142rem;
+    left: 22rem;
+    width: 25rem;
+    height: 15rem;
+    .servTitle {
+      padding-top: 1rem;
+      font-size: 1.5rem;
+    }
+    .servDetails {
+      padding-left: 1rem;
+      font-size: 1.25rem;
+    }
   }
 }
 
