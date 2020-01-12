@@ -36,13 +36,16 @@ For Mobile
   }
   .broCol{
     .stripes {
-      top: 3rem;
+      top: 5rem;
+      left: 1.5rem;
     }
     .bro1 {
       width: 45%;
+      left: -0.75rem;
     }
     .brotherhoodText {
-      top: 3rem;
+      top: 2.5rem;
+      right: -0.75rem;
       padding: 1rem 0.5rem;
       width: 40%;
       .brotherhoodTitle {
@@ -55,6 +58,8 @@ For Mobile
   }
   .actRow {
     .actText {
+      top: -2rem;
+      left: -2rem;
       .actTitle {
         font-size: 0.6rem;
       }
@@ -63,12 +68,15 @@ For Mobile
       }
     }
     .activism {
-      top: 45%;
-      left: 15%;
+      top: 40%;
+      left: 7%;
+    }
+    .greybox {
+      right: 2rem;
     }
   }
   .servCol {
-    margin-top: 0;
+    margin-top: -2rem;
     .stripes {
       bottom: 5%;
     }
@@ -76,13 +84,35 @@ For Mobile
       top: 5%;
       .servTitle {
         font-size: 0.6rem;
-        
       }
       .servDetails {
         font-size: 0.4rem;
         margin-bottom: 0;
       }
     }
+    .serv2 {
+        left: 1rem;
+    }
+  }
+  .contactForm {
+    top: 3%;
+    left: 4%;
+    padding: 1rem 0.5rem;
+    width: 90%;
+    color: white;
+    background-color: $blackish;
+    size: sm;
+    font-size: 0.4rem;
+    .contactTitle {
+      font-size: 0.6rem;
+    }
+    .send {
+      font-size: 0.4rem;
+      background-color: white;
+    }
+  }
+  .contactBg {
+      width: 10%;
   }
 }
 
@@ -149,6 +179,23 @@ For Tablet
       }
     }
   }
+  .contactBg {
+    height: 35rem;
+  }
+  .contactForm {
+    top: 6%;
+    left: 6%;
+    padding: 1rem 0.5rem;
+    width: 55%;
+    size: sm;
+    font-size: 0.8rem;
+    .contactTitle {
+      font-size: 0.8rem;
+    }
+    .send {
+      font-size: 0.8rem;
+    }
+  }
 }
 
 /*
@@ -165,6 +212,11 @@ For Small Laptops
   }
   .navbarLogo {
     float: left;
+  }
+  .contactForm {
+    top: 5%;
+    left: 5%;
+    padding: 1.5rem 2rem;
   }
 }
 

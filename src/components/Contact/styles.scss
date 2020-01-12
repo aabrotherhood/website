@@ -1,0 +1,34 @@
+@import '../../styles/variables.scss';
+
+.contact {
+	position: relative;
+	top: 5rem;
+}
+
+.contactBg {
+	z-index: 1;
+	width: 100%;
+}
+
+.contactForm {
+	z-index: 2;
+	background-color: white;
+	font-family: "Lantinghei TC", sans-serif;
+	font-weight: extralight;
+	color: $blackish;
+	width: 50%;
+	position: absolute;
+	top: 10%;
+	left: 10%;
+	text-align: left;
+	padding: 3rem 2rem;
+}
+
+.contactTitle {
+	font-size: 1.5rem;
+}
+
+.send {
+	position: relative;
+	left: 43%;
+}
