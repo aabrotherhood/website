@@ -7,7 +7,7 @@ class Mission extends Component {
     return (
       <Col className="mission">
         <p className="missionTitle">Our Mission</p>
-        <p className="missionDetails">AAB is built on three pillars: service, brotherhood, and activism</p>
+        <p className="missionDetails">AAB is built on three pillars: service, brotherhood, and activism.</p>
       </Col>
     );
   }

@@ -1,16 +1,16 @@
 import React, {Component} from 'react';
 import Img from 'react-image';
 import Preloader from '../Preloader/index';
-// import Logo from '../../assets/aab_logo.svg';
+import Logo from '../../assets/aab_logo.svg';
 import {Row, Col} from 'react-bootstrap';
 import './styles.scss';
 
 class Navbar extends Component {
   render () {
     return (
-      <Row>
+      <Row className='navbar'>
         <Col sm={2}>
-          {/* <Img className='navbarLogo' src={Logo} loader={<Preloader/>} alt='AAB logo'/> */}
+          <Img className='navbarLogo' src={Logo} loader={<Preloader/>} alt='AAB logo'/>
         </Col>
         <Col className="navBarText">
           ABOUT

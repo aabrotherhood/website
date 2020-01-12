@@ -1,6 +1,8 @@
 @import '../../styles/variables.scss';
 
 .mission {
+  margin: auto;
+  width: 90%;
   font-family: "Lantinghei TC", sans-serif;
   background-color: $red;
   color: white;
@@ -8,6 +10,10 @@
   margin: 5rem 0;
   .missionTitle {
     font-size: 1.5rem;
-    font-weight: 500;
+    font-weight: bold;
+  }
+  .missionDetails {
+  	font-weight: extralight;
+  	font-size: 1.25rem;
   }
 }
