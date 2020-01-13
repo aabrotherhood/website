@@ -5,14 +5,15 @@ import history from './history.js';
 import './index.scss';
 import App from './components/App/index';
 import * as serviceWorker from './serviceWorker';
+import * as ROUTES from './constants/routes';
 import 'bootstrap/dist/css/bootstrap.min.css';
 
 ReactDOM.render(
   <Router history={history}>
     <App>
-      <Route exact path='/' render={App}></Route>
-      <Route path='/members' render={App}></Route>
-      <Route exact path='/login' render={App}></Route>
+      <Route exact path={ROUTES.LANDING} render={App}></Route>
+      <Route path={ROUTES.MEMBERS} render={App}></Route>
+      <Route exact path={ROUTES.LOGIN} render={App}></Route>
     </App>
   </Router>,
   // <App/>,
