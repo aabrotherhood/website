@@ -4,10 +4,15 @@
   position: sticky;
   .navBarText {
     padding: 2rem 0;
-    color: $blackish;
     font-family: "Lantinghei TC", sans-serif;
     text-transform: uppercase;
-
+    a {
+      color: $blackish;
+      text-decoration: none;
+    }
+    a:hover {
+      color: $red;
+    }
   }
   
   .navBarText:hover {

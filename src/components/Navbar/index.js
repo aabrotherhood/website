@@ -3,7 +3,9 @@ import Img from 'react-image';
 import Preloader from '../Preloader/index';
 import Logo from '../../assets/aab_logo.svg';
 import {Row, Col} from 'react-bootstrap';
-import { Link } from 'react-scroll'
+import { Link } from 'react-scroll';
+import { Link as RRDLink } from 'react-router-dom';
+import * as ROUTES from '../../constants/routes';
 import './styles.scss';
 
 class Navbar extends Component {
@@ -29,7 +31,7 @@ class Navbar extends Component {
             duration={500} >Contact</Link>
         </Col>
         <Col className="navBarText">
-          Members
+          <RRDLink to={ROUTES.MEMBERS}>Members</RRDLink>
         </Col>
       </Row>
      );
