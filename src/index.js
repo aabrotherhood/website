@@ -11,6 +11,8 @@ ReactDOM.render(
   <Router history={history}>
     <App>
       <Route exact path='/' render={App}></Route>
+      <Route path='/members' render={App}></Route>
+      <Route exact path='/login' render={App}></Route>
     </App>
   </Router>,
   // <App/>,
