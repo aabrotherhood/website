@@ -2,14 +2,16 @@
 
 .navbar {
   position: sticky;
+  .navBarText {
+    padding: 2rem 0;
+    color: $blackish;
+    font-family: "Lantinghei TC", sans-serif;
+    text-transform: uppercase;
+
+  }
+  
+  .navBarText:hover {
+    color: $red;
+  }
 }
 
-.navBarText {
-  padding: 2rem 0;
-  color: $blackish;
-  font-family: "Lantinghei TC", sans-serif;
-}
-
-.navBarText:hover {
-  color: $red;
-}

@@ -3,26 +3,33 @@ import Img from 'react-image';
 import Preloader from '../Preloader/index';
 import Logo from '../../assets/aab_logo.svg';
 import {Row, Col} from 'react-bootstrap';
+import { Link } from 'react-scroll'
 import './styles.scss';
 
 class Navbar extends Component {
   render () {
+
     return (
       <Row className='navbar'>
         <Col sm={2}>
           <Img className='navbarLogo' src={Logo} loader={<Preloader/>} alt='AAB logo'/>
         </Col>
         <Col className="navBarText">
-          ABOUT
+        <Link 
+          to="mission" 
+          spy={true} 
+          smooth={true} 
+          duration={500} >About</Link>
         </Col>
         <Col className="navBarText">
-          MEMBERS
+          <Link 
+            to="contact" 
+            spy={true} 
+            smooth={true} 
+            duration={500} >Contact</Link>
         </Col>
         <Col className="navBarText">
-          CONTACT
-        </Col>
-        <Col className="navBarText">
-          GALLERY
+          Members
         </Col>
       </Row>
      );

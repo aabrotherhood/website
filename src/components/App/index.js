@@ -15,11 +15,11 @@ class App extends Component {
     <Container className="App">
       <Navbar/> 
       <HomeHero/>
-      <Mission/>
+      <Mission />
       <Brotherhood/>
       <Activism/>
       <div className="spacer"></div>
-      <Service/>
+      <Service name="about"/>
     </Container>
   );
 }
