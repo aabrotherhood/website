@@ -4,6 +4,8 @@ import Img from 'react-image';
 import Preloader from '../Preloader/index';
 import ContactBg from '../../assets/contact-bg.png';
 import './styles.scss';
+require('dotenv').config()
+const nodemailer = require('nodemailer');
 
 class Contact extends Component {
 	constructor(props) {
@@ -45,7 +47,29 @@ class Contact extends Component {
   }
 
   handleSubmit(event) {
-		// to access the state, do this.state.first for first name and etc. 
+		let transporter = nodemailer.createTransport({
+			service: gmail,
+			auth: {
+				user: process.env.EMAIL,
+				pass: process.env.PASSWORD
+			}
+		});
+
+		let mailOptions = {
+			from = this.state.first, ' ', this.state.last, ' <', this.state.email, '>',
+			to = 'aa.brotherhood@gmail.com',
+			subject = this.state.subject,
+			text = this.state.message
+		}
+
+	transporter.sendMail(mailOptions, function(err, data) {
+		if (err) {
+			console.log("Error sending email.");
+		}
+		else {
+			console.log("Email sent.");
+		}
+	})
     event.preventDefault();
   }
 
