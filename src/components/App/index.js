@@ -1,28 +1,47 @@
 import React, {Component} from 'react';
-import Navbar from '../Navbar/index';
-import {Container} from 'react-bootstrap';
-import HomeHero from '../HomeHero/index';
-import Mission from'../Mission/index';
-import Brotherhood from '../Brotherhood/index';
-import Activism from '../Activism/index';
-import Service from '../Service/index';
+import {Container, Row} from 'react-bootstrap';
+import {withRouter} from 'react-router-dom';
+import CSSTransitionGroup from 'react-transition-group/CSSTransitionGroup';
+import { withFirebase } from '../Firebase';
 import '../../styles/global.scss';
 import './styles.scss';
 
 class App extends Component {
+  constructor(props) {
+    super(props);
+    this.state = {
+      authUser: null
+    }
+  }
+  componentDidMount() {
+    this.listener = this.props.firebase.auth.onAuthStateChanged(
+      authUser => {
+        authUser
+          ? this.setState({ authUser })
+          : this.setState({ authUser: null });
+      },
+    );
+  }
+  componentWillUnmount() {
+    this.listener();
+  }
   render () {
-  return (
-    <Container className="App">
-      <Navbar/> 
-      <HomeHero/>
-      <Mission />
-      <Brotherhood/>
-      <Activism/>
-      <div className="spacer"></div>
-      <Service name="about"/>
-    </Container>
-  );
-}
+    return (
+      <Container fluid={true}>
+        <Row className="justify-content-center">
+          <CSSTransitionGroup
+            className="transitionGroup"
+            transitionName="content"
+            transitionEnterTimeout={500}
+            transitionLeaveTimeout={300}>
+              <div key={this.props.history.location.pathname}>
+                {this.props.children}
+              </div>
+          </CSSTransitionGroup>
+        </Row>
+      </Container>
+    );
+  }
 }
 
-export default App;
+export default withRouter(withFirebase(App));

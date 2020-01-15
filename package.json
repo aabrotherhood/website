@@ -7,6 +7,7 @@
     "@testing-library/react": "^9.3.2",
     "@testing-library/user-event": "^7.1.2",
     "bootstrap": "^4.4.1",
+    "firebase": "^7.6.2",
     "node-sass": "^4.13.0",
     "nodemailer": "^6.4.2",
     "react": "^16.12.0",
@@ -16,6 +17,7 @@
     "react-router-dom": "^5.1.2",
     "react-scripts": "3.3.0",
     "react-scroll": "^1.7.15",
+    "react-transition-group": "1.x",
     "serialize-javascript": "^2.1.2"
   },
   "scripts": {

@@ -4,18 +4,24 @@ import {Router, Route} from 'react-router-dom';
 import history from './history.js';
 import './index.scss';
 import App from './components/App/index';
+import Landing from './components/Landing/index';
+import CustomForm from './components/CustomFormWrapper/index';
 import * as serviceWorker from './serviceWorker';
 import * as ROUTES from './constants/routes';
+import Firebase, { FirebaseContext } from './components/Firebase';
 import 'bootstrap/dist/css/bootstrap.min.css';
 
 ReactDOM.render(
-  <Router history={history}>
-    <App>
-      <Route exact path={ROUTES.LANDING} render={App}></Route>
-      <Route path={ROUTES.MEMBERS} render={App}></Route>
-      <Route exact path={ROUTES.LOGIN} render={App}></Route>
-    </App>
-  </Router>,
+  <FirebaseContext.Provider value={new Firebase()}>
+    <Router history={history}>
+      <App>
+        <Route exact path={ROUTES.LANDING} component={Landing}></Route>
+        <Route path={ROUTES.MEMBERS} component={App}></Route>
+        <Route path={ROUTES.LOGIN} render={() => <CustomForm type='Login'/>}></Route>
+        <Route path={ROUTES.SIGNUP} render={() => <CustomForm type='Sign Up'/>}></Route>
+      </App>
+    </Router>
+  </FirebaseContext.Provider>,
   // <App/>,
 document.getElementById('root'));
 
