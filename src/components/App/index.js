@@ -2,30 +2,14 @@ import React, {Component} from 'react';
 import {Container, Row} from 'react-bootstrap';
 import {withRouter} from 'react-router-dom';
 import CSSTransitionGroup from 'react-transition-group/CSSTransitionGroup';
-import { withFirebase } from '../Firebase';
+import { withAuthentication } from '../Sessions';
 import '../../styles/global.scss';
 import './styles.scss';
 
 class App extends Component {
-  constructor(props) {
-    super(props);
-    this.state = {
-      authUser: null
-    }
-  }
-  componentDidMount() {
-    this.listener = this.props.firebase.auth.onAuthStateChanged(
-      authUser => {
-        authUser
-          ? this.setState({ authUser })
-          : this.setState({ authUser: null });
-      },
-    );
-  }
-  componentWillUnmount() {
-    this.listener();
-  }
+
   render () {
+    console.log(this.props)
     return (
       <Container fluid={true}>
         <Row className="justify-content-center">
@@ -44,4 +28,4 @@ class App extends Component {
   }
 }
 
-export default withRouter(withFirebase(App));
+export default withRouter(withAuthentication(App));

@@ -32,7 +32,7 @@ class CustomForm extends Component {
         this.props.firebase.doCreateUserWithEmailAndPassword(this.state.email, this.state.passwordOne)
         .then(authUser => {
           console.log("success signing up!");
-          this.props.history.push('/');
+          this.props.history.push('/home');
         }).catch(err => {
           console.log('ERROR',err);
         });
@@ -40,7 +40,7 @@ class CustomForm extends Component {
         this.props.doSignInWithEmailAndPassword(this.state.email, this.state.passwordOne) 
         .then(() => {
           console.log("success logging ing!");
-          this.props.history.push('/');
+          this.props.history.push('/home');
         }).catch (err => {
           console.log('ERROR', err);
         })
