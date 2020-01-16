@@ -7,8 +7,6 @@ class CustomForm extends Component {
   constructor(props) {
     super(props);
     this.state = {
-      first: 'Mark',
-      last: 'Otto',
       check: '',
       email: 'example@gmail.com',
       passwordOne: '',
@@ -25,21 +23,21 @@ class CustomForm extends Component {
       this.setState({passwordValid: true})
       return
     }
-    if (this.state.first !== '' && this.state.last !== '' && this.state.email !== '' && this.state.check === 'spindell') {
+    if (this.state.email !== '' && this.state.check === 'spindell') {
       this.setState({passwordValid: false})
       console.log('everything is good to go!');
       if (this.props.type === 'Sign Up') {
         this.props.firebase.doCreateUserWithEmailAndPassword(this.state.email, this.state.passwordOne)
         .then(authUser => {
           console.log("success signing up!");
-          this.props.history.push('/home');
+          this.props.history.push('/edit');
         }).catch(err => {
           console.log('ERROR',err);
         });
       } else {
         this.props.doSignInWithEmailAndPassword(this.state.email, this.state.passwordOne) 
         .then(() => {
-          console.log("success logging ing!");
+          console.log("success logging in!");
           this.props.history.push('/home');
         }).catch (err => {
           console.log('ERROR', err);
@@ -56,36 +54,7 @@ class CustomForm extends Component {
 
     return (
       <Form noValidate onSubmit={this.handleSubmit} className="customForm">
-        {this.props.type === 'Sign Up' ?
-        <Form.Row>
-          <Form.Group as={Col} md="6" controlId="validationCustom01">
-            <Form.Label>First name</Form.Label>
-            <Form.Control
-              required
-              type="text"
-              placeholder="First name"
-              defaultValue="Mark"
-              name="first"
-              isInvalid={this.state.first === ''}
-              onChange={this.handleChange}
-            />
-            <Form.Control.Feedback>Looks good!</Form.Control.Feedback>
-          </Form.Group>
-          <Form.Group as={Col} md="6" controlId="validationCustom02">
-            <Form.Label>Last name</Form.Label>
-            <Form.Control
-              required
-              type="text"
-              placeholder="Last name"
-              defaultValue="Otto"
-              isInvalid={this.state.last === ''}
-              name="last"
-              onChange={this.handleChange}
-            />
-            <Form.Control.Feedback>Looks good!</Form.Control.Feedback>
-          </Form.Group>
-        </Form.Row>
-        : <div></div> }
+        
         {this.props.type === 'Sign Up' ? 
         <Form.Row>
           <Form.Group as={Col} md="12" controlId="validationCustomUsername">

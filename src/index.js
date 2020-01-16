@@ -7,6 +7,7 @@ import App from './components/App/index';
 import Landing from './components/Landing/index';
 import Home from './components/Home/index';
 import CustomForm from './components/CustomFormWrapper/index';
+import Edit from './components/Edit/index';
 import * as serviceWorker from './serviceWorker';
 import * as ROUTES from './constants/routes';
 import Firebase, { FirebaseContext } from './components/Firebase';
@@ -21,6 +22,7 @@ ReactDOM.render(
         <Route path={ROUTES.LOGIN} render={() => <CustomForm type='Login'/>}></Route>
         <Route path={ROUTES.SIGNUP} render={() => <CustomForm type='Sign Up'/>}></Route>
         <Route path={ROUTES.HOME} component={Home}></Route>
+        <Route path={ROUTES.EDIT} component={Edit}></Route>
       </App>
     </Router>
   </FirebaseContext.Provider>,

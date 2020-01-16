@@ -9,7 +9,6 @@ import './styles.scss';
 class App extends Component {
 
   render () {
-    console.log(this.props)
     return (
       <Container fluid={true}>
         <Row className="justify-content-center">
