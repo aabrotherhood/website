@@ -1,34 +1,20 @@
 @import '../../styles/variables.scss';
 
 .contact {
+	background-color: $blackish;
+	color: white;
+	font-family: "Lantinghei TC", sans-serif;
 	position: relative;
 	top: 5rem;
-}
-
-.contactBg {
-	z-index: 1;
-	width: 100%;
-}
-
-.contactForm {
-	z-index: 2;
-	background-color: white;
-	font-family: "Lantinghei TC", sans-serif;
-	font-weight: extralight;
-	color: $blackish;
-	width: 50%;
-	position: absolute;
-	top: 10%;
-	left: 10%;
-	text-align: left;
-	padding: 3rem 2rem;
+	padding: 2rem;
+	font-size: 2rem;
+	margin-bottom: 5rem;
 }
 
 .contactTitle {
-	font-size: 1.5rem;
+	font-weight: bold;
 }
 
-.send {
-	position: relative;
-	left: 43%;
+.contactText {
+	font-size: 1.5rem;
 }

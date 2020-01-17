@@ -1,14 +1,15 @@
 import React, {Component} from 'react';
-import {Container, Row, Col, Form, Button} from 'react-bootstrap';
 import Img from 'react-image';
 import Preloader from '../Preloader/index';
-import ContactBg from '../../assets/contact-bg.png';
 import './styles.scss';
+/*
+import {Container, Row, Col, Form, Button} from 'react-bootstrap';
+import ContactBg from '../../assets/contact-bg.png';
 require('dotenv').config()
-const nodemailer = require('nodemailer');
+const nodemailer = require('nodemailer'); */
 
 class Contact extends Component {
-	constructor(props) {
+	/* constructor(props) {
 		super(props);
 
 		this.state ={
@@ -71,50 +72,22 @@ class Contact extends Component {
 		}
 	})
     event.preventDefault();
-  }
+  } */
 
 	render () {
 		return (
-			<Container className='contact'>
-				<Img className='contactBg' src={ContactBg} loader={<Preloader/>} />
-				<Form className='contactForm'>
-					<p className='contactTitle'>
+			<div className='contact'>
+				<p className='contactTitle'>
 						INTERESTED IN JOINING?
 					</p>
 					<p className='contactText'>
-						For more information about how you can get involved, email aa.brotherhood@gmail.com.
+						For more information about how you can get involved, email 
+						<p className='email'>
+						<a href="mailto:aa.brotherhood@gmail.com" target="_top">aa.brotherhood@gmail.com
+					    </a>.
+					    </p>
 					</p>
-					<Row>
-						<Col>
-							<Form.Group controlId='formGroupFirst'>
-								<Form.Label>First name</Form.Label>
-								<Form.Control size='sm' onChange={this.handleChange.bind(this, 'first')}/>
-							</Form.Group>
-						</Col>
-						<Col>
-							<Form.Group controlId='formGroupLast'>
-								<Form.Label>Last name</Form.Label>
-								<Form.Control size='sm' onChange={this.handleChange.bind(this, 'last')}/>
-							</Form.Group>
-						</Col>
-					</Row>
-					<Form.Group controlId='formGroupEmail'>
-						<Form.Label>Email address</Form.Label>
-						<Form.Control type='email' size='sm' onChange={this.handleChange.bind(this, 'email')}/>
-					</Form.Group>
-					<Form.Group controlId='formGroupSub'>
-						<Form.Label>Subject</Form.Label>
-						<Form.Control size='sm' onChange={this.handleChange.bind(this, 'subject')}/>
-					</Form.Group>
-					<Form.Group controlId='formGroupMessage'>
-						<Form.Label>Message</Form.Label>
-						<Form.Control as='textarea' rows='3' size='sm' onChange={this.handleChange.bind(this, 'message')}/>
-					</Form.Group>
-					<Button className='send' variant='outline-dark'>
-						Send
-					</Button>
-				</Form>
-			</Container>
+			</div>
 		);
 	}
 };

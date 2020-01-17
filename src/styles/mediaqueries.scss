@@ -94,25 +94,15 @@ For Mobile
         left: 1rem;
     }
   }
-  .contactForm {
-    top: 3%;
-    left: 4%;
-    padding: 1rem 0.5rem;
-    width: 90%;
-    color: white;
-    background-color: $blackish;
-    size: sm;
-    font-size: 0.4rem;
-    .contactTitle {
-      font-size: 0.6rem;
-    }
-    .send {
-      font-size: 0.4rem;
-      background-color: white;
-    }
+  .contact {
+    padding: 1rem;
+    margin-bottom: 3rem;
   }
-  .contactBg {
-      width: 10%;
+  .contactTitle {
+    font-size: 0.6rem;
+  }
+  .contactText {
+    font-size: 0.4rem;
   }
 }
 
@@ -179,22 +169,14 @@ For Tablet
       }
     }
   }
-  .contactBg {
-    height: 35rem;
+  .contact {
+    padding: 1rem;
   }
-  .contactForm {
-    top: 6%;
-    left: 6%;
-    padding: 1rem 0.5rem;
-    width: 55%;
-    size: sm;
+  .contactTitle {
+    font-size: 1rem;
+  }
+  .contactText {
     font-size: 0.8rem;
-    .contactTitle {
-      font-size: 0.8rem;
-    }
-    .send {
-      font-size: 0.8rem;
-    }
   }
 }
 
@@ -213,10 +195,11 @@ For Small Laptops
   .navbarLogo {
     float: left;
   }
-  .contactForm {
-    top: 5%;
-    left: 5%;
-    padding: 1.5rem 2rem;
+  .contactTitle {
+    font-size: 1.5rem;
+  }
+  .contactText {
+    font-size: 1.25rem;
   }
 }
 
