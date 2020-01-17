@@ -11,15 +11,13 @@ class Signup extends Component {
 
   render() {
     return( 
-      <Col className='justify-content-center customFormWrapper'>
+      <Col className='customFormWrapper'>
         <Row className='justify-content-center'>
           <Img className='navbarLogo' src={Logo} loader={<Preloader/>} alt='AAB logo'/>
         </Row>
-        <Row className='justify-content-center'>
           <FirebaseContext.Consumer>
             {firebase => <CustomForm type={this.props.type} firebase={firebase} />}
           </FirebaseContext.Consumer>
-        </Row>
       </Col>
     );
   }

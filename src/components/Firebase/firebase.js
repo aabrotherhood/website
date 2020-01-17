@@ -1,5 +1,7 @@
 import app from 'firebase/app';
 import 'firebase/auth';
+import 'firebase/database';
+import 'firebase/storage';
 
 const firebaseConfig = {
   apiKey: process.env.REACT_APP_FIREBASE_KEY,
@@ -31,6 +33,8 @@ class Firebase {
     app.initializeApp(config);
 
     this.auth = app.auth();
+    this.db = app.database();
+    this.storage = app.storage();
   }
 
   // Firebase Auth Functions
@@ -41,5 +45,13 @@ class Firebase {
     this.auth.signInWithEmailAndPassword(email, password);
   
   doSignOut = () => this.auth.signOut();
+
+  // *** User API ***
+  brother = uid => this.db.ref(`brothers/${uid}`);
+  brothers = () => this.db.ref('brothers');
+  currentUser = () => this.auth.currentUser;
+
+  // Storage
+  brotherImage = () => this.storage.ref('brothers');
 }
 export default Firebase;

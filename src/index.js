@@ -18,7 +18,7 @@ ReactDOM.render(
     <Router history={history}>
       <App>
         <Route exact path={ROUTES.LANDING} component={Landing}></Route>
-        <Route path={ROUTES.MEMBERS} component={App}></Route>
+        <Route path={ROUTES.MEMBERS} component={Landing}></Route>
         <Route path={ROUTES.LOGIN} render={() => <CustomForm type='Login'/>}></Route>
         <Route path={ROUTES.SIGNUP} render={() => <CustomForm type='Sign Up'/>}></Route>
         <Route path={ROUTES.HOME} component={Home}></Route>
