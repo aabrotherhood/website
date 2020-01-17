@@ -32,12 +32,12 @@ class Edit extends Component {
     const currentBrother = this.props.firebase.brother(this.props.firebase.currentUser().uid);
     const brotherImagesRef = this.props.firebase.brotherImage();
     const currentBrotherRef = brotherImagesRef.child(this.props.firebase.currentUser().uid);
-    currentBrotherRef.getDownloadURL().then(url => {
+    currentBrotherRef.getDownloadURL().then(imageURL => {
       const {first, last, brotherName, birthday, house, year, concentration, location, occupation, phone, personalEmail, schoolEmail} = this.state;
       currentBrother.set({
         first,last,brotherName,birthday, house, year, 
         concentration, location, occupation, 
-        phone, personalEmail, schoolEmail, url}
+        phone, personalEmail, schoolEmail, imageURL}
         ,function(error) {
           if (error) {
             // The write failed...
