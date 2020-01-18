@@ -5,6 +5,7 @@ import CSSTransitionGroup from 'react-transition-group/CSSTransitionGroup';
 import { withAuthentication } from '../Sessions';
 import '../../styles/global.scss';
 import './styles.scss';
+import '../../styles/animations.scss';
 
 class App extends Component {
 
