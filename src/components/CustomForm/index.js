@@ -67,33 +67,30 @@ class CustomForm extends Component {
       <Form noValidate onSubmit={this.handleSubmit} className="customForm">
         {this.props.type === 'Sign Up' ? 
         <Form.Row>
-          <Form.Group as={Col} md="12" controlId="validationCustomUsername03">
+          <Form.Group as={Col} md="12" controlId="validationCustomUsername">
             <Form.Label>Where are check ins held?</Form.Label>
             <InputGroup>
               <Form.Control
                 type="text"
                 placeholder="Answer"
-                defaultValue="Example"
                 isInvalid={this.state.check === ''}
                 name="check"
                 onChange={this.handleChange}
                 required
               />
               <Form.Control.Feedback type="invalid">
-                Not the right answer. (All lowercase).
+                (All lowercase).
               </Form.Control.Feedback>
             </InputGroup>
           </Form.Group>
         </Form.Row> : <div></div> }
         <Form.Row>
-          <Form.Group as={Col} md="12" controlId="validationCustomUsername">
+          <Form.Group as={Col} md="12" controlId="validationCustomUsername03">
             <Form.Label>Email</Form.Label>
             <InputGroup>
               <Form.Control
                 type="text"
-                placeholder="Email"
-                aria-describedby="inputGroupPrepend"
-                defaultValue="example@gmail.com"
+                placeholder="Email@gmail.com"
                 isInvalid={this.state.email === ''}
                 name="email"
                 onChange={this.handleChange}

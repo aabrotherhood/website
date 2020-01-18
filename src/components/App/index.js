@@ -10,7 +10,7 @@ class App extends Component {
 
   render () {
     return (
-      <Container fluid={true}>
+      <Container fluid={true} className="App">
         <Row className="justify-content-center">
           <CSSTransitionGroup
             className="transitionGroup"

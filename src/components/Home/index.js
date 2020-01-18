@@ -1,10 +1,13 @@
 import React, {Component} from 'react';
 import {withAuthorization} from '../Sessions';
+import Brothers from '../Brothers';
 
 class Home extends Component {
   render() {
     return( 
-      <div>HOME</div>
+      <div>
+        <Brothers/>
+      </div>
     )
   }
 }

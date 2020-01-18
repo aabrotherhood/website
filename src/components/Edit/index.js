@@ -1,6 +1,7 @@
 import React, {Component} from 'react';
 import {Col, Form, InputGroup, Button} from 'react-bootstrap';
 import {withAuthorization} from '../Sessions';
+import './styles.scss';
 
 class Edit extends Component {
   constructor(props) {
@@ -24,31 +25,36 @@ class Edit extends Component {
 
     this.handleSubmit = this.handleSubmit.bind(this);
     this.handleChange = this.handleChange.bind(this);
-    this.handleUpload = this.handleUpload.bind(this);
+    // this.handleUpload = this.handleUpload.bind(this);
   }
   handleSubmit(event) {
     event.preventDefault();
-    this.handleUpload();
-    const currentBrother = this.props.firebase.brother(this.props.firebase.currentUser().uid);
-    const brotherImagesRef = this.props.firebase.brotherImage();
-    const currentBrotherRef = brotherImagesRef.child(this.props.firebase.currentUser().uid);
-    currentBrotherRef.getDownloadURL().then(imageURL => {
-      const {first, last, brotherName, birthday, house, year, concentration, location, occupation, phone, personalEmail, schoolEmail} = this.state;
-      currentBrother.set({
-        first,last,brotherName,birthday, house, year, 
-        concentration, location, occupation, 
-        phone, personalEmail, schoolEmail, imageURL}
-        ,function(error) {
-          if (error) {
-            // The write failed...
-            console.log('Failed updated brother info');
-          } else {
-            // Data saved successfully!
-            console.log('Succesfully updated information');
-          }
-        })
-        this.props.history.push('/home')
+    const currentBrotherRef = this.props.firebase.currentBrotherImage(this.props.firebase.currentUser().uid);
+    currentBrotherRef.put(this.state.image).then(() => {
+      console.log('Successfully loaded image');
+      currentBrotherRef.getDownloadURL().then(imageURL=> {
+        console.log(imageURL)
+        const currentBrother = this.props.firebase.brother(this.props.firebase.currentUser().uid);
+        const {first, last, brotherName, birthday, house, year, concentration, location, occupation, phone, personalEmail, schoolEmail} = this.state;
+        currentBrother.set({
+          first,last,brotherName,birthday, house, year, 
+          concentration, location, occupation, 
+          phone, personalEmail, schoolEmail, imageURL}
+          ,function(error) {
+            if (error) {
+              // The write failed...
+              console.log('Failed updated brother info');
+            } else {
+              // Data saved successfully!
+              console.log('Succesfully updated information');
+            }
+          })
+          this.props.history.push('/home')
+      })
+    }).catch(err => {
+      console.log('ERROR', err);
     })
+   
   }
   handleChange(event) {
     if (event.target.files) {
@@ -58,16 +64,6 @@ class Edit extends Component {
       this.setState({[event.target.name]: event.target.value});
     }
   }
-
-  handleUpload() {
-    const brotherImagesRef = this.props.firebase.brotherImage();
-    const currentBrotherRef = brotherImagesRef.child(this.props.firebase.currentUser().uid);
-    currentBrotherRef.put(this.state.image).then(() => {
-      console.log('Successfully loaded image');
-    }).catch(err => {
-      console.log('ERROR', err);
-    })
-  };
 
   render() {
     return( 
@@ -188,7 +184,7 @@ class Edit extends Component {
               <Form.Control
                 type="text"
                 placeholder="Boston"
-                name="occupation"
+                name="location"
                 onChange={this.handleChange}
                 required
               />
