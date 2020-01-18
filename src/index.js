@@ -6,6 +6,7 @@ import './index.scss';
 import App from './components/App/index';
 import Landing from './components/Landing/index';
 import Home from './components/Home/index';
+import Members from './components/Members';
 import CustomForm from './components/CustomFormWrapper/index';
 import Edit from './components/Edit/index';
 import * as serviceWorker from './serviceWorker';
@@ -18,7 +19,7 @@ ReactDOM.render(
     <Router history={history}>
       <App>
         <Route exact path={ROUTES.LANDING} component={Landing}></Route>
-        <Route path={ROUTES.MEMBERS} component={Landing}></Route>
+        <Route path={ROUTES.MEMBERS} component={Members}></Route>
         <Route path={ROUTES.LOGIN} render={() => <CustomForm type='Login'/>}></Route>
         <Route path={ROUTES.SIGNUP} render={() => <CustomForm type='Sign Up'/>}></Route>
         <Route path={ROUTES.HOME} component={Home}></Route>
