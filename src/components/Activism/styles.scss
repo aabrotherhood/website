@@ -5,14 +5,15 @@
 	font-family: "Lantinghei TC", sans-serif;
 	color: white;
 	position: relative;
-	margin-top: 5rem;
+	margin-top: 7rem;
+	margin-left: 2rem;
 	.actText {
 		background-color: $red;
-		width: 60%;
+		width: 70%;
 		z-index: 3;
 		padding: 1rem 1rem;
 		.actTitle {
-			font-weight: 600;
+			font-weight: bold;
 			float: center;
 			font-size: 1.5rem;
 		}
@@ -24,18 +25,17 @@
 	
 	.activism {
 		position: absolute;
-		width: 70%;
+		width: 67%;
 		z-index: 2;
-		top: 30%;
-		left: 20%;
+		top: 15%;
+		left: 12%;
 	}
 	
 	.greybox {
 		position: absolute;
-		width: 70%;
-		right: 0;
+		width: 60%;
+		right: 5rem;
 		z-index: 1;
-		margin-top: 1rem;
 	}
 }
 

@@ -3,8 +3,7 @@
 .servCol {
 	position: relative;
 	text-align: left;
-
-	margin-top: 5rem;
+	margin-top: 3rem;
 	.servText {
 		background-color: $gold;
 		color: white;
@@ -16,14 +15,14 @@
 		text-align: center;
 		position: absolute;
 		top: 15%;
-		left: 40%;
+		left: 45%;
 		.redBox {
 			background-color: $red;
 			z-index: 1;
 			padding: 1rem 1rem;
 		}
 		.servTitle {
-			font-weight: 600;
+			font-weight: bold;
 			font-size: 1.5rem;
 		}
 		.servDetails {
@@ -32,15 +31,15 @@
 		}
 	}
 	.serv2 {
-		width: 45%;
+		width: 42%;
 		z-index: 2;
 		position: relative;
-		left: 0;
+		left: 3rem;
 	}
 	.stripes {
 		width: 30%;
 		position: absolute;
 		bottom: 10%;
-		right: 30%;
+		right: 25%;
 	}
 }
