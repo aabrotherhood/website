@@ -6,6 +6,7 @@ import Mission from'../Mission/index';
 import Brotherhood from '../Brotherhood/index';
 import Activism from '../Activism/index';
 import Service from '../Service/index';
+import Contact from '../Contact';
 import '../../styles/global.scss';
 import './styles.scss';
 
@@ -20,6 +21,7 @@ class App extends Component {
       <Activism/>
       <div className="spacer"></div>
       <Service name="about"/>
+      <Contact/>
     </Container>
   );
 }
