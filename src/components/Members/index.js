@@ -1,11 +1,12 @@
 import React, {Component} from 'react';
 import {withAuthorization} from '../Sessions';
 import Brothers from '../Brothers';
+import './styles.scss';
 
 class Home extends Component {
   render() {
     return( 
-      <div>
+      <div className="members">
         <Brothers/>
       </div>
     )
