@@ -1,0 +1,18 @@
+@import "../../styles/variables.scss";
+
+.members {
+	background-color: white;
+	border: 1rem solid $red;
+	color: $blackish;
+	font-family: "Lantinghei TC", sans-serif;
+	width: 10rem;
+	height: 10rem;
+	.brotherImage {
+		height: 10rem;
+		width: 10rem;
+	}
+	.realName {
+		font-family: "Lantinghei TC," sans-serif;
+		font-size: 10rem;
+	}
+}
