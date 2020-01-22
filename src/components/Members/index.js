@@ -7,11 +7,9 @@ import './styles.scss';
 class Members extends Component {
   render() {
     return( 
-    	<Container>
-    		<div>
-        		<Brothers className='members'/>
-    		</div>
-    	</Container>
+      <div className="members">
+        <Brothers/>
+      </div>
     )
   }
 }

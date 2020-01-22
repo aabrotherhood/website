@@ -1,18 +1,16 @@
-@import "../../styles/variables.scss";
+@import '../../styles/variables.scss';
 
 .members {
-	background-color: white;
-	border: 1rem solid $red;
-	color: $blackish;
-	font-family: "Lantinghei TC", sans-serif;
-	width: 10rem;
-	height: 10rem;
-	.brotherImage {
-		height: 10rem;
-		width: 10rem;
-	}
-	.realName {
-		font-family: "Lantinghei TC," sans-serif;
-		font-size: 10rem;
-	}
+  .brother {
+    .brotherImage {
+      width: 50px;
+      height: 50px;
+    }
+    .brotherName, .birthday, .occupation,.location,.house,.year,.concentration,.personalEmail,.schoolEmail,.phone {
+      visibility: hidden;
+    }
+    .brotherName {
+    	font-family: "Times New Roman", sans-serif;
+    }
+  }
 }
