@@ -1,6 +1,4 @@
 import React, {Component} from 'react';
-import Img from 'react-image';
-import Preloader from '../Preloader/index';
 import './styles.scss';
 /*
 import {Container, Row, Col, Form, Button} from 'react-bootstrap';

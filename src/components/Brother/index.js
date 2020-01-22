@@ -6,7 +6,7 @@ import {Col} from 'react-bootstrap';
 class Brother extends Component {
   render() {
     return (
-      <Col>
+      <Col className="brother">
         <Img className="brotherImage" src={this.props.info.imageURL} loader={<Preloader/>} alt={this.props.info.first}/>
         <h2 className="realName">{this.props.info.first + ' ' + this.props.info.last}</h2>
         <p className="brotherName">{this.props.info.brotherName}</p>
