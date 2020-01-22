@@ -37,7 +37,7 @@ class Brothers extends Component {
       })
     }
     return(
-      <div>
+      <div className="brotherCol">
         {loading ? brothersList : <div></div>}
       </div>      
     )

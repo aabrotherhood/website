@@ -33,6 +33,7 @@ class Navbar extends Component {
         <Col className="navBarText">
           <RRDLink to={ROUTES.MEMBERS}>Members</RRDLink>
         </Col>
+        
       </Row>
      );
   }
