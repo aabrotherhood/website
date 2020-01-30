@@ -3,7 +3,7 @@
 .home {
   .homeNavbar {
     margin: 1rem 1rem;
-    justify-content: flex-end;
+    justify-content: space-between;
     .homeNavbarLogo {
       width: 90px;
       height: 80px;
@@ -22,19 +22,33 @@
       }
     }
   }
-  .brotherCol {
-    width: 20%;
-    .brother {
-      .brotherImage {
-        width: 50px;
-        height: 50px;
-      }
-      .realName {
-        font-weight: 100;
-        font-size: 1rem;
-      }
-      .brotherName, .birthday, .occupation,.location,.house,.year,.concentration,.personalEmail,.schoolEmail,.phone {
-        display: none;
+  .homeContent {
+    margin-top: 2rem;
+    .brotherCol {
+      width: 25%;
+      .brother {
+        display: inline-block;
+        padding: 0px 32px;
+        text-align: left;
+        .brotherImage {
+          width: 50px;
+          height: 50px;
+          border-radius: 25px;
+          float: left;
+          margin-right: 10px;
+        }
+        .realName {
+          font-weight: 100;
+          font-size: 1rem;
+          margin: auto 0px;
+        }
+        .year {
+          font-weight: 100;
+          font-size: 1rem;
+        }
+        .brotherName, .birthday, .occupation,.location,.house,.concentration,.personalEmail,.schoolEmail,.phone {
+          display: none;
+        }
       }
     }
   }

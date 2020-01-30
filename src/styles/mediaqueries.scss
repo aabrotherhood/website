@@ -104,6 +104,27 @@ For Mobile
   .contactText {
     font-size: 0.4rem;
   }
+  .members {
+    .topMembers {
+      .heading {
+        font-size: 1rem !important;
+      }
+      .behindText{
+        font-size: 200px !important;
+        top: 15%;
+      }
+    }
+    .brotherCol {
+      margin: 0rem 0rem !important;
+      .yearCols {
+        margin: 0rem 0 !important;
+        padding: 0 !important;
+      }
+      .year {
+        font-size: 2rem !important;
+      }
+    }
+  }
 }
 
 /*
@@ -178,6 +199,26 @@ For Tablet
   .contactText {
     font-size: 0.8rem;
   }
+  .members {
+    .topMembers {
+      .heading {
+        font-size: 2rem !important;
+      }
+      .behindText{
+        font-size: 300px !important;
+        top: 10%;
+      }
+    }
+    .brotherCol {
+      margin: 0rem 2rem !important;
+      .yearCols {
+        margin: 0rem 0 !important;
+      }
+      .year {
+        font-size: 3rem !important;
+      }
+    }
+  }
 }
 
 /*
@@ -200,6 +241,24 @@ For Small Laptops
   }
   .contactText {
     font-size: 1.25rem;
+  }
+
+  .members {
+    .topMembers {
+      .heading {
+        font-size: 3rem !important;
+      }
+      .behindText{
+        font-size: 300px !important;
+        top: 10%;
+      }
+    }
+    .brotherCol {
+      margin: 0rem 3rem !important;
+      .year {
+        font-size: 3rem !important;
+      }
+    }
   }
 }
 
@@ -248,4 +307,22 @@ For 4k and above
   .homeCol {
     width: 100% !important;
   }
+  .members {
+    .topMembers {
+      .heading {
+        font-size: 9rem !important;
+      }
+      .behindText{
+        font-size: 800px !important;
+        top: 20%;
+      }
+    }
+    .brotherCol {
+      margin: 7rem 7rem !important;
+      .year {
+        font-size: 6rem !important;
+      }
+    }
+  }
+
 }

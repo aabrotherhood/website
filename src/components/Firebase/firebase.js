@@ -54,5 +54,12 @@ class Firebase {
   // Storage
   brotherImage = () => this.storage.ref('brothers');
   currentBrotherImage = uid => this.storage.ref('brothers').child(uid);
+  // Storage Recruits
+  recruitImage = () => this.storage.ref('recruits');
+  currentRecruitImage = uid => this.storage.ref('recruits').child(uid);
+
+  // Recruits 
+  recruits = () => this.db.ref('recruits');
+  recruit = uid => this.db.ref(`recruits/${uid}`);
 }
 export default Firebase;

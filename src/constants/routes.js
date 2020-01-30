@@ -5,4 +5,6 @@ export const SIGNUP = '/signup';
 export const HOME = '/home';
 export const EDIT = '/edit';
 export const BROTHERS = '/brothers';
-export const RECRUITMENT = '/recruitment';
+export const RECRUITMENT = '/recruits';
+export const RECRUITMENTSIGNUP = '/recruitment/signup';
+export const INDBROTHER = '/brother/:id';

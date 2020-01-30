@@ -33,7 +33,6 @@ class Edit extends Component {
     currentBrotherRef.put(this.state.image).then(() => {
       console.log('Successfully loaded image');
       currentBrotherRef.getDownloadURL().then(imageURL=> {
-        console.log(imageURL)
         const currentBrother = this.props.firebase.brother(this.props.firebase.currentUser().uid);
         const {first, last, brotherName, birthday, house, year, concentration, location, occupation, phone, personalEmail, schoolEmail} = this.state;
         currentBrother.set({

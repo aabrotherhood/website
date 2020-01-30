@@ -9,6 +9,8 @@ import Home from './components/Home/index';
 import Members from './components/Members';
 import CustomForm from './components/CustomFormWrapper/index';
 import Edit from './components/Edit/index';
+import IndBrother from './components/IndBrother';
+import RSignUp from './components/RecruitmentSignUp';
 import * as serviceWorker from './serviceWorker';
 import * as ROUTES from './constants/routes';
 import Firebase, { FirebaseContext } from './components/Firebase';
@@ -24,6 +26,8 @@ ReactDOM.render(
         <Route path={ROUTES.SIGNUP} render={() => <CustomForm type='Sign Up'/>}></Route>
         <Route path={ROUTES.HOME} component={Home}></Route>
         <Route path={ROUTES.EDIT} component={Edit}></Route>
+        <Route path={ROUTES.INDBROTHER} component={IndBrother}></Route>
+        <Route exact path={ROUTES.RECRUITMENTSIGNUP} component={RSignUp}></Route>
       </App>
     </Router>
   </FirebaseContext.Provider>,
