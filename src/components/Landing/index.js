@@ -1,5 +1,5 @@
 import React, {Component} from 'react';
-import Navbar from '../Navbar/index';
+import TopBar from '../TopBar/index';
 import {Container} from 'react-bootstrap';
 import HomeHero from '../HomeHero/index';
 import Mission from'../Mission/index';
@@ -14,7 +14,7 @@ class App extends Component {
   render () {
   return (
     <Container className="Landing">
-      <Navbar/> 
+      <TopBar loggedIn="false"/> 
       <HomeHero/>
       <Mission />
       <Brotherhood/>

@@ -1,0 +1,49 @@
+@import '../../styles/variables.scss';
+
+.indBrother {
+  overflow: hidden;
+  .behindText {
+    font-size: 500px;
+      position: absolute;
+      top: 0;
+      left: 0;
+      white-space: nowrap;
+      color: rgb(247, 247, 247);
+      z-index: -1;
+  }
+  .infoBox {
+    border-bottom: 10px solid $blackish;
+    width: 80%;
+    margin: 0 auto;
+    .brotherImage {
+      width: 40%;
+      border-radius: 50%;
+    }
+    .infoDetails {
+      text-align: start;
+      width: 53%;
+      margin-left: 3rem;
+      border-top: 10px solid $blackish;
+      .name {
+        font-size: 3rem;
+      }
+      .other {
+        font-size: 1.5rem;
+      }
+    }
+  }
+  .recruits {
+    .recruitComments {
+      margin: 3rem auto;
+      padding: 3rem 0;
+      width: 80%;
+      .comments {
+        text-align: start;
+      }
+    }
+    .redFlags {
+      width: 80%;
+      margin: 0 auto;
+    }
+  }
+}

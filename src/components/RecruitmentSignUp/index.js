@@ -17,7 +17,7 @@ class RecruitmentSignUp extends Component {
       phone: '',
       personalEmail: '',
       schoolEmail: '',
-      image: '',
+      imageURL: 'https://firebasestorage.googleapis.com/v0/b/aab-website-dev.appspot.com/o/brothers%2FKgow8YZhmTONztYA0biyodF5laE2?alt=media&token=0cebf6db-297a-419f-9da8-01be0462badd',
     }
 
     this.initialState = this.state
@@ -27,7 +27,6 @@ class RecruitmentSignUp extends Component {
     this.resetForm = this.resetForm.bind(this);
   }
   resetForm() {
-    console.log(this.initialState)
     this.setState(this.initialState);
     window.location.reload(false);
   }
@@ -35,11 +34,10 @@ class RecruitmentSignUp extends Component {
     event.preventDefault();
 
     const recruitUID = Math.random().toString(36).substring(2, 15) + Math.random().toString(36).substring(2, 15);
-    console.log(recruitUID)
     const currentRecruit = this.props.firebase.recruit(recruitUID);
-    const {first, last, house, year, phone, personalEmail, schoolEmail, image} = this.state
+    const {first, last, house, year, phone, personalEmail, schoolEmail, imageURL} = this.state
     currentRecruit.set({
-      first, last, house, year, phone,personalEmail, schoolEmail, image
+      first, last, house, year, phone,personalEmail, schoolEmail, imageURL
     }, function(error) {
       if (error) {
         console.log('something went wrong',error);

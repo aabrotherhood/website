@@ -8,3 +8,5 @@ export const BROTHERS = '/brothers';
 export const RECRUITMENT = '/recruits';
 export const RECRUITMENTSIGNUP = '/recruitment/signup';
 export const INDBROTHER = '/brother/:id';
+export const INDRECRUIT = '/recruit/:id';
+export const RECRUITMENTCOMMENTS = '/recruitment/comments';

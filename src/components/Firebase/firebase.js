@@ -61,5 +61,9 @@ class Firebase {
   // Recruits 
   recruits = () => this.db.ref('recruits');
   recruit = uid => this.db.ref(`recruits/${uid}`);
+
+  // Comments 
+  comments = () => this.db.ref('comments');
+  commentsByRecruit = uid => this.db.ref(`comments/${uid}`);
 }
 export default Firebase;

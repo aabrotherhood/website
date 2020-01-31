@@ -10,7 +10,6 @@ import './styles.scss';
 
 class Navbar extends Component {
   render () {
-
     return (
       <Row className='navbar'>
         <Col sm={2}>

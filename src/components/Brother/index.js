@@ -12,9 +12,8 @@ class Brother extends Component {
       backgroundSize: 'cover',
     }
     return (
-      <Col onClick={() => this.props.history.push('/brother/' + this.props.info.first + this.props.info.last, {data:JSON.stringify(this.props.info)})} xs={3} className="brother">
+      <Col onClick={() => this.props.history.push(this.props.nextURL, {data:JSON.stringify(this.props.info)})} xs={3} className="brother">
         <div className="brotherImage" style={brotherImage}></div>
-        {/* <Img className="brotherImage" src={this.props.info.imageURL} loader={<Preloader/>} alt={this.props.info.first}/> */}
         <div className="brotherInfo">
           <h2 className="realName">{this.props.info.first + ' ' + this.props.info.last}</h2>
           <p className="brotherName">{this.props.info.brotherName}</p>

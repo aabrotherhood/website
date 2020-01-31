@@ -59,7 +59,7 @@ class Brothers extends Component {
       for (var key in brotherDictInfo) {
 
         brotherDictInfo[key] = brotherDictInfo[key].map(info => {
-          return (<Brother info={info} key={info.uid}/>);
+          return (<Brother info={info} key={info.uid} nextURL={'/brother/' + info.first +info.last}/>);
         });
       }
     }
