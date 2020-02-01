@@ -27,11 +27,6 @@ class RecruitmentComments extends Component {
     this.resetForm = this.resetForm.bind(this);
   }
 
-  resetForm() {
-    this.setState(this.initialState);
-    window.location.reload(false);
-  }
-
   handleSubmit(event) {
     event.preventDefault();
     const currentBrother = this.props.firebase.currentUser().uid;
@@ -63,7 +58,6 @@ class RecruitmentComments extends Component {
             console.log('something went wrong', error);
           } else {
             console.log('successfully added in comments');
-            this.setState(this.initialState);
             window.location.reload(false);
           }
         });
@@ -80,7 +74,6 @@ class RecruitmentComments extends Component {
             console.log('something went wrong', error);
           } else {
             console.log('successfully added in comments');
-            this.setState(this.initialState);
             window.location.reload(false);
           }
         });
@@ -173,7 +166,7 @@ class RecruitmentComments extends Component {
             </Form.Group>
           </Form.Row> 
          
-          <Button className="customButton" type="submit">Save</Button>
+          <Button className="customButton" type="submit">Submit</Button>
         </Form>
       </Col>
     )

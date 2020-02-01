@@ -23,11 +23,12 @@ class CustomForm extends Component {
   handleSubmit = event => {
     event.preventDefault();
     const personalEmail = this.state.email;
-    if (this.state.passwordOne !== this.state.passwordTwo) {
-      this.setState({passwordValid: true})
-      return
-    }
+    
     if (this.state.email !== '' && this.state.check === 'sP1nd3ll') {
+      if (this.state.passwordOne !== this.state.passwordTwo) {
+        this.setState({passwordValid: true})
+        return
+      }
       this.setState({passwordValid: false})
       console.log('everything is good to go!');
       if (this.props.type === 'Sign Up') {
