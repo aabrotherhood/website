@@ -47,7 +47,6 @@ class CustomForm extends Component {
           console.log('ERROR',err);
         });
       } else {
-        console.log('logged in');
         this.props.firebase.doSignInWithEmailAndPassword(this.state.email, this.state.passwordOne) 
         .then(() => {
           console.log("success logging in!");
