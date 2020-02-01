@@ -46,9 +46,9 @@ class Edit extends Component {
             } else {
               // Data saved successfully!
               console.log('Succesfully updated information');
+              this.props.history.push('/home')
             }
           })
-          this.props.history.push('/home')
       })
     }).catch(err => {
       console.log('ERROR', err);
