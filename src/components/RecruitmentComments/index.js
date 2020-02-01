@@ -24,7 +24,6 @@ class RecruitmentComments extends Component {
 
     this.handleSubmit = this.handleSubmit.bind(this);
     this.handleChange = this.handleChange.bind(this);
-    this.resetForm = this.resetForm.bind(this);
   }
 
   handleSubmit(event) {
