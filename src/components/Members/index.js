@@ -4,14 +4,14 @@ import Img from 'react-image';
 import {Col,Row} from 'react-bootstrap';
 import Preloader from '../Preloader';
 import Bro2 from '../../assets/bro2.jpg';
-import Navbar from '../Navbar';
+import TopBar from '../TopBar';
 import './styles.scss';
 
 class Members extends Component {
   render() {
     return( 
       <Col className="members">
-        <Navbar/>
+        <TopBar loggedIn="false"/>
         <Row className="topMembers justify-content-center">
           <h1 className="behindText">Asian American Brotherhood</h1>
           
