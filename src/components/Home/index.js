@@ -10,7 +10,7 @@ class Home extends Component {
       <Col  className="home">
         <TopBar loggedIn="true"/>
         <Row className="homeContent">
-          <iframe title="AABCalendar" key="aabCalendar" src="https://calendar.google.com/calendar/embed?src=aa.brotherhood%40gmail.com&ctz=America%2FNew_York"  width="750" height="550" frameBorder="0" scrolling="no"></iframe>
+          <iframe className="calendar" title="AABCalendar" key="aabCalendar" src="https://calendar.google.com/calendar/embed?src=aa.brotherhood%40gmail.com&ctz=America%2FNew_York"  width="750" height="550" frameBorder="0" scrolling="no"></iframe>
         </Row>
       </Col>
     )

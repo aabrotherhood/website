@@ -2,7 +2,7 @@
 
 .homeNavbar {
   margin: 1rem auto !important;
-  width: 80%;
+  width: 90%;
   .homeNavbarLogo {
     width: 90px;
     height: 80px;
@@ -17,9 +17,15 @@
       float: left;
       margin: 1rem 1rem;
       font-size: 16px;
+      text-decoration: none;
       .link {
         cursor: pointer;
-        color: $blackish
+        color: $blackish;
+        &:hover {
+          color: $dark-red;
+          text-decoration: none;
+
+        }
       }
     }
   }

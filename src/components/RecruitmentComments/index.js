@@ -26,10 +26,12 @@ class RecruitmentComments extends Component {
     this.handleChange = this.handleChange.bind(this);
     this.resetForm = this.resetForm.bind(this);
   }
+
   resetForm() {
     this.setState(this.initialState);
     window.location.reload(false);
   }
+
   handleSubmit(event) {
     event.preventDefault();
     const currentBrother = this.props.firebase.currentUser().uid;
@@ -61,7 +63,8 @@ class RecruitmentComments extends Component {
             console.log('something went wrong', error);
           } else {
             console.log('successfully added in comments');
-            this.resetForm();
+            this.setState(this.initialState);
+            window.location.reload(false);
           }
         });
       } else {
@@ -77,7 +80,8 @@ class RecruitmentComments extends Component {
             console.log('something went wrong', error);
           } else {
             console.log('successfully added in comments');
-            this.resetForm();
+            this.setState(this.initialState);
+            window.location.reload(false);
           }
         });
       }

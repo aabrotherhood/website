@@ -24,15 +24,17 @@ class IndRecruit extends Component {
   componentDidMount() {
     this.props.firebase.commentsByRecruit(this.data.uid).on('value', snapshot => {
       const comment = snapshot.val();
-      this.setState({
-        commenters: comment.commenters,
-        commentsList: comment.commentsList,
-        redFlagsList: comment.redFlagsList,
-        maybe: comment.maybe,
-        no: comment.no,
-        yes: comment.yes,
-        loading: true
-      });
+      if (comment) {
+        this.setState({
+          commenters: comment.commenters,
+          commentsList: comment.commentsList,
+          redFlagsList: comment.redFlagsList,
+          maybe: comment.maybe,
+          no: comment.no,
+          yes: comment.yes,
+          loading: true
+        });
+      }
     })
   }
 

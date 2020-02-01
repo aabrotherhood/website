@@ -30,7 +30,11 @@ class TopBar extends Component {
           </ul> :
           <ul className="listInline">
             <li className="listInlineList">
+              <Link className="link" to={ROUTES.LANDING}>Home</Link>
+            </li>
+            <li className="listInlineList">
             <SLink 
+              className="link"
               to="mission" 
               spy={true} 
               smooth={true} 
@@ -38,6 +42,7 @@ class TopBar extends Component {
             </li> 
             <li className="listInlineList">
               <SLink 
+              className="link"
               to="contact" 
               spy={true} 
               smooth={true} 
