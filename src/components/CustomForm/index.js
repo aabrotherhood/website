@@ -24,14 +24,14 @@ class CustomForm extends Component {
     event.preventDefault();
     const personalEmail = this.state.email;
     
-    if (this.state.email !== '' && this.state.check === 'sP1nd3ll') {
-      if (this.state.passwordOne !== this.state.passwordTwo) {
-        this.setState({passwordValid: true})
-        return
-      }
-      this.setState({passwordValid: false})
+    if (this.state.email !== '') {
       console.log('everything is good to go!');
-      if (this.props.type === 'Sign Up') {
+      if (this.props.type === 'Sign Up' && this.state.check === 'sP1nd3ll') {
+        if (this.state.passwordOne !== this.state.passwordTwo) {
+          this.setState({passwordValid: true})
+          return
+        }
+        this.setState({passwordValid: false})
         this.props.firebase.doCreateUserWithEmailAndPassword(this.state.email, this.state.passwordOne)
         .then(authUser => {
           return this.props.firebase
@@ -47,7 +47,8 @@ class CustomForm extends Component {
           console.log('ERROR',err);
         });
       } else {
-        this.props.doSignInWithEmailAndPassword(this.state.email, this.state.passwordOne) 
+        console.log('logged in');
+        this.props.firebase.doSignInWithEmailAndPassword(this.state.email, this.state.passwordOne) 
         .then(() => {
           console.log("success logging in!");
           this.props.history.push('/home');
