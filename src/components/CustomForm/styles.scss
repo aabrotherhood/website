@@ -1,0 +1,11 @@
+@import '../../styles/variables.scss';
+
+.customForm {
+  text-align: left;
+  .customButton {
+    background-color: $blackish;
+  }
+  a {
+    color: $blackish;
+  }
+}

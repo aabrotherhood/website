@@ -1,0 +1,32 @@
+@import '../../styles/variables.scss';
+
+.homeNavbar {
+  margin: 1rem auto !important;
+  width: 90%;
+  .homeNavbarLogo {
+    width: 90px;
+    height: 80px;
+    margin-right: auto;
+  }
+  .listInline {
+    margin-left: auto;
+    list-style: none;
+    padding-top: 20px;
+    .listInlineList {
+      text-align: center;
+      float: left;
+      margin: 1rem 1rem;
+      font-size: 16px;
+      text-decoration: none;
+      .link {
+        cursor: pointer;
+        color: $blackish;
+        &:hover {
+          color: $dark-red;
+          text-decoration: none;
+
+        }
+      }
+    }
+  }
+}

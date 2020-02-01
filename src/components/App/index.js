@@ -1,30 +1,31 @@
 import React, {Component} from 'react';
-import Navbar from '../Navbar/index';
-import {Container} from 'react-bootstrap';
-import HomeHero from '../HomeHero/index';
-import Mission from'../Mission/index';
-import Brotherhood from '../Brotherhood/index';
-import Activism from '../Activism/index';
-import Service from '../Service/index';
-import Contact from '../Contact/index';
+import {Container, Row} from 'react-bootstrap';
+import {withRouter} from 'react-router-dom';
+import CSSTransitionGroup from 'react-transition-group/CSSTransitionGroup';
+import { withAuthentication } from '../Sessions';
 import '../../styles/global.scss';
 import './styles.scss';
+import '../../styles/animations.scss';
 
 class App extends Component {
+
   render () {
-  return (
-    <Container className="App">
-      <Navbar/> 
-      <HomeHero/>
-      <Mission/>
-      <Brotherhood/>
-      <Activism/>
-      <div className="spacer"></div>
-      <Service/>
-      <Contact/>
-    </Container>
-  );
-}
+    return (
+      <Container fluid={true} className="App">
+        <Row className="justify-content-center">
+          <CSSTransitionGroup
+            className="transitionGroup"
+            transitionName="content"
+            transitionEnterTimeout={500}
+            transitionLeaveTimeout={300}>
+              <div key={this.props.history.location.pathname}>
+                {this.props.children}
+              </div>
+          </CSSTransitionGroup>
+        </Row>
+      </Container>
+    );
+  }
 }
 
-export default App;
+export default withRouter(withAuthentication(App));

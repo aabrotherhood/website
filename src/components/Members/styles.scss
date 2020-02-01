@@ -1,0 +1,59 @@
+@import '../../styles/variables.scss';
+
+.members {
+  overflow: hidden;
+  .topMembers {
+    margin: 5rem 0;
+    .heading {
+      font-size: 4rem;
+      padding-top: 50%;
+      margin-left: 1rem;
+      border-bottom: 10px solid $red;
+    }
+    .memberImage {
+      width: 40%;
+    }
+    .behindText{
+      font-size: 500px;
+      position: absolute;
+      left: 0;
+      white-space: nowrap;
+      color: rgb(247, 247, 247);
+      z-index: -1;
+    }
+  }
+  .brotherCol {
+    margin: 0 2rem;
+
+    .brother {
+      overflow: hidden;
+      margin: 1rem;
+      padding: 0;
+      .brotherImage {
+        width: 100%;
+        height: auto;
+      }
+      .brotherInfo {
+        padding-top: 30%;
+        opacity: 0;
+        position: absolute;
+        top: 0;
+        left: 0;
+        bottom: 0;
+        right: 0;
+        width: 100%;
+        height: 100%;
+        background-color: rgba(0,0,0,0.6);
+        color: white;
+        -moz-transition: all 0.4s ease-in-out 0s;
+        -webkit-transition: all 0.4s ease-in-out 0s;
+        -ms-transition: all 0.4s ease-in-out 0s;
+        transition: all 0.4s ease-in-out 0s;
+        text-align: center;
+        &:hover {
+          opacity: 1;
+        }
+      }
+    }
+  }
+}

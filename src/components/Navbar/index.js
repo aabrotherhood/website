@@ -3,6 +3,9 @@ import Img from 'react-image';
 import Preloader from '../Preloader/index';
 import Logo from '../../assets/aab_logo.svg';
 import {Row, Col} from 'react-bootstrap';
+import { Link } from 'react-scroll';
+import { Link as RRDLink } from 'react-router-dom';
+import * as ROUTES from '../../constants/routes';
 import './styles.scss';
 
 class Navbar extends Component {
@@ -13,17 +16,23 @@ class Navbar extends Component {
           <Img className='navbarLogo' src={Logo} loader={<Preloader/>} alt='AAB logo'/>
         </Col>
         <Col className="navBarText">
-          ABOUT
+        <Link 
+          to="mission" 
+          spy={true} 
+          smooth={true} 
+          duration={500} >About</Link>
         </Col>
         <Col className="navBarText">
-          MEMBERS
+          <Link 
+            to="contact" 
+            spy={true} 
+            smooth={true} 
+            duration={500} >Contact</Link>
         </Col>
         <Col className="navBarText">
-          CONTACT
+          <RRDLink to={ROUTES.MEMBERS}>Members</RRDLink>
         </Col>
-        <Col className="navBarText">
-          GALLERY
-        </Col>
+        
       </Row>
      );
   }
