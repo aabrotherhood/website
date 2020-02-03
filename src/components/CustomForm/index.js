@@ -26,9 +26,12 @@ class CustomForm extends Component {
     
     if (this.state.email !== '') {
       console.log('everything is good to go!');
-      if (this.props.type === 'Sign Up' && this.state.check === 'sP1nd3ll') {
+      if (this.props.type === 'Sign Up') {
         if (this.state.passwordOne !== this.state.passwordTwo) {
           this.setState({passwordValid: true})
+          return
+        }
+        if (this.state.check !== 'sP1nd3ll') {
           return
         }
         this.setState({passwordValid: false})
