@@ -24,7 +24,7 @@ const firebaseConfigDev = {
   measurementId: "G-1K0MZFX1CJ"
 };
 
-const config = firebaseConfigDev;
+const config = process.env === "production" ? firebaseConfig : firebaseConfigDev;
 
 
 class Firebase {
