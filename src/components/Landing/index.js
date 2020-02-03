@@ -3,25 +3,29 @@ import TopBar from '../TopBar/index';
 import {Container} from 'react-bootstrap';
 import HomeHero from '../HomeHero/index';
 import Mission from'../Mission/index';
-import Brotherhood from '../Brotherhood/index';
-import Activism from '../Activism/index';
-import Service from '../Service/index';
-import Contact from '../Contact';
+import Pillars from '../Pillars';
+import HomeHeroPic from '../../assets/homeHero.jpeg';
+import Bro1 from '../../assets/serv1.jpeg';
+import Footer from '../Footer';
 import '../../styles/global.scss';
 import './styles.scss';
 
 class App extends Component {
   render () {
   return (
-    <Container className="Landing">
+    <Container className="Landing" fluid={true}>
       <TopBar loggedIn="false"/> 
-      <HomeHero/>
+      <HomeHero fontSize="90px" image={HomeHeroPic} text="Asian American Brotherhood"/>
       <Mission />
-      <Brotherhood/>
-      <Activism/>
-      <div className="spacer"></div>
-      <Service name="about"/>
-      <Contact/>
+      <Pillars/>
+      <HomeHero fontSize="70px" image={Bro1} 
+      text="Our close-knit membership
+      provides every member the 
+      opportunity to be an active 
+      and contributing force within 
+      the organization."
+      />
+      <Footer/>
     </Container>
   );
 }

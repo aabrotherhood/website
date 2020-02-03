@@ -1,10 +1,6 @@
 import React, {Component} from 'react';
 import {withRouter, Link} from 'react-router-dom';
-import { Link as SLink } from 'react-scroll';
-import {Row} from 'react-bootstrap';
-import AABLogo from '../../assets/aab_logo.svg';
-import Img from 'react-image';
-import Preloader from '../Preloader';
+import {Row,Col} from 'react-bootstrap';
 import * as ROUTES from '../../constants/routes';
 import './styles.scss';
 
@@ -12,46 +8,37 @@ class TopBar extends Component {
   render() {
     return (
       <Row className="homeNavbar">
-        <Img loader={<Preloader/>} src={AABLogo} alt="logo"/>
+        <Col xs={2} className="justify-content-start alignStart">
+          <p className="logo">AAB</p>
+        </Col>
         {this.props.loggedIn === "true" ? 
           <ul className="listInline">
-            <li className="listInlineList">
-              <Link className="link" to={ROUTES.HOME}>Home</Link>
-            </li> 
+            
             <li className="listInlineList">
               <Link className="link" to={ROUTES.MEMBERS}>Brothers</Link>
             </li>
-            <li className="listInlineList"> 
+            <li className="listInlineList">
               <Link className="link" to={ROUTES.RECRUITMENT}>Recruits</Link>
-            </li>
-            <li className="listInlineList"> 
+            </li> 
+            <li className="listInlineList">
               <Link className="link" to={ROUTES.RECRUITMENTCOMMENTS}>Comment</Link>
-            </li>
+            </li> 
+            <li className="listInlineList">
+              <Link className="link" to={ROUTES.HOME}>Home</Link>
+            </li> 
           </ul> :
           <ul className="listInline">
             <li className="listInlineList">
-              <Link className="link" to={ROUTES.LANDING}>Home</Link>
+              <Link className="link" to={ROUTES.LOGIN}>Login</Link>
             </li>
             <li className="listInlineList">
-            <SLink 
-              className="link"
-              to="mission" 
-              spy={true} 
-              smooth={true} 
-              duration={500} >About</SLink>
-            </li> 
-            <li className="listInlineList">
-              <SLink 
-              className="link"
-              to="contact" 
-              spy={true} 
-              smooth={true} 
-              duration={500} >Contact</SLink>
-            </li>
-            <li className="listInlineList"> 
               <Link className="link" to={ROUTES.MEMBERS}>Members</Link>
             </li>
+            <li className="listInlineList ">
+              <Link className="link" to={ROUTES.LANDING}>Home</Link>
+            </li>
         </ul> }
+
     </Row>
     );
   }

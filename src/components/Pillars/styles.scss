@@ -1,16 +1,23 @@
 @import '../../styles/variables.scss';
 
-.mission {
+.pillars {
   margin: auto;
   width: 90%;
   padding: 1rem 0;
   margin: 5rem auto;
   text-align: left;
-  .missionTitle {
+  .pillarsMain {
     font-size: 25px;
     font-weight: bold;
   }
-  .missionDetails {
-  	font-size: 16px;
+  .pillarsCol {
+    
+    .pillarsTitle {
+      font-size: 20px;
+      font-weight: bold;
+      .pillarsDetails {
+        font-size: 16px;
+      }
+    }
   }
 }

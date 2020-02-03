@@ -1,23 +1,23 @@
 import React, {Component} from 'react';
-import Img from 'react-image';
-import {Col,Row} from 'react-bootstrap';
-import Preloader from '../Preloader/index';
-import HomeHeroPic from '../../assets/homeHero.jpg';
+import {Col} from 'react-bootstrap';
+import {Parallax} from 'react-parallax';
 import './styles.scss';
 
 class HomeHero extends Component {
   render() {
+    const fontSize = {
+      fontSize: this.props.fontSize
+    }
      return (
         <Col className="homeCol">
-          <Row className='justify-content-start'>
-            <h1 className='homeText homeTextTop'>Harvard</h1>
-          </Row>
-
-          <Img className='homeHeroPic' src={HomeHeroPic} loader={<Preloader/>} alt='2019 Group'/>
-          
-          <Row className='justify-content-end'>
-           <h1 className='homeText homeTextBottom'>Asian American Brotherhood</h1>
-          </Row>
+          <Parallax
+          className="homeHeroPic"
+            blur={{ min: -3, max: 7 }}
+            bgImage={this.props.image} 
+            bgImageAlt="2019 group"
+            strength={-100}>
+              <p className="homeLogo" style={fontSize}>{this.props.text}</p>
+            </Parallax>
         </Col>
      );
   }

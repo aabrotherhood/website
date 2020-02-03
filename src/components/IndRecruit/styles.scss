@@ -2,15 +2,6 @@
 
 .indBrother {
   overflow: hidden;
-  .behindText {
-    font-size: 500px;
-      position: absolute;
-      top: 0;
-      left: 0;
-      white-space: nowrap;
-      color: rgb(247, 247, 247);
-      z-index: -1;
-  }
   .infoBox {
     border-bottom: 10px solid $blackish;
     width: 80%;
@@ -33,6 +24,10 @@
     }
   }
   .recruits {
+    .header {
+      font-size: 20px;
+      font-weight: bold;
+    }
     .recruitComments {
       margin: 3rem auto;
       padding: 3rem 0;
@@ -40,10 +35,34 @@
       .comments {
         text-align: start;
       }
+      .pieChartKey {
+        .yes {
+          width: 20px;
+          height: 20px;
+          background-color: #044B7F;
+          margin-right: 10px;
+        }
+        .no {
+          width: 20px;
+          height: 20px;
+          background-color: #821122;
+          margin-right: 10px;
+
+        }
+        .maybe {
+          width: 20px;
+          height: 20px;
+          background-color: #107E7D;
+          margin-right: 10px;
+
+        }
+      }
     }
     .redFlags {
+      text-align: start;
       width: 80%;
       margin: 0 auto;
+      padding: 0;
     }
   }
 }

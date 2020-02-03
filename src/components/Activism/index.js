@@ -2,7 +2,7 @@ import React, {Component} from 'react';
 import {Col} from 'react-bootstrap';
 import Img from 'react-image';
 import Preloader from '../Preloader/index';
-import Act1 from '../../assets/activism.jpg';
+import Act1 from '../../assets/activism.jpeg';
 import GreyBox from '../../assets/greybox.png';
 import './styles.scss';
 

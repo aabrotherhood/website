@@ -1,20 +1,27 @@
 @import '../../styles/variables.scss';
 
 .homeNavbar {
-  margin: 1rem auto !important;
-  width: 90%;
-  .homeNavbarLogo {
-    width: 90px;
-    height: 80px;
-    margin-right: auto;
+  margin: 3rem auto !important;
+  width: 100%;
+  text-transform: uppercase;
+  .alignStart {
+    text-align: start;
+    padding-left: 40px ;
+  }
+  .logo {
+    margin-top: 0.5rem;
+    font-size: 25px;
+    font-weight: bold;
+    letter-spacing: 5px;
   }
   .listInline {
-    margin-left: auto;
     list-style: none;
-    padding-top: 20px;
+    flex: 0 0 83%;
+    padding-left: 0 !important;
+    padding-right: 40px;
     .listInlineList {
       text-align: center;
-      float: left;
+      float: right;
       margin: 1rem 1rem;
       font-size: 16px;
       text-decoration: none;
@@ -27,6 +34,9 @@
 
         }
       }
+    }
+    .right {
+      float: right ;
     }
   }
 }

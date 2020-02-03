@@ -21,7 +21,6 @@ class IndBrother extends Component {
     return(
       <Col className="indBrother justify-content-center">
         <TopBar loggedIn="false"/>
-        <h1 className="behindText">AAB</h1>
         <Row className="infoBox">
           <div className="brotherImage" style={brotherImage}></div>
           <div className="infoDetails">

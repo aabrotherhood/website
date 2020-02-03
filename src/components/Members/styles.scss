@@ -2,33 +2,20 @@
 
 .members {
   overflow: hidden;
-  .topMembers {
-    margin: 5rem 0;
-    .heading {
-      font-size: 4rem;
-      padding-top: 50%;
-      margin-left: 1rem;
-      border-bottom: 10px solid $red;
-    }
-    .memberImage {
-      width: 40%;
-    }
-    .behindText{
-      font-size: 500px;
-      position: absolute;
-      left: 0;
-      white-space: nowrap;
-      color: rgb(247, 247, 247);
-      z-index: -1;
-    }
+  .homeLogo {
+    padding: 3em 1em;
+    font-weight: bold;
+    color: white;
+    z-index: 1;
+    font-size: 90px;
   }
   .brotherCol {
     margin: 0 2rem;
-
     .brother {
       overflow: hidden;
       margin: 1rem;
       padding: 0;
+      border-radius: 50%;;
       .brotherImage {
         width: 100%;
         height: auto;

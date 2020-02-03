@@ -1,0 +1,14 @@
+@import '../../styles/variables.scss';
+
+.footer {
+	padding: 3em 0;
+	.mailLink {
+		.mailSVG {
+			width: 30px;
+			padding: 25px 0;
+		}
+	}
+	.final {
+		font-size: 16px;
+	}
+}

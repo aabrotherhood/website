@@ -71,7 +71,6 @@ class IndRecruit extends Component {
     return(
       <Col className="indBrother justify-content-center">
         <TopBar loggedIn="true"/>
-        <h1 className="behindText">Recruits</h1>
         <Row className="infoBox">
           <div className="brotherImage" style={brotherImage}></div>
           <div className="infoDetails">
@@ -86,54 +85,72 @@ class IndRecruit extends Component {
         <Col className="recruits">
           {loading && commented ?
           <Row className="recruitComments justify-content-center">
-            <ReactMinimalPieChart
-              animate
-              animationDuration={500}
-              animationEasing="ease-out"
-              className="recruitPieChart"
-              cx={50}
-              cy={50}
-              data={[
-                {
-                  color: '#821122',
-                  title: 'No',
-                  value: no
-                },
-                {
-                  color: '#044B7F',
-                  title: 'Yes',
-                  value: yes
-                },
-                {
-                  color: '#107E7D',
-                  title: 'Maybe',
-                  value: maybe
-                }
-              ]}
-              label
-              labelPosition={112}
-              labelStyle={{
-                fontFamily: 'sans-serif',
-                fontSize: '5px'
-              }}
-              lengthAngle={360}
-              lineWidth={100}
-              paddingAngle={0}
-              radius={42}
-              rounded={false}
-              startAngle={0}
-              viewBoxSize={[
-                100,
-                100
-              ]}
-            /> 
+            <Col>
+              <ReactMinimalPieChart
+                animate
+                animationDuration={500}
+                animationEasing="ease-out"
+                className="recruitPieChart"
+                cx={50}
+                cy={50}
+                data={[
+                  {
+                    color: '#821122',
+                    title: 'No',
+                    value: no
+                  },
+                  {
+                    color: '#044B7F',
+                    title: 'Yes',
+                    value: yes
+                  },
+                  {
+                    color: '#107E7D',
+                    title: 'Maybe',
+                    value: maybe
+                  }
+                ]}
+                label
+                labelPosition={112}
+                labelStyle={{
+                  fontFamily: 'sans-serif',
+                  fontSize: '5px'
+                }}
+                lengthAngle={360}
+                lineWidth={100}
+                paddingAngle={0}
+                radius={42}
+                rounded={false}
+                startAngle={0}
+                viewBoxSize={[
+                  100,
+                  100
+                ]}
+              /> 
+              <Col className="pieChartKey">
+                <Row>
+                  <div className="yes"></div>
+                  <p>Yes</p>
+                </Row>
+                <Row>
+                  <div className="no"></div>
+                  <p>No</p>
+                </Row>
+                <Row>
+                  <div className="maybe"></div>
+                  <p>Maybe</p>
+                </Row>
+              </Col>
+            </Col>
             <Col className="comments justify-content-start">
+              <p className="header">Comments</p>
               {actualCommentsList}
             </Col>
           </Row>: <div></div> }
-          <Row className="redFlags">
+          <Col className="redFlags">
+            <p className="header">Red Flags</p>
             {loading ? actualRedFlagsList : <div></div>}
-          </Row>
+          </Col>
         </Col>
       </Col>
     );

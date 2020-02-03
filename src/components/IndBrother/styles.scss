@@ -2,15 +2,6 @@
 
 .indBrother {
   overflow: hidden;
-  .behindText {
-    font-size: 500px;
-      position: absolute;
-      top: 0;
-      left: 0;
-      white-space: nowrap;
-      color: rgb(247, 247, 247);
-      z-index: -1;
-  }
   .infoBox {
     border-bottom: 10px solid $blackish;
     width: 80%;

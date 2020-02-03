@@ -4,26 +4,13 @@ For Mobile
 ====================
 */
 @media screen and (max-width: 425px) {
-  .App {
-    .spacer {
-      height: 12rem !important;
-    }
-  }
   .homeCol {
     width: 100% !important;
-    .homeText {
-      font-size: 0.75rem;
+    .homeLogo {
+      font-size: 40px !important;
     }
+
   }
-  .navBarText {
-      font-size: 0.1rem;
-      padding-top: 0.5rem;
-    }
-    .navbarLogo {
-      max-width: 15%;
-      float: center;
-      padding-top: 1rem;
-    }
   .mission {
     margin: 3rem 0;
     padding: 0.5rem 0;
@@ -34,86 +21,8 @@ For Mobile
       font-size: .65rem;
     }
   }
-  .broCol{
-    .stripes {
-      top: 5rem;
-      left: 1.5rem;
-    }
-    .bro1 {
-      width: 45%;
-      left: -0.75rem;
-    }
-    .brotherhoodText {
-      top: 2.5rem;
-      right: -0.75rem;
-      padding: 1rem 0.5rem;
-      width: 40%;
-      .brotherhoodTitle {
-        font-size: 0.6rem;
-      }
-      .brotherhoodDetails {
-        font-size: 0.4rem;
-      }
-    }
-  }
-  .actRow {
-    .actText {
-      top: -2rem;
-      left: -2rem;
-      .actTitle {
-        font-size: 0.6rem;
-      }
-      .actDetails {
-        font-size: 0.4rem;
-      }
-    }
-    .activism {
-      top: 40%;
-      left: 7%;
-    }
-    .greybox {
-      right: 2rem;
-    }
-  }
-  .servCol {
-    margin-top: -2rem;
-    .stripes {
-      bottom: 5%;
-    }
-    .servText {
-      top: 5%;
-      .servTitle {
-        font-size: 0.6rem;
-      }
-      .servDetails {
-        font-size: 0.4rem;
-        margin-bottom: 0;
-      }
-    }
-    .serv2 {
-        left: 1rem;
-    }
-  }
-  .contact {
-    padding: 1rem;
-    margin-bottom: 3rem;
-  }
-  .contactTitle {
-    font-size: 0.6rem;
-  }
-  .contactText {
-    font-size: 0.4rem;
-  }
+
   .members {
-    .topMembers {
-      .heading {
-        font-size: 1rem !important;
-      }
-      .behindText{
-        font-size: 200px !important;
-        top: 15%;
-      }
-    }
     .brotherCol {
       margin: 0rem 0rem !important;
       .yearCols {
@@ -122,6 +31,21 @@ For Mobile
       }
       .year {
         font-size: 2rem !important;
+      }
+    }
+  }
+  .pillarsCol {
+    flex: 0 0 100% !important;
+  }
+  .homeNavbar {
+    .alignStart {
+      padding-left: 0 !important;
+    }
+    .listInline {
+      padding-right: 0 !important;
+      .listInlineList {
+        margin-left: 0.5em !important;
+        margin-right: 0.5em !important;
       }
     }
   }
@@ -135,18 +59,10 @@ For Tablet
 @media screen and (min-width: 426px) and (max-width: 768px) {
   .homeCol {
     width: 100% !important;
-    .homeText {
-      font-size: 1.5rem;
+    .homeLogo {
+      font-size: 55px !important;
     }
   }
-  .navBarText {
-    font-size: .9rem;
-  }
-  .navbarLogo {
-      padding-top: 0.5rem;
-      max-width: 100%;
-      float: left;
-    }
   .mission {
     .missionTitle {
       font-size: 1.25rem;
@@ -155,60 +71,8 @@ For Tablet
       font-size: 1rem;
     }
   }
-  .broCol{
-    .brotherhoodText {
-      top: 8rem;
-      .brotherhoodTitle {
-        font-size: 1rem;
-      }
-      .brotherhoodDetails {
-        font-size: 0.8rem;
-      }
-    }
-  }
-  .actRow {
-    .actText {
-      .actTitle {
-        font-size: 1rem;
-      }
-      .actDetails {
-        font-size: 0.8rem;
-      }
-    }
-    .activism {
-      left: 15%;
-    }
-  }
-  .servCol {
-    margin-top: 0;
-    .servText {
-      .servTitle {
-        font-size: 1.0rem;
-      }
-      .servDetails {
-        font-size: 0.8rem;
-      }
-    }
-  }
-  .contact {
-    padding: 1rem;
-  }
-  .contactTitle {
-    font-size: 1rem;
-  }
-  .contactText {
-    font-size: 0.8rem;
-  }
   .members {
-    .topMembers {
-      .heading {
-        font-size: 2rem !important;
-      }
-      .behindText{
-        font-size: 300px !important;
-        top: 10%;
-      }
-    }
+  
     .brotherCol {
       margin: 0rem 2rem !important;
       .yearCols {
@@ -219,6 +83,9 @@ For Tablet
       }
     }
   }
+ .pillarsCol {
+   flex: 0 0 100% !important;
+ }
 }
 
 /*
@@ -230,27 +97,11 @@ For Small Laptops
   .homeText {
     font-size: 1.75rem;
   }
-  .navBarText {
-    font-size: 1rem;
-  }
-  .navbarLogo {
-    float: left;
-  }
-  .contactTitle {
-    font-size: 1.5rem;
-  }
-  .contactText {
-    font-size: 1.25rem;
-  }
 
   .members {
     .topMembers {
       .heading {
         font-size: 3rem !important;
-      }
-      .behindText{
-        font-size: 300px !important;
-        top: 10%;
       }
     }
     .brotherCol {
@@ -268,32 +119,8 @@ For Large Laptops
 ====================
 */
 @media screen and (min-width: 1025px) and (max-width: 1440px) {
-  .App {
-    .spacer {
-      height: 30rem !important;
-    }
-  }
   .homeText {
     font-size: 2rem;
-  }
-  .navBarText {
-    font-size: 1rem;
-  }
-  .navbarLogo {
-    float: left;
-  }
-  .brotherhoodText {
-    .brotherhoodTitle {
-      font-size: 1.5rem;
-    }
-    .brotherhoodDetails {
-      font-size: 1.25rem;
-    }
-  }
-  .actRow {
-    .greybox {
-      margin-top: 5rem;
-    }
   }
 }
 
@@ -304,17 +131,10 @@ For 4k and above
 ====================
 */
 @media screen and (min-width: 1441px) {
-  .homeCol {
-    width: 100% !important;
-  }
   .members {
     .topMembers {
       .heading {
         font-size: 9rem !important;
-      }
-      .behindText{
-        font-size: 800px !important;
-        top: 20%;
       }
     }
     .brotherCol {

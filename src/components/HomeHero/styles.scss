@@ -1,33 +1,11 @@
 @import '../../styles/variables.scss';
 
 .homeCol {
-  width: 80% !important;
-  margin: auto;
-  font-family:"Lantinghei TC", sans-serif;
-  .homeText {
-    background-color: $red;
-    padding: 0.5rem 1rem;
-    color: white;
-    margin: 0;
-    text-transform: uppercase;
-    font-family: "Lantinghei TC", sans-serif;
+  padding: 0 !important;
+  .homeLogo {
+    padding: 3em 0em;
     font-weight: bold;
-  }
-  
-  .homeTextTop {
-    margin-bottom: -1rem;
-    z-index: 2;
-  }
-  
-  .homeTextBottom {
-    margin-top: -5rem;
-    padding-top: 5rem;
-    z-index: -1;
-  }
-  
-  .homeHeroPic {
-    width: 95%;
+    color: white;
     z-index: 1;
-    max-height: 70%;
   }
 }
