@@ -23,7 +23,14 @@ For Mobile
   }
 
   .members {
+    .homeLogo {
+      font-size: 40px !important;
+    }
     .brotherCol {
+      .brother {
+        flex: 0 0 90% !important;
+        max-width: 90% !important;
+      }
       margin: 0rem 0rem !important;
       .yearCols {
         margin: 0rem 0 !important;
@@ -72,9 +79,15 @@ For Tablet
     }
   }
   .members {
-  
+    .homeLogo {
+      font-size: 55px !important;
+    }
     .brotherCol {
       margin: 0rem 2rem !important;
+      .brother {
+        flex: 0 0 40% !important;
+        max-width: 40% !important;
+      }
       .yearCols {
         margin: 0rem 0 !important;
       }
