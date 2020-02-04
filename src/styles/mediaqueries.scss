@@ -166,8 +166,15 @@ For Large Laptops
 ====================
 */
 @media screen and (min-width: 1025px) and (max-width: 1440px) {
-  .homeText {
-    font-size: 2rem;
+  .homeCol {
+    .homeLogo {
+      padding: 3em 3em !important;
+    }
+  }
+  .members {
+    .homeLogo {
+      padding: 3em 3em !important;
+    }
   }
 }
 
@@ -178,7 +185,16 @@ For 4k and above
 ====================
 */
 @media screen and (min-width: 1441px) {
+  .homeCol {
+    .homeLogo {
+      font-size: 5em !important;
+      padding: 3em 1em !important;
+    }
+  }
   .members {
+    .homeLogo {
+      padding: 3em 4em !important;
+    }
     .topMembers {
       .heading {
         font-size: 9rem !important;
