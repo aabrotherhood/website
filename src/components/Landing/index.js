@@ -6,6 +6,7 @@ import Mission from'../Mission/index';
 import Pillars from '../Pillars';
 import HomeHeroPic from '../../assets/homeHero.jpeg';
 import Bro1 from '../../assets/serv1.jpeg';
+import Serve from '../../assets/serv2.jpeg';
 import Footer from '../Footer';
 import '../../styles/global.scss';
 import './styles.scss';
@@ -17,6 +18,9 @@ class App extends Component {
       <TopBar loggedIn="false"/> 
       <HomeHero fontSize="90px" image={HomeHeroPic} text="Asian American Brotherhood"/>
       <Mission />
+      <HomeHero fontSize="70px" image={Serve} 
+      text="AAB is commited to serving our community."
+      />
       <Pillars/>
       <HomeHero fontSize="70px" image={Bro1} 
       text="Our close-knit membership

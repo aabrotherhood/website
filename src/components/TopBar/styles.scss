@@ -23,8 +23,11 @@
       text-align: center;
       float: right;
       margin: 1rem 1rem;
-      font-size: 16px;
+      font-size: 12px;
+      font-weight: 400;
+      letter-spacing: 0.2em;
       text-decoration: none;
+      color: #707070;
       .link {
         cursor: pointer;
         color: $blackish;
