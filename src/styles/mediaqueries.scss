@@ -8,6 +8,8 @@ For Mobile
     width: 100% !important;
     .homeLogo {
       font-size: 40px !important;
+      padding: 3em 0em !important;
+
     }
 
   }
@@ -25,6 +27,8 @@ For Mobile
   .members {
     .homeLogo {
       font-size: 40px !important;
+      padding: 3em 1em !important;
+
     }
     .brotherCol {
       .brother {
@@ -56,6 +60,20 @@ For Mobile
       }
     }
   }
+  .indBrother {
+    .infoBox {
+      justify-content: center;
+      border-bottom: none !important;
+      .brotherImage {
+      width: 80% !important;
+      padding-top: 80% !important;
+      }
+      .infoDetails {
+        border-top: none !important;
+        width: 100% !important;
+      }
+    }
+  }
 }
 
 /*
@@ -68,6 +86,7 @@ For Tablet
     width: 100% !important;
     .homeLogo {
       font-size: 55px !important;
+      padding: 3em 0em !important;
     }
   }
   .mission {
@@ -81,6 +100,7 @@ For Tablet
   .members {
     .homeLogo {
       font-size: 55px !important;
+      padding: 3em 1em !important;
     }
     .brotherCol {
       margin: 0rem 2rem !important;
@@ -98,6 +118,20 @@ For Tablet
   }
  .pillarsCol {
    flex: 0 0 100% !important;
+ }
+ .indBrother {
+   .infoBox {
+     justify-content: center;
+     border-bottom: none !important;
+     .brotherImage {
+      width: 80% !important;
+      padding-top: 80% !important;
+      }
+     .infoDetails {
+       border-top: none !important;
+       width: 100% !important;
+     }
+   }
  }
 }
 

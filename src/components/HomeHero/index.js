@@ -15,7 +15,7 @@ class HomeHero extends Component {
             blur={{ min: -3, max: 7 }}
             bgImage={this.props.image} 
             bgImageAlt="2019 group"
-            strength={-100}>
+            strength={-300}>
               <p className="homeLogo" style={fontSize}>{this.props.text}</p>
             </Parallax>
         </Col>

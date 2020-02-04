@@ -31,6 +31,7 @@ class Brothers extends Component {
           last: brothersList[key]['last'],
           imageURL: brothersList[key]['imageURL'],
           year: brothersList[key]['year'],
+          house: brothersList[key]['house'],
           uid: key,
         }));
 
