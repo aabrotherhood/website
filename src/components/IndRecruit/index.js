@@ -91,7 +91,7 @@ class IndRecruit extends Component {
         <Col className="recruits">
           {loading && commented ?
           <Row className="recruitComments justify-content-center">
-            <Col>
+            <Col className="recruitPieChartCol">
               <ReactMinimalPieChart
                 animate
                 animationDuration={500}

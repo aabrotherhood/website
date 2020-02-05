@@ -76,10 +76,25 @@ For Mobile
       .infoDetails {
         border-top: none !important;
         width: 100% !important;
+        margin-left: 0 !important;
+      }
+    }
+    .recruits {
+      .recruitComments {
+        width: 90% !important;
+        margin: 0rem auto !important;
+        padding: 0 !important;
+        .recruitPieChartCol {
+          margin: 1rem 0;
+          flex: 0 0 100%;
+        }
+      }
+      .redFlags {
+        width: 90% !important;
+        padding: 0 15px !important;
       }
     }
   }
-
 }
 
 /*
@@ -136,8 +151,25 @@ For Tablet
      .infoDetails {
        border-top: none !important;
        width: 100% !important;
+       margin-left: 0 !important;
+
      }
    }
+   .recruits {
+    .recruitComments {
+      width: 90% !important;
+      margin: 0rem auto !important;
+      padding: 0 !important;
+      .recruitPieChartCol {
+        margin: 1rem 0;
+        flex: 0 0 100%;
+      }
+    }
+    .redFlags {
+      width: 90% !important;
+      padding: 0 15px !important;
+    }
+  }
  }
  .homeNavbar {
    .alignStart {
