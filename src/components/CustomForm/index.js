@@ -25,43 +25,43 @@ class CustomForm extends Component {
   handleSubmit = event => {
     event.preventDefault();
     this.setState({loading: true});
-    // const personalEmail = this.state.email;
+    const personalEmail = this.state.email;
     
-    // if (this.state.email !== '') {
-    //   console.log('everything is good to go!');
-    //   if (this.props.type === 'Sign Up') {
-    //     if (this.state.passwordOne !== this.state.passwordTwo) {
-    //       this.setState({passwordValid: true})
-    //       return
-    //     }
-    //     if (this.state.check !== 'sP1nd3ll') {
-    //       return
-    //     }
-    //     this.setState({passwordValid: false})
-    //     this.props.firebase.doCreateUserWithEmailAndPassword(this.state.email, this.state.passwordOne)
-    //     .then(authUser => {
-    //       return this.props.firebase
-    //       .brother(authUser.user.uid)
-    //       .set({
-    //         personalEmail
-    //       });
-    //     })
-    //     .then(() => {
-    //       console.log("success signing up!");
-    //       this.props.history.push({pathname:'/edit', state:{email: this.state.email}});
-    //     }).catch(err => {
-    //       console.log('ERROR',err);
-    //     });
-    //   } else {
-    //     this.props.firebase.doSignInWithEmailAndPassword(this.state.email, this.state.passwordOne) 
-    //     .then(() => {
-    //       console.log("success logging in!");
-    //       this.props.history.push('/home');
-    //     }).catch (err => {
-    //       console.log('ERROR', err);
-    //     })
-    //   }
-    // }
+    if (this.state.email !== '') {
+      console.log('everything is good to go!');
+      if (this.props.type === 'Sign Up') {
+        if (this.state.passwordOne !== this.state.passwordTwo) {
+          this.setState({passwordValid: true})
+          return
+        }
+        if (this.state.check !== 'sP1nd3ll') {
+          return
+        }
+        this.setState({passwordValid: false})
+        this.props.firebase.doCreateUserWithEmailAndPassword(this.state.email, this.state.passwordOne)
+        .then(authUser => {
+          return this.props.firebase
+          .brother(authUser.user.uid)
+          .set({
+            personalEmail
+          });
+        })
+        .then(() => {
+          console.log("success signing up!");
+          this.props.history.push({pathname:'/edit', state:{email: this.state.email}});
+        }).catch(err => {
+          console.log('ERROR',err);
+        });
+      } else {
+        this.props.firebase.doSignInWithEmailAndPassword(this.state.email, this.state.passwordOne) 
+        .then(() => {
+          console.log("success logging in!");
+          this.props.history.push('/home');
+        }).catch (err => {
+          console.log('ERROR', err);
+        })
+      }
+    }
   };
 
   handleChange = event => {
