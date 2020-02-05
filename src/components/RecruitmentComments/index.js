@@ -1,36 +1,66 @@
 import React, {Component} from 'react';
 import {Col, Form, Button} from 'react-bootstrap';
-import TopBar from '../TopBar';
 import {withAuthorization} from '../Sessions';
 
 class RecruitmentComments extends Component {
+  initialState = {
+    first:'', 
+    last: '', 
+    recruit: '',
+    recruitInfo: null,
+    loading: false,
+    yes: 0,
+    no: 0,
+    maybe: 0,
+    comments: '',
+    redFlags: '',
+    brotherName: '',
+    brotherUID: '',
+  }
   constructor(props) {
     super(props);
 
-    this.state = {
-      first:'', 
-      last: '', 
-      recruit: '',
-      recruitInfo: null,
-      loading: false,
-      yes: 0,
-      no: 0,
-      maybe: 0,
-      comments: '',
-      redFlags: '',
-    }
-
-    this.initialState = this.state
+    this.state = this.initialState
 
     this.handleSubmit = this.handleSubmit.bind(this);
     this.handleChange = this.handleChange.bind(this);
+    this.handleReset = this.handleReset.bind(this);
+  }
+  componentDidMount() {
+    let currentComponent = this;
+    this.props.firebase.recruits().on('value', snapshot => {
+      const recruitsList = snapshot.val();
+      if (recruitsList) {
+        const recruitsInfoList = Object.keys(recruitsList).map(key => ({
+            first: recruitsList[key].first,
+            last: recruitsList[key].last,
+            uid: key
+        }));
+        currentComponent.setState({recruitInfo: recruitsInfoList, loading: true});
+      }   else {
+        currentComponent.setState({recruitInfo: null, loading: false})
+        }
+    });
+    const currentBrotherUID = this.props.firebase.currentUser().uid;
+    this.props.firebase.brother(currentBrotherUID).on('value', function(snapshot) {
+      const brother = snapshot.val();
+      if (brother) {
+        currentComponent.setState({brotherName: brother.first + ' ' + brother.last, brotherUID: currentBrotherUID});
+      }
+    });
+  }
+
+  handleReset() {
+    this.setState({...this.initialState})
   }
 
   handleSubmit(event) {
     event.preventDefault();
-    const currentBrother = this.props.firebase.currentUser().uid;
+    alert('Thanks! Submit another');
+    
     const recruitComments = this.props.firebase.commentsByRecruit(this.state.recruit);
-    const {yes, no, maybe, comments, redFlags} = this.state
+    const recruitCommenters = this.props.firebase.recruitCommenters(this.state.recruit);
+    const {yes, no, maybe, comments, redFlags,brotherName, brotherUID} = this.state;
     recruitComments.once('value').then(function(snapshot) {
       const comment = snapshot.val();
       if (comment) {
@@ -41,25 +71,29 @@ class RecruitmentComments extends Component {
         currentComments.push(comments);
         var currentRedFlags =  Object.keys(comment.redFlagsList).map(key => (comment.redFlagsList[key]));
         currentRedFlags.push(redFlags);
-        var currentCommenters = Object.keys(comment.commenters).map(key => (comment.commenters[key]));
-        if (!currentCommenters.includes(currentBrother)) {
-          currentCommenters.push(currentBrother);
-        }
+        
         recruitComments.set({
           yes: currentYes,
           no: currentNo,
           maybe: currentMaybe,
           commentsList: currentComments,
           redFlagsList: currentRedFlags,
-          commenters: currentCommenters
         }, function(error) {
           if (error) {
             console.log('something went wrong', error);
           } else {
             console.log('successfully added in comments');
-            window.location.reload(false);
           }
         });
+        recruitCommenters.set({
+          [brotherUID]: brotherName
+        }, function(error) {
+          if (error) {
+            console.log('something went wrong', error);
+          } else {
+            console.log('successfully added in comments');
+          }
+        })
       } else {
         recruitComments.set({
           yes: yes,
@@ -67,36 +101,26 @@ class RecruitmentComments extends Component {
           maybe: maybe,
           commentsList: [comments],
           redFlagsList: [redFlags],
-          commenters: [currentBrother]
         }, function(error) {
           if (error) {
             console.log('something went wrong', error);
           } else {
             console.log('successfully added in comments');
-            window.location.reload(false);
           }
         });
+        recruitCommenters.set({
+          [brotherUID]: brotherName
+        },function(error) {
+          if (error) {
+            console.log('something went wrong', error);
+          } else {
+            console.log('successfully added in comments');
+          }});
       }
     });
-
-   
+    this.handleReset()
   }
-  componentDidMount() {
-    this.props.firebase.recruits().on('value', snapshot => {
-      const recruitsList = snapshot.val();
-      if (recruitsList) {
-        const recruitsInfoList = Object.keys(recruitsList).map(key => ({
-            first: recruitsList[key].first,
-            last: recruitsList[key].last,
-            uid: key
-        }));
-
-        this.setState({recruitInfo: recruitsInfoList, loading: true});
-      }   else {
-          this.setState({recruitInfo: null, loading: false})
-        }
-    });
-  }
+  
   handleChange(event) {
     if (event.target.name === 'decision') {
       switch (event.target.value) {
@@ -129,8 +153,6 @@ class RecruitmentComments extends Component {
 
     return( 
       <Col>
-      <TopBar loggedIn="true"/>
-        
         <Form noValidate onSubmit={this.handleSubmit} className="customForm">
           <Form.Row>
             <Form.Group controlId="exampleForm.ControlSelect1"  as={Col} md="12">
@@ -155,13 +177,13 @@ class RecruitmentComments extends Component {
           <Form.Row>
             <Form.Group as={Col} md="12">
               <Form.Label>Comments</Form.Label>
-              <Form.Control as="textarea" rows="3" onChange={this.handleChange} name="comments"/>
+              <Form.Control value={this.state.comments} as="textarea" rows="3" onChange={this.handleChange} name="comments"/>
             </Form.Group>
           </Form.Row> 
           <Form.Row>
             <Form.Group as={Col} md="12">
               <Form.Label>Red Flags</Form.Label>
-              <Form.Control as="textarea" rows="3" onChange={this.handleChange} name="redFlags"/>
+              <Form.Control value={this.state.redFlags} as="textarea" rows="3" onChange={this.handleChange} name="redFlags"/>
             </Form.Group>
           </Form.Row> 
          

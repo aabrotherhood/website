@@ -24,6 +24,10 @@ class CustomForm extends Component {
 
   handleSubmit = event => {
     event.preventDefault();
+    if (this.state.check !== 'sP1nd3ll' && this.props.type === 'Sign Up') {
+      alert('Answer to security question is incorrect');
+      return
+    }
     this.setState({loading: true});
     const personalEmail = this.state.email;
     
@@ -32,9 +36,6 @@ class CustomForm extends Component {
       if (this.props.type === 'Sign Up') {
         if (this.state.passwordOne !== this.state.passwordTwo) {
           this.setState({passwordValid: true})
-          return
-        }
-        if (this.state.check !== 'sP1nd3ll') {
           return
         }
         this.setState({passwordValid: false})

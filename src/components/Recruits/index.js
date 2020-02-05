@@ -3,7 +3,6 @@ import Brother from '../Brother';
 import {withFirebase} from '../Firebase/context';
 import {withAuthorization} from '../Sessions';
 import {Row,Col} from 'react-bootstrap';
-import TopBar from '../TopBar';
 import './styles.scss';
 
 class Recruits extends Component {
@@ -40,7 +39,6 @@ class Recruits extends Component {
     }
     return (
       <Col>
-        <TopBar loggedIn="true"/>
         <Row className="recruits">
           {loading ? recruitsList : <div></div>}
         </Row>

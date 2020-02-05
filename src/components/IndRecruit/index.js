@@ -1,7 +1,6 @@
 import React, {Component} from 'react';
 import {Col,Row} from 'react-bootstrap';
 import {withAuthorization} from '../Sessions';
-import TopBar from '../TopBar';
 import ReactMinimalPieChart from 'react-minimal-pie-chart';
 import './styles.scss';
 
@@ -25,8 +24,10 @@ class IndRecruit extends Component {
     this.props.firebase.commentsByRecruit(this.data.uid).on('value', snapshot => {
       const comment = snapshot.val();
       if (comment) {
+        const commentersFullName = Object.keys(comment.commenters).map((brother) => (comment.commenters[brother]))
         this.setState({
-          commenters: comment.commenters,
+          commenters: Object.keys(comment.commenters),
+          commentersName: commentersFullName,
           commentsList: comment.commentsList,
           redFlagsList: comment.redFlagsList,
           maybe: comment.maybe,
@@ -46,10 +47,11 @@ class IndRecruit extends Component {
       backgroundSize: 'cover',
       marginBottom: '2rem',
     }
-    const {commenters, commentsList, redFlagsList, maybe, no, yes, loading} = this.state;
+    const {commenters, commentersName, commentsList, redFlagsList, maybe, no, yes, loading} = this.state;
     var actualCommentsList;
     var actualRedFlagsList;
     var commented = false;
+    var commentersList;
     if (loading) {
       if (commentsList) {
         actualCommentsList = commentsList.map((comment, indx) => {
@@ -66,11 +68,15 @@ class IndRecruit extends Component {
         actualRedFlagsList = <p>No Red Flags</p>
       }
       commented = commenters.includes(this.props.firebase.currentUser().uid);
+      if (commented) {
+        commentersList = commentersName.map((brother, indx) => {
+          return <p key={indx}>{brother}</p>
+        })
+      }
     }
 
     return(
       <Col className="indBrother justify-content-center">
-        <TopBar loggedIn="true"/>
         <Row className="infoBox">
           <div className="brotherImage" style={brotherImage}></div>
           <div className="infoDetails">
@@ -144,12 +150,16 @@ class IndRecruit extends Component {
             </Col>
             <Col className="comments justify-content-start">
               <p className="header">Comments</p>
-              {actualCommentsList}
+              {loading ? actualCommentsList : <div></div>}
             </Col>
           </Row>: <div></div> }
           <Col className="redFlags">
             <p className="header">Red Flags</p>
             {loading ? actualRedFlagsList : <div></div>}
+          </Col>
+          <Col className="redFlags">
+            <p className="header">Have Gotten Meals</p>
+            {loading ? commentersList : <div></div>}
           </Col>
         </Col>
       </Col>

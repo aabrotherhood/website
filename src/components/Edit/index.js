@@ -1,7 +1,6 @@
 import React, {Component} from 'react';
 import {Col, Form, InputGroup, Button} from 'react-bootstrap';
 import {withAuthorization} from '../Sessions';
-import TopBar from '../TopBar';
 import Loading from '../../assets/loading.gif';
 import './styles.scss';
 
@@ -33,29 +32,49 @@ class Edit extends Component {
     event.preventDefault();
     this.setState({loading: true});
     const currentBrotherRef = this.props.firebase.currentBrotherImage(this.props.firebase.currentUser().uid);
-    currentBrotherRef.put(this.state.image).then(() => {
-      console.log('Successfully loaded image');
-      currentBrotherRef.getDownloadURL().then(imageURL=> {
-        const currentBrother = this.props.firebase.brother(this.props.firebase.currentUser().uid);
-        const {first, last, brotherName, birthday, house, year, concentration, location, occupation, phone, personalEmail, schoolEmail} = this.state;
-        currentBrother.set({
-          first,last,brotherName,birthday, house, year, 
-          concentration, location, occupation, 
-          phone, personalEmail, schoolEmail, imageURL}
-          ,function(error) {
-            if (error) {
-              // The write failed...
-              console.log('Failed updated brother info');
-            } else {
-              // Data saved successfully!
-              console.log('Succesfully updated information');
-            }
-          })
-          this.props.history.push('/home')
+    if (this.state.image !== null) {
+      currentBrotherRef.put(this.state.image).then(() => {
+        console.log('Successfully loaded image');
+        currentBrotherRef.getDownloadURL().then(imageURL=> {
+          const currentBrother = this.props.firebase.brother(this.props.firebase.currentUser().uid);
+          const {first, last, brotherName, birthday, house, year, concentration, location, occupation, phone, personalEmail, schoolEmail} = this.state;
+          currentBrother.set({
+            first,last,brotherName,birthday, house, year, 
+            concentration, location, occupation, 
+            phone, personalEmail, schoolEmail, imageURL}
+            ,function(error) {
+              if (error) {
+                // The write failed...
+                console.log('Failed updated brother info');
+              } else {
+                // Data saved successfully!
+                console.log('Succesfully updated information');
+              }
+            })
+            this.props.history.push('/home')
+        })
+      }).catch(err => {
+        console.log('ERROR', err);
       })
-    }).catch(err => {
-      console.log('ERROR', err);
-    })
+    } else {
+      const currentBrother = this.props.firebase.brother(this.props.firebase.currentUser().uid);
+      const imageURL = "https://firebasestorage.googleapis.com/v0/b/aab-website-754b0.appspot.com/o/brothers%2Faab.png?alt=media&token=459771fb-0788-4f19-912a-ad3cfbc6de3f";
+      const {first, last, brotherName, birthday, house, year, concentration, location, occupation, phone, personalEmail, schoolEmail} = this.state;
+      currentBrother.set({
+        first,last,brotherName,birthday, house, year, 
+        concentration, location, occupation, 
+        phone, personalEmail, schoolEmail, imageURL}
+        ,function(error) {
+          if (error) {
+            // The write failed...
+            console.log('Failed updated brother info');
+          } else {
+            // Data saved successfully!
+            console.log('Succesfully updated information');
+          }
+        })
+        this.props.history.push('/home')
+    }
   }
   handleChange(event) {
     if (event.target.files) {
@@ -73,7 +92,6 @@ class Edit extends Component {
         <div className="loading">
           <img src={Loading} alt="loading gif" className="spinner"/>
         </div> : <div></div>}
-        <TopBar logggedIn="true"/>
         <Form noValidate onSubmit={this.handleSubmit} className="customForm">
           <Form.Row>
             <Form.Group as={Col} md="12">

@@ -3,14 +3,13 @@ import Brothers from '../Brothers';
 import {Col} from 'react-bootstrap';
 import Bro2 from '../../assets/activism.jpeg';
 import {Parallax} from 'react-parallax';
-import TopBar from '../TopBar';
+import {withFirebase} from '../Firebase/context';
 import './styles.scss';
 
 class Members extends Component {
   render() {
     return( 
       <Col className="members">
-        <TopBar loggedIn="false"/>
         <Parallax
           className="homeHeroPic"
             blur={{ min: -3, max: 7 }}
@@ -25,4 +24,4 @@ class Members extends Component {
   }
 }
 
-export default (Members);
+export default withFirebase(Members);

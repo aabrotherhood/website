@@ -1,5 +1,4 @@
 import React, {Component} from 'react';
-import TopBar from '../TopBar/index';
 import {Container} from 'react-bootstrap';
 import HomeHero from '../HomeHero/index';
 import Mission from'../Mission/index';
@@ -8,6 +7,7 @@ import HomeHeroPic from '../../assets/homeHero.jpeg';
 import Bro1 from '../../assets/serv1.jpeg';
 import Serve from '../../assets/serv2.jpeg';
 import Footer from '../Footer';
+import {withFirebase} from '../Firebase/context';
 import '../../styles/global.scss';
 import './styles.scss';
 
@@ -15,7 +15,6 @@ class App extends Component {
   render () {
   return (
     <Container className="Landing" fluid={true}>
-      <TopBar loggedIn="false"/> 
       <HomeHero fontSize="90px" image={HomeHeroPic} text="Asian American Brotherhood"/>
       <Mission />
       <HomeHero fontSize="70px" image={Serve} 
@@ -35,4 +34,4 @@ class App extends Component {
 }
 }
 
-export default App;
+export default withFirebase(App);

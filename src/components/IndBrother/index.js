@@ -1,6 +1,5 @@
 import React, {Component} from 'react';
 import {Col,Row} from 'react-bootstrap';
-import TopBar from '../TopBar';
 import './styles.scss';
 
 class IndBrother extends Component {
@@ -20,7 +19,6 @@ class IndBrother extends Component {
     }
     return(
       <Col className="indBrother justify-content-center">
-        <TopBar loggedIn="false"/>
         <Row className="infoBox">
           <div className="brotherImage" style={brotherImage}></div>
           <div className="infoDetails">

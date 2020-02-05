@@ -17,7 +17,7 @@ class RecruitmentSignUp extends Component {
       phone: '',
       personalEmail: '',
       schoolEmail: '',
-      imageURL: 'https://firebasestorage.googleapis.com/v0/b/aab-website-dev.appspot.com/o/brothers%2FKgow8YZhmTONztYA0biyodF5laE2?alt=media&token=0cebf6db-297a-419f-9da8-01be0462badd',
+      imageURL: 'https://firebasestorage.googleapis.com/v0/b/aab-website-754b0.appspot.com/o/brothers%2Faab.png?alt=media&token=459771fb-0788-4f19-912a-ad3cfbc6de3f',
     }
 
     this.initialState = this.state
