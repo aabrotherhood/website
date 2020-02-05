@@ -33,7 +33,7 @@ class TopBar extends Component {
               <p className="link" onClick={this.props.firebase.doSignOut}>Logout</p>
             </li>
           </Row> :
-          <ul className="listInline">
+          <Row className="listInline">
             <li className="listInlineList ">
               <Link className="link" to={ROUTES.LANDING}>Home</Link>
             </li>
@@ -43,7 +43,7 @@ class TopBar extends Component {
             <li className="listInlineList">
               <Link className="link" to={ROUTES.LOGIN}>Login</Link>
             </li>
-        </ul> }
+        </Row> }
     </Row>
     );
   }
