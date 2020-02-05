@@ -1,6 +1,7 @@
 import React, {Component} from 'react';
 import {Form, Col, InputGroup, Button} from 'react-bootstrap';
 import {withRouter} from 'react-router-dom';
+import Loading from '../../assets/loading.gif';
 import * as ROUTES from '../../constants/routes';
 import { Link } from 'react-router-dom';
 
@@ -14,7 +15,8 @@ class CustomForm extends Component {
       email: 'example@gmail.com',
       passwordOne: '',
       passwordTwo: '',
-      passwordValid: false
+      passwordValid: false,
+      loading: false,
     }
     this.handleSubmit = this.handleSubmit.bind(this);
     this.handleChange = this.handleChange.bind(this);
@@ -22,43 +24,44 @@ class CustomForm extends Component {
 
   handleSubmit = event => {
     event.preventDefault();
-    const personalEmail = this.state.email;
+    this.setState({loading: true});
+    // const personalEmail = this.state.email;
     
-    if (this.state.email !== '') {
-      console.log('everything is good to go!');
-      if (this.props.type === 'Sign Up') {
-        if (this.state.passwordOne !== this.state.passwordTwo) {
-          this.setState({passwordValid: true})
-          return
-        }
-        if (this.state.check !== 'sP1nd3ll') {
-          return
-        }
-        this.setState({passwordValid: false})
-        this.props.firebase.doCreateUserWithEmailAndPassword(this.state.email, this.state.passwordOne)
-        .then(authUser => {
-          return this.props.firebase
-          .brother(authUser.user.uid)
-          .set({
-            personalEmail
-          });
-        })
-        .then(() => {
-          console.log("success signing up!");
-          this.props.history.push({pathname:'/edit', state:{email: this.state.email}});
-        }).catch(err => {
-          console.log('ERROR',err);
-        });
-      } else {
-        this.props.firebase.doSignInWithEmailAndPassword(this.state.email, this.state.passwordOne) 
-        .then(() => {
-          console.log("success logging in!");
-          this.props.history.push('/home');
-        }).catch (err => {
-          console.log('ERROR', err);
-        })
-      }
-    }
+    // if (this.state.email !== '') {
+    //   console.log('everything is good to go!');
+    //   if (this.props.type === 'Sign Up') {
+    //     if (this.state.passwordOne !== this.state.passwordTwo) {
+    //       this.setState({passwordValid: true})
+    //       return
+    //     }
+    //     if (this.state.check !== 'sP1nd3ll') {
+    //       return
+    //     }
+    //     this.setState({passwordValid: false})
+    //     this.props.firebase.doCreateUserWithEmailAndPassword(this.state.email, this.state.passwordOne)
+    //     .then(authUser => {
+    //       return this.props.firebase
+    //       .brother(authUser.user.uid)
+    //       .set({
+    //         personalEmail
+    //       });
+    //     })
+    //     .then(() => {
+    //       console.log("success signing up!");
+    //       this.props.history.push({pathname:'/edit', state:{email: this.state.email}});
+    //     }).catch(err => {
+    //       console.log('ERROR',err);
+    //     });
+    //   } else {
+    //     this.props.firebase.doSignInWithEmailAndPassword(this.state.email, this.state.passwordOne) 
+    //     .then(() => {
+    //       console.log("success logging in!");
+    //       this.props.history.push('/home');
+    //     }).catch (err => {
+    //       console.log('ERROR', err);
+    //     })
+    //   }
+    // }
   };
 
   handleChange = event => {
@@ -69,6 +72,10 @@ class CustomForm extends Component {
 
     return (
       <Form noValidate onSubmit={this.handleSubmit} className="customForm">
+        {this.state.loading ?
+        <div className="loading">
+          <img src={Loading} alt="loading gif" className="spinner"/>
+        </div> : <div></div>}
         {this.props.type === 'Sign Up' ? 
         <Form.Row>
           <Form.Group as={Col} md="12" controlId="validationCustomUsername">
