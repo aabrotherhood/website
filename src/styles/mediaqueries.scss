@@ -50,13 +50,18 @@ For Mobile
   }
   .homeNavbar {
     .alignStart {
-      padding-left: 0 !important;
+      flex: 0 0 100% !important;
+     max-width: 100%;
+     text-align: center;
+     padding-left: 15px;
     }
     .listInline {
+      flex: 0 0 100%;
+      margin: 0 auto;
       padding-right: 0 !important;
+      justify-content: space-evenly;
       .listInlineList {
-        margin-left: 0.5em !important;
-        margin-right: 0.5em !important;
+        margin: 0.5rem 0.5rem;
       }
     }
   }
@@ -74,6 +79,7 @@ For Mobile
       }
     }
   }
+
 }
 
 /*
@@ -131,6 +137,20 @@ For Tablet
        border-top: none !important;
        width: 100% !important;
      }
+   }
+ }
+ .homeNavbar {
+   .alignStart {
+    flex: 0 0 100% !important;
+    max-width: 100%;
+    text-align: center;
+    padding-left: 15px;
+   }
+   .listInline {
+     flex: 0 0 100%;
+     margin: 0 auto;
+     padding-right: 0 !important;
+     justify-content: space-evenly;
    }
  }
 }

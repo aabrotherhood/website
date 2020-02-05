@@ -13,12 +13,9 @@ class TopBar extends Component {
           <p className="logo">AAB</p>
         </Col>
         {this.props.loggedIn === "true" ? 
-          <ul className="listInline">
+          <Row className="listInline">
             <li className="listInlineList">
-              <p className="link" onClick={this.props.firebase.doSignOut}>Logout</p>
-            </li>
-            <li className="listInlineList">
-              <Link className="link" to={ROUTES.RECRUITMENTCOMMENTS}>Comment</Link>
+              <Link className="link" to={ROUTES.LANDING}>Home</Link>
             </li> 
             <li className="listInlineList">
               <Link className="link" to={ROUTES.MEMBERS}>Brothers</Link>
@@ -27,18 +24,24 @@ class TopBar extends Component {
               <Link className="link" to={ROUTES.RECRUITMENT}>Recruits</Link>
             </li> 
             <li className="listInlineList">
-              <Link className="link" to={ROUTES.LANDING}>Home</Link>
+              <Link className="link" to={ROUTES.RECRUITMENTCOMMENTS}>Comment</Link>
             </li> 
-          </ul> :
-          <ul className="listInline">
             <li className="listInlineList">
-              <Link className="link" to={ROUTES.LOGIN}>Login</Link>
+              <Link className="link" to={ROUTES.EDIT}>Edit</Link>
+            </li> 
+            <li className="listInlineList">
+              <p className="link" onClick={this.props.firebase.doSignOut}>Logout</p>
+            </li>
+          </Row> :
+          <ul className="listInline">
+            <li className="listInlineList ">
+              <Link className="link" to={ROUTES.LANDING}>Home</Link>
             </li>
             <li className="listInlineList">
               <Link className="link" to={ROUTES.MEMBERS}>Members</Link>
             </li>
-            <li className="listInlineList ">
-              <Link className="link" to={ROUTES.LANDING}>Home</Link>
+            <li className="listInlineList">
+              <Link className="link" to={ROUTES.LOGIN}>Login</Link>
             </li>
         </ul> }
     </Row>
