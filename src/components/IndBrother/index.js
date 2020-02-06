@@ -25,6 +25,14 @@ class IndBrother extends Component {
             <p className="name">{this.data.first + ' ' + this.data.last}</p>
             <p className="year">{this.data.year}</p>
             <p className="house">{this.data.house}</p>
+            <p className="brotherName">{this.data.brotherName}</p>
+            <p className="birthday">{this.data.birthday}</p>
+            <p className="occupation">{this.data.occupation}</p>
+            <p className="location">{this.data.location}</p>
+            <p className="concentration">{this.data.concentration}</p>
+            <p className="personalEmail">{this.data.personalEmail}</p>
+            <p className="schoolEmail">{this.data.schoolEmail}</p>
+            <p className="phone">{this.data.phone}</p>
           </div>
         </Row>
       </Col>

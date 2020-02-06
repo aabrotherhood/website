@@ -32,8 +32,8 @@ For Mobile
     }
     .brotherCol {
       .brother {
-        flex: 0 0 90% !important;
-        max-width: 90% !important;
+        flex: 0 0 40% !important;
+        max-width: 40% !important;
       }
       margin: 0rem 0rem !important;
       .yearCols {
@@ -43,6 +43,12 @@ For Mobile
       .year {
         font-size: 2rem !important;
       }
+    }
+  }
+  .recruits {
+    .brother {
+      flex: 0 0 40% !important;
+      max-width: 40% !important;
     }
   }
   .pillarsCol {

@@ -6,6 +6,16 @@ import * as ROUTES from '../../constants/routes';
 import './styles.scss';
 
 class TopBar extends Component {
+  constructor(props) {
+    super(props);
+    this.handleLogout = this.handleLogout.bind(this);
+  }
+
+  handleLogout() {
+    this.props.firebase.doSignOut();
+    this.props.history.push('/login');
+  }
+
   render() {
     return (
       <Row className="homeNavbar">
@@ -30,7 +40,7 @@ class TopBar extends Component {
               <Link className="link" to={ROUTES.EDIT}>Edit</Link>
             </li> 
             <li className="listInlineList">
-              <p className="link" onClick={this.props.firebase.doSignOut}>Logout</p>
+              <p className="link" onClick={this.handleLogout}>Logout</p>
             </li>
           </Row> :
           <Row className="listInline">
