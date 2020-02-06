@@ -132,8 +132,8 @@ For Tablet
     .brotherCol {
       margin: 0rem 2rem !important;
       .brother {
-        flex: 0 0 40% !important;
-        max-width: 40% !important;
+        flex: 0 0 25% !important;
+        max-width: 25% !important;
       }
       .yearCols {
         margin: 0rem 0 !important;
@@ -141,6 +141,13 @@ For Tablet
       .year {
         font-size: 3rem !important;
       }
+    }
+   
+  }
+  .recruits {
+    .brother {
+      flex: 0 0 25% !important;
+      max-width: 25% !important;
     }
   }
  .pillarsCol {
