@@ -22,7 +22,7 @@ class TopBar extends Component {
         <Col xs={2} className="justify-content-start alignStart">
           <p className="logo">AAB</p>
         </Col>
-        {this.props.loggedIn === "true" ? 
+        {this.props.loggedIn ? 
           <Row className="listInline">
             <li className="listInlineList">
               <Link className="link" to={ROUTES.LANDING}>Home</Link>

@@ -4,12 +4,14 @@ import {Col} from 'react-bootstrap';
 import Bro2 from '../../assets/activism.jpeg';
 import {Parallax} from 'react-parallax';
 import {withFirebase} from '../Firebase/context';
+import {AuthUserContext} from '../Sessions'
 import './styles.scss';
 
 class Members extends Component {
-  render() {
+  render() {   
     return( 
       <Col className="members">
+        
         <Parallax
           className="homeHeroPic"
             blur={{ min: -3, max: 7 }}
@@ -18,7 +20,11 @@ class Members extends Component {
             strength={-100}>
               <p className="homeLogo">Meet our Brothers</p>
             </Parallax>
-        <Brothers type="members" />
+        <AuthUserContext.Consumer>
+          {authUser =>
+            authUser ? <Brothers type="members" loggedIn={true}/> : <Brothers type="members" loggedIn={false}/>
+          }
+        </AuthUserContext.Consumer>
       </Col>
     )
   }

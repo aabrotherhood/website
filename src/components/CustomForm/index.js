@@ -36,6 +36,8 @@ class CustomForm extends Component {
       if (this.props.type === 'Sign Up') {
         if (this.state.passwordOne !== this.state.passwordTwo) {
           this.setState({passwordValid: true})
+          alert('Passwords don\'t match!');
+          window.location.reload(false);
           return
         }
         this.setState({passwordValid: false})
@@ -60,6 +62,8 @@ class CustomForm extends Component {
           this.props.history.push('/home');
         }).catch (err => {
           console.log('ERROR', err);
+          alert('Passwords or email not correct');
+          window.location.reload(false);
         })
       }
     }

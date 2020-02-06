@@ -10,22 +10,13 @@ class Brothers extends Component {
     this.state = {
       brotherDictInfo: null,
       loading: false,
-      loggedIn: false,
     }
   }
   componentDidMount() {
-    this.listener = this.props.firebase.auth.onAuthStateChanged(
-      authUser => {
-        authUser
-          ? this.setState({ loggedIn: true })
-          : this.setState({ loggedIn: false });
-      },
-    );
-
     this.props.firebase.brothers().on('value', snapshot => {
       const brothersList = snapshot.val();
       var brotherInfoList;
-      if (this.state.loggedIn) {
+      if (this.props.loggedIn) {
         brotherInfoList = Object.keys(brothersList).map(key => ({
           first: brothersList[key]['first'],
           last: brothersList[key]['last'],
@@ -40,7 +31,6 @@ class Brothers extends Component {
           uid: key,
         }));
       } else {
-
         brotherInfoList = Object.keys(brothersList).map(key => ({
           first: brothersList[key]['first'],
           last: brothersList[key]['last'],
@@ -50,7 +40,6 @@ class Brothers extends Component {
           uid: key,
         }));
       }
-
       var brotherDict = {};
 
       for (var brother in brotherInfoList) {
@@ -68,9 +57,7 @@ class Brothers extends Component {
       this.setState({brotherDictInfo: brotherDict, loading: true});
     });
   }
-  componentWillUnmount() {
-    this.listener();
-  }
+
   render() {
     const { brotherDictInfo, loading} = this.state;
     return(
