@@ -52,11 +52,11 @@ class RecruitmentComments extends Component {
 
   handleReset() {
     this.setState({...this.initialState})
+    alert('Thanks! Submit another');
   }
 
   handleSubmit(event) {
     event.preventDefault();
-    alert('Thanks! Submit another');
     
     const recruitComments = this.props.firebase.commentsByRecruit(this.state.recruit);
     const {yes, no, maybe, comments, redFlags,brotherName, brotherUID} = this.state;
@@ -87,6 +87,8 @@ class RecruitmentComments extends Component {
             console.log('something went wrong', error);
           } else {
             console.log('successfully added in comments');
+            window.location.reload(false);
+
           }
         });
       } else {
@@ -103,6 +105,8 @@ class RecruitmentComments extends Component {
             console.log('something went wrong', error);
           } else {
             console.log('successfully added in comments');
+            window.location.reload(false);
+
           }
         });
       }
