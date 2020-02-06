@@ -11,6 +11,7 @@ class IndRecruit extends Component {
     this.data = JSON.parse(this.props.history.location.state.data);
     this.state = {
       commenters: null, 
+      commentersUID: null,
       commentsList: null,
       redFlagsList: null,
       maybe: 0,
@@ -24,10 +25,9 @@ class IndRecruit extends Component {
     this.props.firebase.commentsByRecruit(this.data.uid).on('value', snapshot => {
       const comment = snapshot.val();
       if (comment) {
-        const commentersFullName = Object.keys(comment.commenters).map((brother) => (comment.commenters[brother]))
         this.setState({
-          commenters: Object.keys(comment.commenters),
-          commentersName: commentersFullName,
+          commenters: comment.commenters,
+          commentersUID: comment.commentersUID,
           commentsList: comment.commentsList,
           redFlagsList: comment.redFlagsList,
           maybe: comment.maybe,
@@ -47,7 +47,7 @@ class IndRecruit extends Component {
       backgroundSize: 'cover',
       marginBottom: '2rem',
     }
-    const {commenters, commentersName, commentsList, redFlagsList, maybe, no, yes, loading} = this.state;
+    const {commenters, commentersUID, commentsList, redFlagsList, maybe, no, yes, loading} = this.state;
     var actualCommentsList;
     var actualRedFlagsList;
     var commented = false;
@@ -67,9 +67,11 @@ class IndRecruit extends Component {
       } else {
         actualRedFlagsList = <p>No Red Flags</p>
       }
-      commented = commenters.includes(this.props.firebase.currentUser().uid);
-      if (commented) {
-        commentersList = commentersName.map((brother, indx) => {
+      if (commentersUID) {
+        commented = commentersUID.includes(this.props.firebase.currentUser().uid);
+      }
+      if (commenters) {
+        commentersList = commenters.map((brother, indx) => {
           return <p key={indx}>{brother}</p>
         })
       }
@@ -150,7 +152,7 @@ class IndRecruit extends Component {
             </Col>
             <Col className="comments justify-content-start">
               <p className="header">Comments</p>
-              {loading ? actualCommentsList : <div></div>}
+                {actualCommentsList}
             </Col>
           </Row>: <div></div> }
           <Col className="redFlags">

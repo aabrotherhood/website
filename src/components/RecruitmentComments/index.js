@@ -59,7 +59,6 @@ class RecruitmentComments extends Component {
     alert('Thanks! Submit another');
     
     const recruitComments = this.props.firebase.commentsByRecruit(this.state.recruit);
-    const recruitCommenters = this.props.firebase.recruitCommenters(this.state.recruit);
     const {yes, no, maybe, comments, redFlags,brotherName, brotherUID} = this.state;
     recruitComments.once('value').then(function(snapshot) {
       const comment = snapshot.val();
@@ -71,13 +70,18 @@ class RecruitmentComments extends Component {
         currentComments.push(comments);
         var currentRedFlags =  Object.keys(comment.redFlagsList).map(key => (comment.redFlagsList[key]));
         currentRedFlags.push(redFlags);
-        
+        var commentersList = Object.keys(comment.commenters).map(key => (comment.commenters[key]));
+        commentersList.push(brotherName)
+        var commentersUIDList = Object.keys(comment.commentersUID).map(key => comment.commentersUID[key])
+        commentersUIDList.push(brotherUID)
         recruitComments.set({
           yes: currentYes,
           no: currentNo,
           maybe: currentMaybe,
           commentsList: currentComments,
           redFlagsList: currentRedFlags,
+          commenters: commentersList,
+          commentersUID: commentersUIDList,
         }, function(error) {
           if (error) {
             console.log('something went wrong', error);
@@ -85,15 +89,6 @@ class RecruitmentComments extends Component {
             console.log('successfully added in comments');
           }
         });
-        recruitCommenters.set({
-          [brotherUID]: brotherName
-        }, function(error) {
-          if (error) {
-            console.log('something went wrong', error);
-          } else {
-            console.log('successfully added in comments');
-          }
-        })
       } else {
         recruitComments.set({
           yes: yes,
@@ -101,6 +96,8 @@ class RecruitmentComments extends Component {
           maybe: maybe,
           commentsList: [comments],
           redFlagsList: [redFlags],
+          commenters: [brotherName],
+          commentersUID: [brotherUID]
         }, function(error) {
           if (error) {
             console.log('something went wrong', error);
@@ -108,14 +105,6 @@ class RecruitmentComments extends Component {
             console.log('successfully added in comments');
           }
         });
-        recruitCommenters.set({
-          [brotherUID]: brotherName
-        },function(error) {
-          if (error) {
-            console.log('something went wrong', error);
-          } else {
-            console.log('successfully added in comments');
-          }});
       }
     });
     this.handleReset()
