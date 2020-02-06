@@ -18,10 +18,13 @@ class Recruits extends Component {
       const recruitsList = snapshot.val();
       if (recruitsList) {
         
-        const recruitsInfoList = Object.keys(recruitsList).map(key => ({
+        const recruitsInfoList = Object.keys(recruitsList).map(key => {
+          const newData = {
             ...recruitsList[key],
             uid: key
-        }));
+          };
+          return (<Brother info={newData} key={key} nextURL={'/recruit/' + recruitsList[key].first + recruitsList[key].last}/>);
+        });
 
         this.setState({recruitInfo: recruitsInfoList, loading: true});
       }   else {
@@ -31,16 +34,11 @@ class Recruits extends Component {
   }
   render() {
     const {recruitInfo, loading} = this.state;
-    var recruitsList;
-    if (loading) {
-      recruitsList = recruitInfo.map(info => {
-        return (<Brother info={info} key={info.uid} nextURL={'/recruit/' + info.first + info.last}/>);
-      });
-    }
+   
     return (
       <Col>
         <Row className="recruits">
-          {loading ? recruitsList : <div></div>}
+          {loading ? recruitInfo : <div></div>}
         </Row>
       </Col>
     );

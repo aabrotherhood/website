@@ -76,7 +76,6 @@ class IndRecruit extends Component {
         })
       }
     }
-
     return(
       <Col className="indBrother justify-content-center">
         <Row className="infoBox">

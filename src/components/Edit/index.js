@@ -286,7 +286,7 @@ class Edit extends Component {
               <InputGroup>
                 <Form.Control
                   type="text"
-                  placeholder="xxx-xxx-xxxx"
+                  placeholder="xxxxxxxxxx"
                   aria-describedby="inputGroupPrepend"
                   name="phone"
                   onChange={this.handleChange}

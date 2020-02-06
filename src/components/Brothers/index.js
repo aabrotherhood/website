@@ -8,16 +8,20 @@ class Brothers extends Component {
   constructor(props) {
     super(props);
     this.state = {
-      brotherInfo: null,
       brotherDictInfo: null,
       loading: false,
       loggedIn: false,
     }
   }
-  componentWillUnmount() {
-    this.listener();
-  }
   componentDidMount() {
+    this.listener = this.props.firebase.auth.onAuthStateChanged(
+      authUser => {
+        authUser
+          ? this.setState({ loggedIn: true })
+          : this.setState({ loggedIn: false });
+      },
+    );
+
     this.props.firebase.brothers().on('value', snapshot => {
       const brothersList = snapshot.val();
       var brotherInfoList;
@@ -47,37 +51,28 @@ class Brothers extends Component {
         }));
       }
 
-        var brotherDict = {};
+      var brotherDict = {};
 
-        for (var brother in brotherInfoList) {
-          if (parseInt(brotherInfoList[brother].year) in brotherDict) {
-            brotherDict[parseInt(brotherInfoList[brother].year)].push(brotherInfoList[brother])
-          } else {
-            brotherDict[parseInt(brotherInfoList[brother].year)] = [brotherInfoList[brother]]
-          }
+      for (var brother in brotherInfoList) {
+        if (parseInt(brotherInfoList[brother].year) in brotherDict) {
+          brotherDict[parseInt(brotherInfoList[brother].year)].push(brotherInfoList[brother])
+        } else {
+          brotherDict[parseInt(brotherInfoList[brother].year)] = [brotherInfoList[brother]]
         }
-        
-        this.setState({brotherDictInfo: brotherDict, loading: true});
-    });
-    this.listener = this.props.firebase.auth.onAuthStateChanged(
-      authUser => {
-        authUser
-          ? this.setState({ loggedIn: true })
-          : this.setState({ loggedIn: false });
-      },
-    );
-  }
-
-  render() {
-    const { brotherDictInfo, loading} = this.state;
-    if (loading) {
-      for (var key in brotherDictInfo) {
-        brotherDictInfo[key] = brotherDictInfo[key].map(info => {
-          console.log(info.uid)
+      }
+      for (var key in brotherDict) {
+        brotherDict[key] = brotherDict[key].map(info => {
           return (<Brother info={info} key={info.uid} nextURL={'/brother/' + info.first + info.last}/>);
         });
       }
-    }
+      this.setState({brotherDictInfo: brotherDict, loading: true});
+    });
+  }
+  componentWillUnmount() {
+    this.listener();
+  }
+  render() {
+    const { brotherDictInfo, loading} = this.state;
     return(
       <Col className="brotherCol justify-content-center">
         {loading ? 
