@@ -60,6 +60,10 @@ class RecruitmentComments extends Component {
 
   handleReset() {
     this.setState({
+      decision: '',
+      yes: 0,
+      no: 0,
+      maybe: 0,
       comments: '',
       redFlags: '',})
     alert('Thanks! Submit another');
@@ -100,7 +104,7 @@ class RecruitmentComments extends Component {
             console.log('something went wrong', error);
           } else {
             console.log('successfully added in comments');
-            window.location.reload(false);
+            // window.location.reload(false);
 
           }
         });
@@ -118,8 +122,7 @@ class RecruitmentComments extends Component {
             console.log('something went wrong', error);
           } else {
             console.log('successfully added in comments');
-            window.location.reload(false);
-
+            // window.location.reload(false);
           }
         });
       }
@@ -131,13 +134,13 @@ class RecruitmentComments extends Component {
     if (event.target.name === 'decision') {
       switch (event.target.value) {
         case 'Yes':
-          this.setState({yes: 1, no: 0, maybe: 0});
+          this.setState({yes: 1, no: 0, maybe: 0, decision: 'Yes'});
           break;
         case 'No':
-          this.setState({no: 1, yes: 0, maybe: 0});
+          this.setState({no: 1, yes: 0, maybe: 0, decision: 'No'});
           break;
         default:
-          this.setState({maybe: 1, yes: 0, no: 0});
+          this.setState({maybe: 1, yes: 0, no: 0, decision: 'Maybe'});
           break;
       }
     } else {
