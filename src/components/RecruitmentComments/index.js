@@ -41,6 +41,7 @@ class RecruitmentComments extends Component {
         currentComponent.setState({recruitInfo: null, loading: false})
         }
     });
+    console.log(this.props.firebase.currentUser());
     const currentBrotherUID = this.props.firebase.currentUser().uid;
     this.props.firebase.brother(currentBrotherUID).on('value', function(snapshot) {
       const brother = snapshot.val();
@@ -51,12 +52,17 @@ class RecruitmentComments extends Component {
   }
 
   handleReset() {
-    this.setState({...this.initialState})
+    this.setState({yes: 0,
+      no: 0,
+      maybe: 0,
+      comments: '',
+      redFlags: '',})
     alert('Thanks! Submit another');
   }
 
   handleSubmit(event) {
     event.preventDefault();
+    console.log(this.props.firebase.currentUser());
     
     const recruitComments = this.props.firebase.commentsByRecruit(this.state.recruit);
     const {yes, no, maybe, comments, redFlags,brotherName, brotherUID} = this.state;
@@ -87,7 +93,7 @@ class RecruitmentComments extends Component {
             console.log('something went wrong', error);
           } else {
             console.log('successfully added in comments');
-            window.location.reload(false);
+            // window.location.reload(false);
 
           }
         });
@@ -105,7 +111,7 @@ class RecruitmentComments extends Component {
             console.log('something went wrong', error);
           } else {
             console.log('successfully added in comments');
-            window.location.reload(false);
+            // window.location.reload(false);
 
           }
         });
