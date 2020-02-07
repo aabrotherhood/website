@@ -41,7 +41,6 @@ class RecruitmentComments extends Component {
         currentComponent.setState({recruitInfo: null, loading: false})
         }
     });
-    console.log(this.props.firebase.currentUser());
     const currentBrotherUID = this.props.firebase.currentUser().uid;
     this.props.firebase.brother(currentBrotherUID).on('value', function(snapshot) {
       const brother = snapshot.val();
@@ -62,7 +61,6 @@ class RecruitmentComments extends Component {
 
   handleSubmit(event) {
     event.preventDefault();
-    console.log(this.props.firebase.currentUser());
     
     const recruitComments = this.props.firebase.commentsByRecruit(this.state.recruit);
     const {yes, no, maybe, comments, redFlags,brotherName, brotherUID} = this.state;
@@ -77,9 +75,13 @@ class RecruitmentComments extends Component {
         var currentRedFlags =  Object.keys(comment.redFlagsList).map(key => (comment.redFlagsList[key]));
         currentRedFlags.push(redFlags);
         var commentersList = Object.keys(comment.commenters).map(key => (comment.commenters[key]));
-        commentersList.push(brotherName)
+        if (!commentersList.includes(brotherName)) {
+          commentersList.push(brotherName)
+        }
         var commentersUIDList = Object.keys(comment.commentersUID).map(key => comment.commentersUID[key])
-        commentersUIDList.push(brotherUID)
+        if (!commentersUIDList.includes(brotherUID)) {
+          commentersUIDList.push(brotherUID)
+        }
         recruitComments.set({
           yes: currentYes,
           no: currentNo,
