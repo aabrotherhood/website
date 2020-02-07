@@ -16,6 +16,7 @@ class RecruitmentComments extends Component {
     redFlags: '',
     brotherName: '',
     brotherUID: '',
+    decision: '',
   }
   constructor(props) {
     super(props);
@@ -41,19 +42,24 @@ class RecruitmentComments extends Component {
         currentComponent.setState({recruitInfo: null, loading: false})
         }
     });
-    const currentBrotherUID = this.props.firebase.currentUser().uid;
-    this.props.firebase.brother(currentBrotherUID).on('value', function(snapshot) {
-      const brother = snapshot.val();
-      if (brother) {
-        currentComponent.setState({brotherName: brother.first + ' ' + brother.last, brotherUID: currentBrotherUID});
-      }
-    });
+    this.props.firebase.auth.onAuthStateChanged(
+      authUser => {
+        if (authUser) {
+          this.props.firebase.brother(authUser.uid).on('value', function(snapshot) {
+              const brother = snapshot.val();
+              if (brother) {
+                currentComponent.setState({brotherName: brother.first + ' ' + brother.last, brotherUID: authUser.uid});
+              }
+            });
+        } else {
+          console.log('nothing')
+        }
+      },
+    );
   }
 
   handleReset() {
-    this.setState({yes: 0,
-      no: 0,
-      maybe: 0,
+    this.setState({
       comments: '',
       redFlags: '',})
     alert('Thanks! Submit another');
@@ -61,7 +67,6 @@ class RecruitmentComments extends Component {
 
   handleSubmit(event) {
     event.preventDefault();
-    
     const recruitComments = this.props.firebase.commentsByRecruit(this.state.recruit);
     const {yes, no, maybe, comments, redFlags,brotherName, brotherUID} = this.state;
     recruitComments.once('value').then(function(snapshot) {
@@ -95,7 +100,7 @@ class RecruitmentComments extends Component {
             console.log('something went wrong', error);
           } else {
             console.log('successfully added in comments');
-            // window.location.reload(false);
+            window.location.reload(false);
 
           }
         });
@@ -113,7 +118,7 @@ class RecruitmentComments extends Component {
             console.log('something went wrong', error);
           } else {
             console.log('successfully added in comments');
-            // window.location.reload(false);
+            window.location.reload(false);
 
           }
         });
@@ -126,13 +131,13 @@ class RecruitmentComments extends Component {
     if (event.target.name === 'decision') {
       switch (event.target.value) {
         case 'Yes':
-          this.setState({yes: 1});
+          this.setState({yes: 1, no: 0, maybe: 0});
           break;
         case 'No':
-          this.setState({no: 1});
+          this.setState({no: 1, yes: 0, maybe: 0});
           break;
         default:
-          this.setState({maybe: 1});
+          this.setState({maybe: 1, yes: 0, no: 0});
           break;
       }
     } else {
@@ -167,7 +172,7 @@ class RecruitmentComments extends Component {
           <Form.Row>
             <Form.Group as={Col} md="12">
               <Form.Label>Decision</Form.Label>
-              <Form.Control as="select" onChange={this.handleChange} name="decision">
+              <Form.Control value={this.state.decision} as="select" onChange={this.handleChange} name="decision">
                 <option></option>
                 <option>Yes</option>
                 <option>No</option>
