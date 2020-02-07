@@ -2,6 +2,7 @@ import React, {Component} from 'react';
 import {Col, Form, InputGroup, Button} from 'react-bootstrap';
 import {withAuthorization} from '../Sessions';
 import Loading from '../../assets/loading.gif';
+import imageCompression from 'browser-image-compression';
 import './styles.scss';
 
 class Edit extends Component {
@@ -27,6 +28,7 @@ class Edit extends Component {
 
     this.handleSubmit = this.handleSubmit.bind(this);
     this.handleChange = this.handleChange.bind(this);
+    this.handleImageUpload = this.handleImageUpload.bind(this);
   }
   handleSubmit(event) {
     event.preventDefault();
@@ -76,10 +78,31 @@ class Edit extends Component {
         this.props.history.push('/home')
     }
   }
+  async handleImageUpload(event) {
+ 
+    const imageFile = event.target.files[0];
+    console.log('originalFile instanceof Blob', imageFile instanceof Blob); // true
+    console.log(`originalFile size ${imageFile.size / 1024 / 1024} MB`);
+   
+    var options = {
+      maxSizeMB: 0.5,
+      maxWidthOrHeight: 700,
+      useWebWorker: true
+    }
+    try {
+      const compressedFile = await imageCompression(imageFile, options);
+      console.log('compressedFile instanceof Blob', compressedFile instanceof Blob); // true
+      console.log(`compressedFile size ${compressedFile.size / 1024 / 1024} MB`); // smaller than maxSizeMB
+      this.setState({image: compressedFile}, () => console.log('set image'));
+    } catch (error) {
+      console.log(error);
+    }
+  }
+
   handleChange(event) {
     if (event.target.files) {
-      const image = event.target.files[0];
-      this.setState({image: image }, () => {console.log('set image')});
+      this.handleImageUpload(event)
+      // this.setState({image: image }, () => {console.log('set image')});
     } else {
       this.setState({[event.target.name]: event.target.value});
     }

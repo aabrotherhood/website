@@ -1,6 +1,5 @@
 import React, {Component} from 'react';
 import {Col, Form, Button} from 'react-bootstrap';
-import {withAuthorization} from '../Sessions';
 
 class RecruitmentComments extends Component {
   initialState = {
@@ -187,6 +186,4 @@ class RecruitmentComments extends Component {
   }
 }
 
-const condition = authUser => !!authUser;
-
-export default withAuthorization(condition)(RecruitmentComments);
+export default RecruitmentComments;
