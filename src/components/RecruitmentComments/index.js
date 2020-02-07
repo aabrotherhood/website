@@ -1,5 +1,6 @@
 import React, {Component} from 'react';
 import {Col, Form, Button} from 'react-bootstrap';
+import { withFirebase } from '../Firebase';
 
 class RecruitmentComments extends Component {
   initialState = {
@@ -186,4 +187,4 @@ class RecruitmentComments extends Component {
   }
 }
 
-export default RecruitmentComments;
+export default withFirebase(RecruitmentComments);
