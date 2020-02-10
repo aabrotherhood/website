@@ -26,7 +26,6 @@ class Emails extends Component {
       }));
 
       const recruimentEmailList = recruitmentList.map(recruit => {
-        console.log(recruit.email)
         return (
           <Recruit key={recruit.uid} info={recruit}/>
         );
