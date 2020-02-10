@@ -3,7 +3,6 @@ import {Col, Form, InputGroup, Button, Row} from 'react-bootstrap';
 import Logo from '../../assets/aab_logo.svg';
 import Img from 'react-image';
 import Preloader from '../Preloader/index';
-import {withAuthorization} from '../Sessions';
 
 class RecruitmentSignUp extends Component {
   constructor(props) {
@@ -186,7 +185,6 @@ class RecruitmentSignUp extends Component {
   }
 }
 
-const condition = authUser => !!authUser;
 
 
-export default withAuthorization(condition)(RecruitmentSignUp);
+export default RecruitmentSignUp;
