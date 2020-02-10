@@ -1,0 +1,9 @@
+.recruitsEmailCol {
+  margin: 0 auto;
+  .recruit {
+    text-align: left;
+    .name,.email,.phone {
+      margin: 0rem;
+    }
+  }
+}
