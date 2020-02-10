@@ -75,7 +75,7 @@ class RecruitmentSignUp extends Component {
               </InputGroup>
             </Form.Group>
             <Form.Group as={Col} md="6">
-              <Form.Label>Second</Form.Label>
+              <Form.Label>Last</Form.Label>
               <InputGroup>
                 <Form.Control
                   type="text"
