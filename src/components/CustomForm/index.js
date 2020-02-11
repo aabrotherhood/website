@@ -24,7 +24,7 @@ class CustomForm extends Component {
 
   handleSubmit = event => {
     event.preventDefault();
-    if (this.state.check !== 'sP1nd3ll' && this.props.type === 'Sign Up') {
+    if (this.state.check !== 'P01nd3@vlquin*cy(&' && this.props.type === 'Sign Up') {
       alert('Answer to security question is incorrect');
       return
     }
