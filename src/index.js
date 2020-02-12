@@ -14,6 +14,7 @@ import RSignUp from './components/RecruitmentSignUp';
 import Recruits from './components/Recruits';
 import RecruitmentComments from './components/RecruitmentComments';
 import Emails from './components/Emails';
+import RecruitmentImages from './components/RecruimentImages';
 import * as serviceWorker from './serviceWorker';
 import * as ROUTES from './constants/routes';
 import Firebase, { FirebaseContext } from './components/Firebase';
@@ -35,6 +36,7 @@ ReactDOM.render(
         <Route path={ROUTES.INDRECRUIT} component={IndRecruit}></Route>
         <Route path={ROUTES.RECRUITMENTCOMMENTS} component={RecruitmentComments}></Route>
         <Route path={ROUTES.RECRUITMENTEMAILS} component={Emails}/>
+        <Route path={ROUTES.RECURITMENTIMAGES} component={RecruitmentImages}/>
       </App>
     </Router>
   </FirebaseContext.Provider>,
