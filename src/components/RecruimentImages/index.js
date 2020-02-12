@@ -139,7 +139,7 @@ class RecruitmentImages extends Component {
           </Form.Row>
           <Form.Row>
             <Form.Group as={Col} md="12">
-            <Form.Label>Profile Picture</Form.Label>
+            <Form.Label>Profile Picture (please use a square image)</Form.Label>
               <InputGroup>
                 <Form.Control
                   type="file"
