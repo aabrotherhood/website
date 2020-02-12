@@ -26,6 +26,7 @@ class RecruitmentComments extends Component {
     this.handleSubmit = this.handleSubmit.bind(this);
     this.handleChange = this.handleChange.bind(this);
     this.handleReset = this.handleReset.bind(this);
+    this.handleShuffle = this.handleShuffle.bind(this);
   }
   componentDidMount() {
     let currentComponent = this;
@@ -69,11 +70,15 @@ class RecruitmentComments extends Component {
     alert('Thanks! Submit another');
   }
 
+  handleShuffle(arr) {
+    return arr.sort(() => 0.5 - Math.random());
+  }
+
   handleSubmit(event) {
     event.preventDefault();
     const recruitComments = this.props.firebase.commentsByRecruit(this.state.recruit);
     const {yes, no, maybe, comments, redFlags,brotherName, brotherUID} = this.state;
-    recruitComments.once('value').then(function(snapshot) {
+    recruitComments.once('value').then(snapshot => {
       const comment = snapshot.val();
       if (comment) {
         const currentYes = comment.yes + yes;
@@ -91,6 +96,7 @@ class RecruitmentComments extends Component {
         if (!commentersUIDList.includes(brotherUID)) {
           commentersUIDList.push(brotherUID)
         }
+        currentComments = this.handleShuffle(currentComments)
         recruitComments.set({
           yes: currentYes,
           no: currentNo,
