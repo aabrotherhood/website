@@ -13,18 +13,18 @@ const firebaseConfig = {
   appId: "1:211474728132:web:8e7ef9805524c1a0167591",
   measurementId: "G-S1YNL0KBPD"
 };
-// const firebaseConfigDev = {
-//   apiKey: process.env.REACT_APP_FIREBASE_KEY_DEV,
-//   authDomain: process.env.REACT_APP_AUTH_DOMAIN_DEV,
-//   databaseURL: process.env.REACT_APP_DATABASE_URL_DEV,
-//   projectId: process.env.REACT_APP_PROJECT_ID_DEV,
-//   storageBucket: process.env.REACT_APP_STORAGE_BUCKET_DEV,
-//   messagingSenderId: process.env.REACT_APP_MESSAGING_SENDER_ID_DEV,
-//   appId: "1:314007227879:web:c60c774608bdde84888142",
-//   measurementId: "G-1K0MZFX1CJ"
-// };
+const firebaseConfigDev = {
+  apiKey: process.env.REACT_APP_FIREBASE_KEY_DEV,
+  authDomain: process.env.REACT_APP_AUTH_DOMAIN_DEV,
+  databaseURL: process.env.REACT_APP_DATABASE_URL_DEV,
+  projectId: process.env.REACT_APP_PROJECT_ID_DEV,
+  storageBucket: process.env.REACT_APP_STORAGE_BUCKET_DEV,
+  messagingSenderId: process.env.REACT_APP_MESSAGING_SENDER_ID_DEV,
+  appId: "1:314007227879:web:c60c774608bdde84888142",
+  measurementId: "G-1K0MZFX1CJ"
+};
 
-const config = firebaseConfig;
+const config = process.env.NODE_ENV === 'development' ? firebaseConfigDev : firebaseConfig;
 
 
 class Firebase {
