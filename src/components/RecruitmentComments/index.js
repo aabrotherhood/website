@@ -26,9 +26,12 @@ class RecruitmentComments extends Component {
     this.handleSubmit = this.handleSubmit.bind(this);
     this.handleChange = this.handleChange.bind(this);
     this.handleReset = this.handleReset.bind(this);
-    this.handleShuffle = this.handleShuffle.bind(this);
+    this.handleGetComment = this.handleGetComment.bind(this);
   }
+
   componentDidMount() {
+    // this.handleChangeData();
+
     let currentComponent = this;
     this.props.firebase.recruits().on('value', snapshot => {
       const recruitsList = snapshot.val();
@@ -61,6 +64,7 @@ class RecruitmentComments extends Component {
 
   handleReset() {
     this.setState({
+      recruit: '',
       decision: '',
       yes: 0,
       no: 0,
@@ -70,70 +74,63 @@ class RecruitmentComments extends Component {
     alert('Thanks! Submit another');
   }
 
-  handleShuffle(arr) {
-    return arr.sort(() => 0.5 - Math.random());
-  }
-
   handleSubmit(event) {
     event.preventDefault();
-    const recruitComments = this.props.firebase.commentsByRecruit(this.state.recruit);
     const {yes, no, maybe, comments, redFlags,brotherName, brotherUID} = this.state;
-    recruitComments.once('value').then(snapshot => {
-      const comment = snapshot.val();
-      if (comment) {
-        const currentYes = comment.yes + yes;
-        const currentNo = comment.no + no;
-        const currentMaybe = comment.maybe + maybe;
-        var currentComments = Object.keys(comment.commentsList).map(key => (comment.commentsList[key]));
-        currentComments.push(comments);
-        var currentRedFlags =  Object.keys(comment.redFlagsList).map(key => (comment.redFlagsList[key]));
-        currentRedFlags.push(redFlags);
-        var commentersList = Object.keys(comment.commenters).map(key => (comment.commenters[key]));
-        if (!commentersList.includes(brotherName)) {
-          commentersList.push(brotherName)
-        }
-        var commentersUIDList = Object.keys(comment.commentersUID).map(key => comment.commentersUID[key])
-        if (!commentersUIDList.includes(brotherUID)) {
-          commentersUIDList.push(brotherUID)
-        }
-        currentComments = this.handleShuffle(currentComments)
-        recruitComments.set({
-          yes: currentYes,
-          no: currentNo,
-          maybe: currentMaybe,
-          commentsList: currentComments,
-          redFlagsList: currentRedFlags,
-          commenters: commentersList,
-          commentersUID: commentersUIDList,
-        }, function(error) {
-          if (error) {
-            console.log('something went wrong', error);
-          } else {
-            console.log('successfully added in comments');
-            // window.location.reload(false);
-
-          }
-        });
+    const recruitComments = this.props.firebase.commentsByRecruitBrotherNew(this.state.recruit, brotherUID);
+    recruitComments.set({
+      yes: yes,
+      no: no,
+      maybe: maybe,
+      comments: comments,
+      redFlags: redFlags,
+      commenterName: brotherName,
+    }, function(error) {
+      if (error) {
+        console.log('something went wrong', error);
       } else {
-        recruitComments.set({
-          yes: yes,
-          no: no,
-          maybe: maybe,
-          commentsList: [comments],
-          redFlagsList: [redFlags],
-          commenters: [brotherName],
-          commentersUID: [brotherUID]
-        }, function(error) {
-          if (error) {
-            console.log('something went wrong', error);
-          } else {
-            console.log('successfully added in comments');
-            // window.location.reload(false);
-          }
-        });
+        console.log('successfully added in comments');
       }
     });
     this.handleReset()
+  }
+
+
+  handleGetComment() {
+    this.props.firebase.commentsByRecruitBrotherNew(this.state.recruit, this.state.brotherUID)
+    .once('value', snapshot => {
+      const comment = snapshot.val();
+      if (comment) {
+        this.setState({
+          comments: comment['comments'],
+          redFlags: comment['redFlags'],
+          maybe: comment['maybe'],
+          no: comment['no'],
+          yes: comment['yes']
+        });
+        if (comment['maybe'] > 0) {
+          this.setState({
+            decision: 'Maybe',
+          })
+        } else if (comment['no'] > 0) {
+          this.setState({
+            decision: 'No',
+          })
+        } else if (comment['yes'] > 0) {
+          this.setState({
+            decision: 'Yes',
+          })
+        }
+      } else {
+        this.setState({
+          decision: '',
+          yes: 0,
+          no: 0,
+          maybe: 0,
+          comments: '',
+          redFlags: '',})
+      }
+    })
   }
   
   handleChange(event) {
@@ -150,7 +147,12 @@ class RecruitmentComments extends Component {
           break;
       }
     } else {
-      this.setState({[event.target.name]: event.target.value});
+      if (event.target.name === 'recruit') {
+        this.setState({[event.target.name]: event.target.value}, () => this.handleGetComment());
+      } else {
+        this.setState({[event.target.name]: event.target.value});
+      }
+
     }
   }
   
@@ -172,7 +174,7 @@ class RecruitmentComments extends Component {
           <Form.Row>
             <Form.Group controlId="exampleForm.ControlSelect1"  as={Col} md="12">
               <Form.Label>Select Recruit</Form.Label>
-              <Form.Control as="select" onChange={this.handleChange} name="recruit">
+              <Form.Control value={this.state.recruit} as="select" onChange={this.handleChange} name="recruit">
                 <option></option>
                 {loading ? recruitsList : <option></option>}
               </Form.Control>

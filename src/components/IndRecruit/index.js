@@ -19,24 +19,70 @@ class IndRecruit extends Component {
       yes: 0,
       loading: false,
     }
+    this.handleShuffle = this.handleShuffle.bind(this);
+    
+  }
+
+  handleShuffle(arr) {
+    return arr.sort(() => 0.5 - Math.random());
   }
 
   componentDidMount() {
-    this.props.firebase.commentsByRecruit(this.data.uid).on('value', snapshot => {
-      const comment = snapshot.val();
-      if (comment) {
-        this.setState({
-          commenters: comment.commenters,
-          commentersUID: comment.commentersUID,
-          commentsList: comment.commentsList,
-          redFlagsList: comment.redFlagsList,
-          maybe: comment.maybe,
-          no: comment.no,
-          yes: comment.yes,
-          loading: true
+    this.props.firebase.commentsByRecruitNew(this.data.uid).on('value', snapshot => {
+      const comments = snapshot.val();
+      var commentersList = [];
+      var commentersUIDList = [];
+      var commentsList = [];
+      var redFlags = [];
+      var maybe = 0;
+      var no = 0;
+      var yes = 0;
+      if (comments) {
+        Object.keys(comments).forEach(function(key) {
+          if (key !== 'commentsFromOld' && key !== 'redFlagsFromOld' && key !== 'maybeFromOld' && key !== 'noFromOld' && key !== 'yesFromOld') {
+            commentersList.push(comments[key]['commenterName']);
+            commentersUIDList.push(key);
+            redFlags.push(comments[key]['redFlags']);
+            commentsList.push(comments[key]['comments']);
+            maybe += comments[key]['maybe'];
+            no += comments[key]['no'];
+            yes += comments[key]['yes'];
+          }
         });
+        if (comments['commentsFromOld']) {
+          const oldComments = Object.keys(comments['commentsFromOld']).map(key => {
+            return comments['commentsFromOld'][key];
+          })
+          commentsList.push(oldComments)
+        }
+        if (comments['redFlagsFromOld']) {
+          const oldComments = Object.keys(comments['redFlagsFromOld']).map(key => {
+            return comments['redFlagsFromOld'][key];
+          })
+          redFlags.push(oldComments)
+        }
+        if (comments['maybeFromOld']) {
+          maybe += comments['maybeFromOld']
+        }
+        if (comments['noFromOld']) {
+          no += comments['noFromOld']
+        }
+        if (comments['yesFromOld']) {
+          yes += comments['yesFromOld']
+        }
+        commentsList = this.handleShuffle(commentsList);
+        this.setState({
+          commenters: commentersList,
+          commentersUID: commentersUIDList,
+          commentsList: commentsList,
+          redFlagsList: redFlags,
+          maybe: maybe,
+          no: no,
+          yes: yes,
+          loading: true
+        })
       }
-    })
+    });
   }
 
   render() {
