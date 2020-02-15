@@ -93,7 +93,17 @@ For Mobile
         .recruitPieChartCol {
           margin: 1rem 0;
           flex: 0 0 100%;
+          .recruitPieChart {
+            width: 100% !important;
+          }
+          .pieChartKey {
+            width: 100% !important;
+          }
         }
+      }
+      .comments {
+        width: 100% !important;
+        padding: 0 15px !important;
       }
       .redFlags {
         width: 100% !important;
@@ -177,6 +187,10 @@ For Tablet
         margin: 1rem 0;
         flex: 0 0 100%;
       }
+    }
+    .comments {
+      width: 100% !important;
+      padding: 0 15px !important;
     }
     .redFlags {
       width: 100% !important;

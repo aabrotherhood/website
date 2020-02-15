@@ -50,16 +50,14 @@ class IndRecruit extends Component {
           }
         });
         if (comments['commentsFromOld']) {
-          const oldComments = Object.keys(comments['commentsFromOld']).map(key => {
-            return comments['commentsFromOld'][key];
+          Object.keys(comments['commentsFromOld']).forEach(key => {
+            commentsList.push(comments['commentsFromOld'][key]);
           })
-          commentsList.push(oldComments)
         }
         if (comments['redFlagsFromOld']) {
-          const oldComments = Object.keys(comments['redFlagsFromOld']).map(key => {
-            return comments['redFlagsFromOld'][key];
+          Object.keys(comments['redFlagsFromOld']).forEach(key => {
+            redFlags.push(comments['redFlagsFromOld'][key]);
           })
-          redFlags.push(oldComments)
         }
         if (comments['maybeFromOld']) {
           maybe += comments['maybeFromOld']
@@ -195,11 +193,12 @@ class IndRecruit extends Component {
                 </Row>
               </Col>
             </Col>
-            <Col className="comments justify-content-start">
-              <p className="header">Comments</p>
-                {actualCommentsList}
-            </Col>
           </Row>: <div></div> }
+          {loading && commented ? 
+          <Col className="comments justify-content-start">
+            <p className="header">Comments</p>
+              {actualCommentsList}
+          </Col> : <div></div> }
           <Col className="redFlags">
             <p className="header">Red Flags</p>
             {loading ? actualRedFlagsList : <div></div>}
