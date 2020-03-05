@@ -13,7 +13,6 @@ export const RECRUITMENTCOMMENTS = '/recruitment/comments';
 export const RECRUITMENTEMAILS = '/recruitment/emails';
 export const RECURITMENTIMAGES = '/recruitment/images';
 export const MEALS = '/doneMeals';
-export const FINAL = '/final';
 export const DELIBS = '/delibs';
 export const DELIBSORDER = '/delibs/order';
 export const DELIBSRECRUIT = '/delibs/order/:id';

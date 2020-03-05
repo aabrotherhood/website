@@ -1,0 +1,79 @@
+@import '../../styles/variables.scss';
+
+.indBrother {
+  overflow: hidden;
+  .infoBox {
+    border-bottom: 10px solid $blackish;
+    width: 80%;
+    margin: 0 auto;
+    .brotherImage {
+      width: 40%;
+      border-radius: 50%;
+    }
+    .infoDetails {
+      text-align: start;
+      width: 53%;
+      margin-left: 3rem;
+      border-top: 10px solid $blackish;
+      .name {
+        font-size: 3rem;
+      }
+      .other {
+        font-size: 1.5rem;
+      }
+    }
+  }
+  .recruits {
+    width: 80%;
+    margin: 0 auto;
+    .header {
+      font-size: 20px;
+      font-weight: bolder;;
+    }
+    .comments {
+      text-align: left;
+      width: 80%;
+      margin: 1rem auto;
+      padding: 0;
+    }
+    .recruitComments {
+      margin: 2rem auto;
+      width: 80%;
+      
+      .recruitPieChart {
+        width: 50%;
+        margin: 0 auto;
+      }
+      .pieChartKey {
+        width: 50%;
+        margin: 0 auto;
+        .yes {
+          width: 20px;
+          height: 20px;
+          background-color: #044B7F;
+          margin-right: 10px;
+        }
+        .no {
+          width: 20px;
+          height: 20px;
+          background-color: #821122;
+          margin-right: 10px;
+
+        }
+        .maybe {
+          width: 20px;
+          height: 20px;
+          background-color: #107E7D;
+          margin-right: 10px;
+
+        }
+      }
+    }
+    .redFlags {
+      text-align: start;
+      width: 80%;
+      margin: 2rem auto;
+      padding: 0;
+    }
+  }
+}

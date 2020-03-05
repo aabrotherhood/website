@@ -1,0 +1,35 @@
+@import '../../styles/variables.scss';
+
+.recruits {
+  overflow: hidden;
+  justify-content: center;
+  .brother {
+    overflow: hidden;
+    margin: 1rem;
+    padding: 0;
+    border-radius: 50%;
+    &:hover {
+      cursor: pointer;
+    }
+    .brotherImage {
+      width: 100%;
+      height: auto;
+    }
+    .brotherInfo {
+      padding-top: 40%;
+      position: absolute;
+      top: 0;
+      left: 0;
+      bottom: 0;
+      right: 0;
+      width: 100%;
+      height: 100%;
+      background-color: rgba(0,0,0,0.3);
+      color: white;
+      text-align: center;
+    }
+    .gradYear, .house, .personalEmail, .schoolEmail, .phone {
+      display: none;
+    }
+  }
+}
