@@ -19,6 +19,7 @@ import Meals from './components/Meals';
 import Delibs from './components/Delibs';
 import DelibsOrder from './components/DelibsOrder';
 import DelibsRecruit from './components/DelibsRecruit';
+import Final from './components/Final';
 import * as serviceWorker from './serviceWorker';
 import * as ROUTES from './constants/routes';
 import Firebase, { FirebaseContext } from './components/Firebase';
@@ -44,6 +45,7 @@ ReactDOM.render(
         <Route exact path={ROUTES.DELIBS} component={Delibs}/>
         <Route exact path={ROUTES.DELIBSORDER} component={DelibsOrder}/>
         <Route exact path={ROUTES.DELIBSRECRUIT} component={DelibsRecruit}/>
+        <Route path={ROUTES.FINAL} component={Final}/>
       </App>
     </Router>
   </FirebaseContext.Provider>,
