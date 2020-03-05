@@ -17,6 +17,7 @@ import Emails from './components/Emails';
 import RecruitmentImages from './components/RecruimentImages';
 import Meals from './components/Meals';
 import Final from './components/Final';
+import Delibs from './components/Delibs';
 import * as serviceWorker from './serviceWorker';
 import * as ROUTES from './constants/routes';
 import Firebase, { FirebaseContext } from './components/Firebase';
@@ -40,6 +41,7 @@ ReactDOM.render(
         <Route path={ROUTES.RECURITMENTIMAGES} component={RecruitmentImages}/>
         <Route path={ROUTES.MEALS} component={Meals}/>
         <Route path={ROUTES.FINAL} component={Final}/>
+        <Route path={ROUTES.DELIBS} component={Delibs}/>
       </App>
     </Router>
   </FirebaseContext.Provider>,
