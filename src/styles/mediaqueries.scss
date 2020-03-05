@@ -4,6 +4,13 @@ For Mobile
 ====================
 */
 @media screen and (max-width: 425px) {
+  .recruitVotes {
+    .recruitForm {
+      width: 100% !important;
+      margin: 0 auto;
+
+    }
+  }
   .homeCol {
     width: 100% !important;
     .homeLogo {

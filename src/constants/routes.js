@@ -12,4 +12,5 @@ export const INDRECRUIT = '/recruit/:id';
 export const RECRUITMENTCOMMENTS = '/recruitment/comments';
 export const RECRUITMENTEMAILS = '/recruitment/emails';
 export const RECURITMENTIMAGES = '/recruitment/images';
-export const MEALS = '/doneMeals'
+export const MEALS = '/doneMeals';
+export const FINAL = '/final';

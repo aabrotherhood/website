@@ -59,7 +59,7 @@ class Meals extends Component {
     };
   }
 
-  componentWillMount() {
+  componentDidMount() {
     const currentBro = this.props.firebase.currentUser().uid;
     var commented = [];
     var noComment = []; 
