@@ -30,7 +30,6 @@ class Final extends Component {
         'crd3z2z6onvdaf9z94ivb': "Dennis Lin",
         'd0i27tgtjxcohjjcw2pt1k': "Daran Zhao", 
         'dl8wjynmyvlxm2wrxlf8h': "Amanda Su",
-        'f1e1pib9r4h1gkvsodn0rm': "Aaron Sun",
         'ftccy3f8l0k1jzlcei3odm': "Jaron Zhou",
         'g8kqrat19al86t7a6jeo2e': "Jack Li",
         'gantv8sljhmyrkrjwfm6ts': "Ethan Whang",
@@ -136,10 +135,6 @@ class Final extends Component {
             'no': 0,
             'maybe': 0, }, 
           'dl8wjynmyvlxm2wrxlf8h': {
-            'yes': 0,
-            'no': 0,
-            'maybe': 0, },
-          'f1e1pib9r4h1gkvsodn0rm': {
             'yes': 0,
             'no': 0,
             'maybe': 0, },
