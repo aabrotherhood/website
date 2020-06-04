@@ -9,16 +9,7 @@ import Members from './components/Members';
 import CustomForm from './components/CustomFormWrapper/index';
 import Edit from './components/Edit/index';
 import IndBrother from './components/IndBrother';
-import IndRecruit from './components/IndRecruit';
-import RSignUp from './components/RecruitmentSignUp';
-import Recruits from './components/Recruits';
-import RecruitmentComments from './components/RecruitmentComments';
 import Emails from './components/Emails';
-import RecruitmentImages from './components/RecruimentImages';
-import Meals from './components/Meals';
-import Delibs from './components/Delibs';
-import DelibsOrder from './components/DelibsOrder';
-import DelibsRecruit from './components/DelibsRecruit';
 import * as serviceWorker from './serviceWorker';
 import * as ROUTES from './constants/routes';
 import Firebase, { FirebaseContext } from './components/Firebase';
@@ -31,6 +22,7 @@ ReactDOM.render(
         <Route exact path={ROUTES.LANDING} component={Landing}></Route>
         <Route path={ROUTES.MEMBERS} component={Members}></Route>
         <Route path={ROUTES.LOGIN} render={() => <CustomForm type='Login'/>}></Route>
+        <Route path={ROUTES.SIGNUP} render={() => <CustomForm type='Sign Up' />}/>
         <Route path={ROUTES.HOME} component={Landing}></Route>
         <Route path={ROUTES.EDIT} component={Edit}></Route>
         <Route path={ROUTES.INDBROTHER} component={IndBrother}></Route>
