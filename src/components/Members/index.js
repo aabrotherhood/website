@@ -2,7 +2,7 @@ import React, {Component} from 'react';
 import Brothers from '../Brothers';
 import {Col} from 'react-bootstrap';
 import Bro2 from '../../assets/activism.jpeg';
-import Bro3 from '../../assets/AAB.jpg';
+import Bro3 from '../../assets/AAB.jpeg';
 import {Parallax} from 'react-parallax';
 import {withFirebase} from '../Firebase/context';
 import {AuthUserContext} from '../Sessions'
