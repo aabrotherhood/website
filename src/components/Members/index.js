@@ -2,6 +2,7 @@ import React, {Component} from 'react';
 import Brothers from '../Brothers';
 import {Col} from 'react-bootstrap';
 import Bro2 from '../../assets/activism.jpeg';
+import Bro3 from '../../assets/AAB.jpg';
 import {Parallax} from 'react-parallax';
 import {withFirebase} from '../Firebase/context';
 import {AuthUserContext} from '../Sessions'
@@ -15,8 +16,8 @@ class Members extends Component {
         <Parallax
           className="homeHeroPic"
             blur={{ min: -3, max: 7 }}
-            bgImage={Bro2} 
-            bgImageAlt="2019 group"
+            bgImage={Bro3} 
+            bgImageAlt="2020 group"
             strength={-100}>
               <p className="homeLogo">Meet our Brothers</p>
             </Parallax>
