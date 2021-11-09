@@ -9,7 +9,6 @@ import Members from './components/Members';
 import CustomForm from './components/CustomFormWrapper/index';
 import Edit from './components/Edit/index';
 import IndBrother from './components/IndBrother';
-import Emails from './components/Emails';
 import * as serviceWorker from './serviceWorker';
 import * as ROUTES from './constants/routes';
 import Firebase, { FirebaseContext } from './components/Firebase';
