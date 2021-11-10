@@ -2,8 +2,6 @@ import React, {Component} from 'react';
 import {Form, Col, InputGroup, Button} from 'react-bootstrap';
 import {withRouter} from 'react-router-dom';
 import Loading from '../../assets/loading.gif';
-import * as ROUTES from '../../constants/routes';
-import { Link } from 'react-router-dom';
 
 import './styles.scss';
 
