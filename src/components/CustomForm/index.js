@@ -1,7 +1,9 @@
 import React, {Component} from 'react';
 import {Form, Col, InputGroup, Button} from 'react-bootstrap';
-import {withRouter, Link} from 'react-router-dom';
-import * as ROUTES from '../../constants/routes';
+import {withRouter} from 'react-router-dom';
+// SIGNUP CODE
+// import {Link} from 'react-router-dom';
+// import * as ROUTES from '../../constants/routes';
 import Loading from '../../assets/loading.gif';
 
 import './styles.scss';
@@ -143,6 +145,13 @@ class CustomForm extends Component {
           </Form.Group>
         </Form.Row>
         : <div></div> }
+        {/* {this.props.type !== 'Sign Up' ? 
+        <Form.Row>
+          <Form.Group as={Col} md="12" controlId="validationCustom04">
+            <Link to={ROUTES.SIGNUP}>Sign up here</Link>
+          </Form.Group>
+        </Form.Row>
+        : <div></div> } */}
         <Button className="customButton" type="submit">{this.props.type}</Button>
       </Form>
     );
