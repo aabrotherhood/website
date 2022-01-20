@@ -21,7 +21,6 @@ ReactDOM.render(
         <Route exact path={ROUTES.LANDING} component={Landing}></Route>
         <Route path={ROUTES.MEMBERS} component={Members}></Route>
         <Route path={ROUTES.LOGIN} render={() => <CustomForm type='Login'/>}></Route>
-        <Route path={ROUTES.SIGNUP} render={() => <CustomForm type='Sign Up'/>}></Route>
         <Route path={ROUTES.HOME} component={Landing}></Route>
         <Route path={ROUTES.EDIT} component={Edit}></Route>
         <Route path={ROUTES.INDBROTHER} component={IndBrother}></Route>
