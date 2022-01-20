@@ -142,6 +142,13 @@ class CustomForm extends Component {
           </Form.Group>
         </Form.Row>
         : <div></div> }
+        {this.props.type !== 'Sign Up' ? 
+        <Form.Row>
+          <Form.Group as={Col} md="12" controlId="validationCustom04">
+            <Link to={ROUTES.SIGNUP}>Sign up here</Link>
+          </Form.Group>
+        </Form.Row>
+        : <div></div> }
         <Button className="customButton" type="submit">{this.props.type}</Button>
       </Form>
     );
