@@ -1,6 +1,7 @@
 import React, {Component} from 'react';
 import {Form, Col, InputGroup, Button} from 'react-bootstrap';
-import {withRouter} from 'react-router-dom';
+import {withRouter, Link} from 'react-router-dom';
+import * as ROUTES from './constants/routes';
 import Loading from '../../assets/loading.gif';
 
 import './styles.scss';
