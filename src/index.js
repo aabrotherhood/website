@@ -10,11 +10,11 @@ import CustomForm from './components/CustomFormWrapper/index';
 import Edit from './components/Edit/index';
 import IndBrother from './components/IndBrother';
 import IndRecruit from './components/IndRecruit';
-import Recruitment from './components/Recruits';
-import RecruitmentSignup from './components/RecruitmentSignUp';
+import RSignUp from './components/RecruitmentSignUp';
+import Recruits from './components/Recruits';
 import RecruitmentComments from './components/RecruitmentComments';
-import RecruitmentImages from './components/RecruimentImages';
 import Emails from './components/Emails';
+import RecruitmentImages from './components/RecruimentImages';
 import * as serviceWorker from './serviceWorker';
 import * as ROUTES from './constants/routes';
 import Firebase, { FirebaseContext } from './components/Firebase';
@@ -31,12 +31,12 @@ ReactDOM.render(
         <Route path={ROUTES.HOME} component={Landing}></Route>
         <Route path={ROUTES.EDIT} component={Edit}></Route>
         <Route path={ROUTES.INDBROTHER} component={IndBrother}></Route>
+        <Route exact path={ROUTES.RECRUITMENTSIGNUP} component={RSignUp}></Route>
+        <Route path={ROUTES.RECRUITMENT} component={Recruits}></Route>
         <Route path={ROUTES.INDRECRUIT} component={IndRecruit}></Route>
-        <Route path={ROUTES.RECRUITMENT} component={Recruitment}></Route>
-        <Route path={ROUTES.RECRUITMENTSIGNUP} component={RecruitmentSignup}></Route>
         <Route path={ROUTES.RECRUITMENTCOMMENTS} component={RecruitmentComments}></Route>
-        <Route path={ROUTES.RECURITMENTIMAGES} component={RecruitmentImages}></Route>
-        <Route path={ROUTES.EMAILS} component={Emails}></Route>
+        <Route path={ROUTES.RECRUITMENTEMAILS} component={Emails}/>
+        <Route path={ROUTES.RECURITMENTIMAGES} component={RecruitmentImages}/>
       </App>
     </Router>
   </FirebaseContext.Provider>,

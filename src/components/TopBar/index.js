@@ -31,6 +31,12 @@ class TopBar extends Component {
               <Link className="link" to={ROUTES.MEMBERS}>Brothers</Link>
             </li>
             <li className="listInlineList">
+              <Link className="link" to={ROUTES.RECRUITMENT}>Recruits</Link>
+            </li> 
+            <li className="listInlineList">
+              <Link className="link" to={ROUTES.RECRUITMENTCOMMENTS}>Comment</Link>
+            </li> 
+            <li className="listInlineList">
               <Link className="link" to={ROUTES.EDIT}>Edit</Link>
             </li> 
             <li className="listInlineList">
