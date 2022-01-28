@@ -25,7 +25,7 @@ class CustomForm extends Component {
 
   handleSubmit = event => {
     event.preventDefault();
-    if (this.state.check !== 'P01nd3@vlquin*cy(&' && this.props.type === 'Sign Up') {
+    if (require('crypto').createHash('md5').update(this.state.check).digest('hex') !== '7485b7bb74435105d0152cf789c141b3' && this.props.type === 'Sign Up') {
       alert('Answer to security question is incorrect');
       return
     }
