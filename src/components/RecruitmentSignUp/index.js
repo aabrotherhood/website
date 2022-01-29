@@ -17,6 +17,7 @@ class RecruitmentSignUp extends Component {
       phone: '',
       personalEmail: '',
       schoolEmail: '',
+      image: null,
       imageURL: 'https://firebasestorage.googleapis.com/v0/b/aab-website-754b0.appspot.com/o/brothers%2Faab.png?alt=media&token=459771fb-0788-4f19-912a-ad3cfbc6de3f',
     }
 
@@ -48,8 +49,35 @@ class RecruitmentSignUp extends Component {
     this.resetForm();
    
   }
+
+  async handleImageUpload(event) {
+ 
+    const imageFile = event.target.files[0];
+    console.log('originalFile instanceof Blob', imageFile instanceof Blob); // true
+    console.log(`originalFile size ${imageFile.size / 1024 / 1024} MB`);
+   
+    var options = {
+      maxSizeMB: 0.5,
+      maxWidthOrHeight: 700,
+      useWebWorker: true
+    }
+    try {
+      const compressedFile = await imageCompression(imageFile, options);
+      console.log('compressedFile instanceof Blob', compressedFile instanceof Blob); // true
+      console.log(`compressedFile size ${compressedFile.size / 1024 / 1024} MB`); // smaller than maxSizeMB
+      this.setState({image: compressedFile}, () => console.log('set image'));
+    } catch (error) {
+      console.log(error);
+    }
+  }
+
   handleChange(event) {
+    if (event.target.files) {
+      this.handleImageUpload(event)
+      // this.setState({image: image }, () => {console.log('set image')});
+    } else {
       this.setState({[event.target.name]: event.target.value});
+    }
   }
 
   render() {
@@ -59,6 +87,23 @@ class RecruitmentSignUp extends Component {
           <Img className='navbarLogo' src={Logo} loader={<Preloader/>} alt='AAB logo'/>
         </Row>
         <Form noValidate onSubmit={this.handleSubmit} className="customForm">
+        <Form.Row>
+            <Form.Group as={Col} md="12">
+            <Form.Label>Profile Picture</Form.Label>
+              <InputGroup>
+                <Form.Control
+                  type="file"
+                  name="image"
+                  onChange={this.handleChange}
+                  className="formImage"
+                  required
+                />
+                <Form.Control.Feedback type="invalid">
+                  Please submit a picture.
+                </Form.Control.Feedback>
+              </InputGroup>
+            </Form.Group>
+          </Form.Row>
           <Form.Row>
             <Form.Group as={Col} md="6">
               <Form.Label>First</Form.Label>
@@ -71,7 +116,7 @@ class RecruitmentSignUp extends Component {
                   required
                 />
                 <Form.Control.Feedback type="invalid">
-                  Please enter your brother name.
+                  Please enter your first name.
                 </Form.Control.Feedback>
               </InputGroup>
             </Form.Group>

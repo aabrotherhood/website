@@ -128,7 +128,7 @@ class Edit extends Component {
                   required
                 />
                 <Form.Control.Feedback type="invalid">
-                  Please enter your brother name.
+                  Please submit a picture.
                 </Form.Control.Feedback>
               </InputGroup>
             </Form.Group>
@@ -145,7 +145,7 @@ class Edit extends Component {
                   required
                 />
                 <Form.Control.Feedback type="invalid">
-                  Please enter your brother name.
+                  Please enter your first name.
                 </Form.Control.Feedback>
               </InputGroup>
             </Form.Group>
@@ -177,7 +177,7 @@ class Edit extends Component {
                   required
                 />
                 <Form.Control.Feedback type="invalid">
-                  Please enter your first name.
+                  Please enter your brother name.
                 </Form.Control.Feedback>
               </InputGroup>
             </Form.Group>
