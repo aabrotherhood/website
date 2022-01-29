@@ -18,6 +18,7 @@ class RecruitmentSignUp extends Component {
       phone: '',
       personalEmail: '',
       schoolEmail: '',
+      image: null,
       imageURL: 'https://firebasestorage.googleapis.com/v0/b/aab-website-754b0.appspot.com/o/brothers%2Faab.png?alt=media&token=459771fb-0788-4f19-912a-ad3cfbc6de3f',
     }
 
@@ -36,10 +37,11 @@ class RecruitmentSignUp extends Component {
     event.preventDefault();
 
     const recruitUID = Math.random().toString(36).substring(2, 15) + Math.random().toString(36).substring(2, 15);
+    const imageURL = "https://firebasestorage.googleapis.com/v0/b/aab-website-754b0.appspot.com/o/brothers%2Faab.png?alt=media&token=459771fb-0788-4f19-912a-ad3cfbc6de3f";
     const currentRecruit = this.props.firebase.recruit(recruitUID);
-    const {first, last, house, year, phone, personalEmail, schoolEmail, imageURL} = this.state
+    const {first, last, house, year, phone, personalEmail, schoolEmail} = this.state
     currentRecruit.set({
-      first, last, house, year, phone,personalEmail, schoolEmail, imageURL
+      first, last, house, year, phone,personalEmail, schoolEmail
     }, function(error) {
       if (error) {
         console.log('something went wrong',error);
@@ -58,15 +60,15 @@ class RecruitmentSignUp extends Component {
     console.log(`originalFile size ${imageFile.size / 1024 / 1024} MB`);
    
     var options = {
-      maxSizeMB: 0.5,
-      maxWidthOrHeight: 700,
+      maxSizeMB: 0.1,
+      maxWidthOrHeight: 1024,
       useWebWorker: true
     }
     try {
       const compressedFile = await imageCompression(imageFile, options);
       console.log('compressedFile instanceof Blob', compressedFile instanceof Blob); // true
       console.log(`compressedFile size ${compressedFile.size / 1024 / 1024} MB`); // smaller than maxSizeMB
-      this.setState({image: compressedFile, imageURL: URL.createObjectURL(compressedFile), imageClicked:false}, () => console.log('set image'));
+      this.setState({image: compressedFile}, () => console.log('set image'));
     } catch (error) {
       console.log(error);
     }
@@ -74,8 +76,8 @@ class RecruitmentSignUp extends Component {
 
   handleChange(event) {
     if (event.target.files) {
-      this.handleImageUpload(event)
-      // this.setState({image: image }, () => {console.log('set image')});
+      this.setState({imageClicked: true})
+      this.handleImageUpload(event);
     } else {
       this.setState({[event.target.name]: event.target.value});
     }
