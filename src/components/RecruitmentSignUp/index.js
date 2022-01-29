@@ -35,7 +35,6 @@ class RecruitmentSignUp extends Component {
   handleSubmit(event) {
     event.preventDefault();
  
-    const recruitImageRef = this.props.firebase.currentRecruitImage(this.state.recruit);
     const recruitUID = Math.random().toString(36).substring(2, 15) + Math.random().toString(36).substring(2, 15);
     const currentRecruit = this.props.firebase.recruit(recruitUID);
     const {first, last, house, year, phone, personalEmail, schoolEmail} = this.state
