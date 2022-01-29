@@ -18,8 +18,7 @@ class RecruitmentSignUp extends Component {
       phone: '',
       personalEmail: '',
       schoolEmail: '',
-      image: null,
-      imageURL: 'https://firebasestorage.googleapis.com/v0/b/aab-website-754b0.appspot.com/o/brothers%2Faab.png?alt=media&token=459771fb-0788-4f19-912a-ad3cfbc6de3f',
+      image: null
     }
 
     this.initialState = this.state
@@ -35,23 +34,46 @@ class RecruitmentSignUp extends Component {
   }
   handleSubmit(event) {
     event.preventDefault();
-
+ 
+    const recruitImageRef = this.props.firebase.currentRecruitImage(this.state.recruit);
     const recruitUID = Math.random().toString(36).substring(2, 15) + Math.random().toString(36).substring(2, 15);
-    const imageURL = "https://firebasestorage.googleapis.com/v0/b/aab-website-754b0.appspot.com/o/brothers%2Faab.png?alt=media&token=459771fb-0788-4f19-912a-ad3cfbc6de3f";
     const currentRecruit = this.props.firebase.recruit(recruitUID);
     const {first, last, house, year, phone, personalEmail, schoolEmail} = this.state
-    currentRecruit.set({
-      first, last, house, year, phone,personalEmail, schoolEmail, imageURL
-    }, function(error) {
-      if (error) {
-        console.log('something went wrong',error);
-      } else {
-        console.log('registered new recruit');
-      }
-    })
+    if (this.state.image !== null) {
+      currentRecruit.put(this.state.image).then(() => {
+        console.log('Successfully loaded image');
+        currentRecruit.getDownloadURL().then(imageURL=> {
+          currentRecruit.set({
+            first,last, house, year,
+            phone, personalEmail, schoolEmail, imageURL}
+            ,function(error) {
+              if (error) {
+                // The write failed...
+                console.log('Failed updated recruit info');
+              } else {
+                // Data saved successfully!
+                console.log('Succesfully updated information');
+              }
+            })
+            this.resetForm();
+        })
+      }).catch(err => {
+        console.log('ERROR', err);
+      })
+    } else {
+      const imageURL = "https://firebasestorage.googleapis.com/v0/b/aab-website-754b0.appspot.com/o/brothers%2Faab.png?alt=media&token=459771fb-0788-4f19-912a-ad3cfbc6de3f";
+      currentRecruit.set({
+        first, last, house, year, phone,personalEmail, schoolEmail, imageURL
+      }, function(error) {
+        if (error) {
+          console.log('something went wrong',error);
+        } else {
+          console.log('registered new recruit');
+        }
+      })
     this.resetForm();
-   
   }
+}
 
   async handleImageUpload(event) {
  
@@ -76,7 +98,6 @@ class RecruitmentSignUp extends Component {
 
   handleChange(event) {
     if (event.target.files) {
-      this.setState({imageClicked: true})
       this.handleImageUpload(event);
     } else {
       this.setState({[event.target.name]: event.target.value});
