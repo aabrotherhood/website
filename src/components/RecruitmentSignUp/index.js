@@ -18,7 +18,6 @@ class RecruitmentSignUp extends Component {
       phone: '',
       personalEmail: '',
       schoolEmail: '',
-      image: null,
       imageURL: 'https://firebasestorage.googleapis.com/v0/b/aab-website-754b0.appspot.com/o/brothers%2Faab.png?alt=media&token=459771fb-0788-4f19-912a-ad3cfbc6de3f',
     }
 
@@ -67,7 +66,7 @@ class RecruitmentSignUp extends Component {
       const compressedFile = await imageCompression(imageFile, options);
       console.log('compressedFile instanceof Blob', compressedFile instanceof Blob); // true
       console.log(`compressedFile size ${compressedFile.size / 1024 / 1024} MB`); // smaller than maxSizeMB
-      this.setState({image: compressedFile}, () => console.log('set image'));
+      this.setState({image: compressedFile, imageURL: URL.createObjectURL(compressedFile), imageClicked:false}, () => console.log('set image'));
     } catch (error) {
       console.log(error);
     }
