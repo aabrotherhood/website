@@ -41,7 +41,7 @@ class RecruitmentSignUp extends Component {
     const currentRecruit = this.props.firebase.recruit(recruitUID);
     const {first, last, house, year, phone, personalEmail, schoolEmail} = this.state
     currentRecruit.set({
-      first, last, house, year, phone,personalEmail, schoolEmail
+      first, last, house, year, phone,personalEmail, schoolEmail, imageURL
     }, function(error) {
       if (error) {
         console.log('something went wrong',error);
