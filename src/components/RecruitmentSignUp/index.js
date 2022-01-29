@@ -2,6 +2,7 @@ import React, {Component} from 'react';
 import {Col, Form, InputGroup, Button, Row} from 'react-bootstrap';
 import Logo from '../../assets/aab_logo.svg';
 import Img from 'react-image';
+import imageCompression from 'browser-image-compression';
 import Preloader from '../Preloader/index';
 import {withFirebase} from '../Firebase';
 
