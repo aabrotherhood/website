@@ -36,7 +36,7 @@ class RecruitmentSignUp extends Component {
 
     const recruitUID = Math.random().toString(36).substring(2, 15) + Math.random().toString(36).substring(2, 15);
     const currentRecruit = this.props.firebase.recruit(recruitUID);
-    const {first, last, house, year, phone, personalEmail, schoolEmail, imageURL} = this.state
+    const {first, last, house, room, year, phone, personalEmail, schoolEmail, imageURL} = this.state
     currentRecruit.set({
       first, last, house, room, year, phone,personalEmail, schoolEmail, imageURL
     }, function(error) {
