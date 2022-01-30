@@ -38,7 +38,7 @@ class RecruitmentSignUp extends Component {
     const currentRecruit = this.props.firebase.recruit(recruitUID);
     const {first, last, house, room, year, phone, personalEmail, schoolEmail, imageURL} = this.state
     currentRecruit.set({
-      first, last, house, room, year, phone,personalEmail, schoolEmail, imageURL
+      first, last, house, room, year, phone, personalEmail, schoolEmail, imageURL
     }, function(error) {
       if (error) {
         console.log('something went wrong',error);
@@ -114,7 +114,7 @@ class RecruitmentSignUp extends Component {
                 <Form.Control
                   type="text"
                   placeholder="W422"
-                  name="house"
+                  name="room"
                   onChange={this.handleChange}
                   required
                 />
