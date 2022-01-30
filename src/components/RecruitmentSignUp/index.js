@@ -93,7 +93,7 @@ class RecruitmentSignUp extends Component {
             </Form.Group>
           </Form.Row> 
           <Form.Row>
-            <Form.Group as={Col} md="6">
+            <Form.Group as={Col} md="4">
               <Form.Label>House/Dorm</Form.Label>
               <InputGroup>
                 <Form.Control
@@ -108,7 +108,7 @@ class RecruitmentSignUp extends Component {
                 </Form.Control.Feedback>
               </InputGroup>
             </Form.Group>
-            <Form.Group as={Col} md="6">
+            <Form.Group as={Col} md="4">
               <Form.Label>Room</Form.Label>
               <InputGroup>
                 <Form.Control
@@ -123,7 +123,7 @@ class RecruitmentSignUp extends Component {
                 </Form.Control.Feedback>
               </InputGroup>
             </Form.Group>
-            <Form.Group as={Col} md="6">
+            <Form.Group as={Col} md="4">
               <Form.Label>Year (format: 2020)</Form.Label>
               <InputGroup>
                 <Form.Control
