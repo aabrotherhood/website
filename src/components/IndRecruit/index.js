@@ -128,7 +128,6 @@ class IndRecruit extends Component {
             <p className="name">{this.data.first + ' ' + this.data.last}</p>
             <p className="other">{this.data.year}</p>
             <p className="other">{this.data.house + ' ' + this.data.room}</p>
-            <p className="other">{this.data.room}</p>
             <p className="other">{this.data.phone}</p>
             <p className="other">{this.data.personalEmail}</p>
             <p className="other">{this.data.schoolEmail}</p>
