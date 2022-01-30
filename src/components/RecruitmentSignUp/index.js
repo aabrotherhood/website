@@ -13,6 +13,7 @@ class RecruitmentSignUp extends Component {
       first:'', 
       last: '', 
       house: '',
+      room: '',
       year: '',
       phone: '',
       personalEmail: '',
@@ -37,7 +38,7 @@ class RecruitmentSignUp extends Component {
     const currentRecruit = this.props.firebase.recruit(recruitUID);
     const {first, last, house, year, phone, personalEmail, schoolEmail, imageURL} = this.state
     currentRecruit.set({
-      first, last, house, year, phone,personalEmail, schoolEmail, imageURL
+      first, last, house, room, year, phone,personalEmail, schoolEmail, imageURL
     }, function(error) {
       if (error) {
         console.log('something went wrong',error);
@@ -93,7 +94,7 @@ class RecruitmentSignUp extends Component {
           </Form.Row> 
           <Form.Row>
             <Form.Group as={Col} md="6">
-              <Form.Label>House</Form.Label>
+              <Form.Label>House/Dorm</Form.Label>
               <InputGroup>
                 <Form.Control
                   type="text"
@@ -103,7 +104,22 @@ class RecruitmentSignUp extends Component {
                   required
                 />
                 <Form.Control.Feedback type="invalid">
-                  What house were/are you in?
+                  What house or dorm are you in?
+                </Form.Control.Feedback>
+              </InputGroup>
+            </Form.Group>
+            <Form.Group as={Col} md="6">
+              <Form.Label>Room</Form.Label>
+              <InputGroup>
+                <Form.Control
+                  type="text"
+                  placeholder="W422"
+                  name="house"
+                  onChange={this.handleChange}
+                  required
+                />
+                <Form.Control.Feedback type="invalid">
+                  What room number are you in?
                 </Form.Control.Feedback>
               </InputGroup>
             </Form.Group>
