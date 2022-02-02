@@ -44,6 +44,8 @@ class RecruitmentSignUp extends Component {
         console.log('something went wrong',error);
       } else {
         console.log('registered new recruit');
+        alert('Successfully registered!');
+        this.props.history.push('/');
       }
     })
     this.resetForm();
