@@ -104,7 +104,6 @@ class Meals extends Component {
         'nudg9r0cizeb8y1mydhd2w': "Andrew Cheng",
         'ocktjb9dezit7d1hgvaxt9': "David Kang",
         'p05dldd8226tzcz8iplv6': "Daniel Kwon",
-        'sc7m34bto5hnrm9vtb5f1f': "Danika Luo",
         'ult0gs9tr2l4insekb1kfr': "Ben Chiu",
         'uy3zdxtpdl0648po92o47': "Ethan Taotafa",
         'w05gtcxo0q8k4iq31rcw1': "Kyle Lee",
