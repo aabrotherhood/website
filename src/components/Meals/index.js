@@ -81,7 +81,7 @@ class Meals extends Component {
         'abjzgkws9qfktbandic54j': "Paul Song",
         'aetbs9fw2mdmy4sqifeg1n': "Marissa Li",
         'by4926397stzi19higab': "Ricky Lam",
-        'c71yc8tpxoou794clvcfwf': "Anna O\'Neil",
+        'c71yc8tpxoou794clvcfwf': "Anna O'Neil",
         'c9914cyoxupb8e3yegxgc': "Ivan Zhang",
         'cihl5fzlc7ln1w3t4s9et7': "Jayson Lin",
         'cmyv6rrx9s4tm3t4skgwy': "Reddy Lee",
