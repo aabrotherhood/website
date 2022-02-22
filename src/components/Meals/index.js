@@ -2,7 +2,7 @@ import React, {Component} from 'react';
 import {withAuthorization} from '../Sessions';
 import {Row, Col} from 'react-bootstrap';
 import './styles.scss';
-import { Link } from 'react-router-dom';
+// import { Link } from 'react-router-dom';
 
 class Meals extends Component {
   constructor(props) {
