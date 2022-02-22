@@ -68,6 +68,7 @@ class Meals extends Component {
         last: recruitsList[key]['last'],
         uid: key,
       }));
+      var recruitsDict = {};
     for (var recruit in recruitInfoList) {
       recruitsDict[recruitInfoList[recruit].uid] = [recruitInfoList[recruit]]
     }
