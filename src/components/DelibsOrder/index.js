@@ -79,8 +79,11 @@ class DelibsOrder extends Component {
               ...recruitsList[key],
               uid: key
             };
+            return (<Brother info={newData} key={key} nextURL={'/delibs/order/' + recruitsList[key].first + recruitsList[key].last}/>);
           }
-          return (<Brother info={newData} key={key} nextURL={'/delibs/order/' + recruitsList[key].first + recruitsList[key].last}/>);
+          else {
+            return error
+          }
         });
 
         this.setState({recruitInfo: recruitsInfoList, loading: true});
