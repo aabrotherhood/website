@@ -83,7 +83,7 @@ class DelibsOrder extends Component {
           }
           else {
             return error
-          }
+          };
         });
 
         this.setState({recruitInfo: recruitsInfoList, loading: true});
