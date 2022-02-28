@@ -82,7 +82,7 @@ class DelibsOrder extends Component {
             return (<Brother info={newData} key={key} nextURL={'/delibs/order/' + recruitsList[key].first + recruitsList[key].last}/>);
           }
           else {
-            return error
+            return null
           };
         });
 
