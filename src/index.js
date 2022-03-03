@@ -43,7 +43,7 @@ ReactDOM.render(
         <Route path={ROUTES.RECRUITMENTEMAILS} component={Emails}/>
         <Route path={ROUTES.RECURITMENTIMAGES} component={RecruitmentImages}/>
         <Route path={ROUTES.MEALS} component={Meals}/>
-        <Route path={ROUTES.FINAL} component={Final}/>
+        {/* <Route path={ROUTES.FINAL} component={Final}/> */}
         <Route path={ROUTES.DELIBS} component={Delibs}/>
         {/* <Route exact path={ROUTES.DELIBSORDER} component={DelibsOrder}/>
         <Route exact path={ROUTES.DELIBSRECRUIT} component={DelibsRecruit}/> */}
