@@ -19,7 +19,7 @@ import Meals from './components/Meals';
 import * as serviceWorker from './serviceWorker';
 import * as ROUTES from './constants/routes';
 import Firebase, { FirebaseContext } from './components/Firebase';
-import Final from './components/Final';
+// import Final from './components/Final';
 import Delibs from './components/Delibs';
 // import DelibsOrder from './components/DelibsOrder';
 // import DelibsRecruit from './components/DelibsRecruit';
