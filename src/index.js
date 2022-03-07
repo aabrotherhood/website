@@ -36,13 +36,13 @@ ReactDOM.render(
         <Route path={ROUTES.HOME} component={Landing}></Route>
         <Route path={ROUTES.EDIT} component={Edit}></Route>
         <Route path={ROUTES.INDBROTHER} component={IndBrother}></Route>
-        <Route exact path={ROUTES.RECRUITMENTSIGNUP} component={RSignUp}></Route>
+        {/* <Route exact path={ROUTES.RECRUITMENTSIGNUP} component={RSignUp}></Route>
         <Route path={ROUTES.RECRUITMENT} component={Recruits}></Route>
         <Route path={ROUTES.INDRECRUIT} component={IndRecruit}></Route>
         <Route path={ROUTES.RECRUITMENTCOMMENTS} component={RecruitmentComments}></Route>
         <Route path={ROUTES.RECRUITMENTEMAILS} component={Emails}/>
         <Route path={ROUTES.RECURITMENTIMAGES} component={RecruitmentImages}/>
-        <Route path={ROUTES.MEALS} component={Meals}/>
+        <Route path={ROUTES.MEALS} component={Meals}/> */}
         {/* <Route path={ROUTES.FINAL} component={Final}/> */}
         <Route path={ROUTES.DELIBS} component={Delibs}/>
         {/* <Route exact path={ROUTES.DELIBSORDER} component={DelibsOrder}/>
