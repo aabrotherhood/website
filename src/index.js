@@ -9,18 +9,18 @@ import Members from './components/Members';
 import CustomForm from './components/CustomFormWrapper/index';
 import Edit from './components/Edit/index';
 import IndBrother from './components/IndBrother';
-import IndRecruit from './components/IndRecruit';
-import RSignUp from './components/RecruitmentSignUp';
-import Recruits from './components/Recruits';
-import RecruitmentComments from './components/RecruitmentComments';
-import Emails from './components/Emails';
-import RecruitmentImages from './components/RecruimentImages';
-import Meals from './components/Meals';
+// import IndRecruit from './components/IndRecruit';
+// import RSignUp from './components/RecruitmentSignUp';
+// import Recruits from './components/Recruits';
+// import RecruitmentComments from './components/RecruitmentComments';
+// import Emails from './components/Emails';
+// import RecruitmentImages from './components/RecruimentImages';
+// import Meals from './components/Meals';
 import * as serviceWorker from './serviceWorker';
 import * as ROUTES from './constants/routes';
 import Firebase, { FirebaseContext } from './components/Firebase';
 // import Final from './components/Final';
-import Delibs from './components/Delibs';
+// import Delibs from './components/Delibs';
 // import DelibsOrder from './components/DelibsOrder';
 // import DelibsRecruit from './components/DelibsRecruit';
 import 'bootstrap/dist/css/bootstrap.min.css';
@@ -44,7 +44,7 @@ ReactDOM.render(
         <Route path={ROUTES.RECURITMENTIMAGES} component={RecruitmentImages}/>
         <Route path={ROUTES.MEALS} component={Meals}/> */}
         {/* <Route path={ROUTES.FINAL} component={Final}/> */}
-        <Route path={ROUTES.DELIBS} component={Delibs}/>
+        {/* <Route path={ROUTES.DELIBS} component={Delibs}/> */}
         {/* <Route exact path={ROUTES.DELIBSORDER} component={DelibsOrder}/>
         <Route exact path={ROUTES.DELIBSRECRUIT} component={DelibsRecruit}/> */}
       </App>
