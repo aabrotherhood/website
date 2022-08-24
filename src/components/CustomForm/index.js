@@ -2,8 +2,8 @@ import React, {Component} from 'react';
 import {Form, Col, InputGroup, Button} from 'react-bootstrap';
 import {withRouter} from 'react-router-dom';
 // SIGNUP CODE
-import {Link} from 'react-router-dom';
-import * as ROUTES from '../../constants/routes';
+// import {Link} from 'react-router-dom';
+// import * as ROUTES from '../../constants/routes';
 import Loading from '../../assets/loading.gif';
 
 import './styles.scss';
@@ -152,8 +152,8 @@ class CustomForm extends Component {
             <Link to={ROUTES.SIGNUP}>Sign up here</Link>
           </Form.Group>
         </Form.Row>
-        : <div></div> }
-        <Button className="customButton" type="submit">{this.props.type}</Button> */}
+        : <div></div> } */}
+        <Button className="customButton" type="submit">{this.props.type}</Button>
       </Form>
     );
   }
