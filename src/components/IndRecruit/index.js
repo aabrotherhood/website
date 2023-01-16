@@ -1,7 +1,7 @@
 import React, {Component} from 'react';
 import {Col,Row} from 'react-bootstrap';
 import {withAuthorization} from '../Sessions';
-import ReactMinimalPieChart from 'react-minimal-pie-chart';
+// import ReactMinimalPieChart from 'react-minimal-pie-chart';
 import './styles.scss';
 
 class IndRecruit extends Component {
@@ -134,7 +134,7 @@ class IndRecruit extends Component {
           </div>
         </Row>
         <Col className="recruits">
-          {loading && commented ?
+          {/* {loading && commented ?
           <Row className="recruitComments justify-content-center">
             <Col className="recruitPieChartCol">
               <ReactMinimalPieChart
@@ -193,7 +193,7 @@ class IndRecruit extends Component {
                 </Row>
               </Col>
             </Col>
-          </Row>: <div></div> }
+          </Row>: <div></div> } */}
           {loading && commented ? 
           <Col className="comments justify-content-start">
             <p className="header">Comments</p>
