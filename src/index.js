@@ -9,12 +9,12 @@ import Members from './components/Members';
 import CustomForm from './components/CustomFormWrapper/index';
 import Edit from './components/Edit/index';
 import IndBrother from './components/IndBrother';
-// import IndRecruit from './components/IndRecruit';
-// import RSignUp from './components/RecruitmentSignUp';
-// import Recruits from './components/Recruits';
-// import RecruitmentComments from './components/RecruitmentComments';
-// import Emails from './components/Emails';
-// import RecruitmentImages from './components/RecruimentImages';
+import IndRecruit from './components/IndRecruit';
+import RSignUp from './components/RecruitmentSignUp';
+import Recruits from './components/Recruits';
+import RecruitmentComments from './components/RecruitmentComments';
+import Emails from './components/Emails';
+import RecruitmentImages from './components/RecruimentImages';
 // import Meals from './components/Meals';
 import * as serviceWorker from './serviceWorker';
 import * as ROUTES from './constants/routes';
@@ -36,13 +36,13 @@ ReactDOM.render(
         <Route path={ROUTES.HOME} component={Landing}></Route>
         <Route path={ROUTES.EDIT} component={Edit}></Route>
         <Route path={ROUTES.INDBROTHER} component={IndBrother}></Route>
-        {/* <Route exact path={ROUTES.RECRUITMENTSIGNUP} component={RSignUp}></Route>
+        <Route exact path={ROUTES.RECRUITMENTSIGNUP} component={RSignUp}></Route>
         <Route path={ROUTES.RECRUITMENT} component={Recruits}></Route>
         <Route path={ROUTES.INDRECRUIT} component={IndRecruit}></Route>
         <Route path={ROUTES.RECRUITMENTCOMMENTS} component={RecruitmentComments}></Route>
         <Route path={ROUTES.RECRUITMENTEMAILS} component={Emails}/>
         <Route path={ROUTES.RECURITMENTIMAGES} component={RecruitmentImages}/>
-        <Route path={ROUTES.MEALS} component={Meals}/> */}
+        {/* <Route path={ROUTES.MEALS} component={Meals}/> */}
         {/* <Route path={ROUTES.FINAL} component={Final}/> */}
         {/* <Route path={ROUTES.DELIBS} component={Delibs}/> */}
         {/* <Route exact path={ROUTES.DELIBSORDER} component={DelibsOrder}/>
