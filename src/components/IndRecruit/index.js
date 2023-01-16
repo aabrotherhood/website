@@ -14,9 +14,9 @@ class IndRecruit extends Component {
       commentersUID: null,
       commentsList: null,
       redFlagsList: null,
-      maybe: 0,
-      no: 0,
-      yes: 0,
+      // maybe: 0,
+      // no: 0,
+      // yes: 0,
       loading: false,
     }
     this.handleShuffle = this.handleShuffle.bind(this);
@@ -34,9 +34,9 @@ class IndRecruit extends Component {
       var commentersUIDList = [];
       var commentsList = [];
       var redFlags = [];
-      var maybe = 0;
-      var no = 0;
-      var yes = 0;
+      // var maybe = 0;
+      // var no = 0;
+      // var yes = 0;
       if (comments) {
         Object.keys(comments).forEach(function(key) {
           if (key !== 'commentsFromOld' && key !== 'redFlagsFromOld' && key !== 'maybeFromOld' && key !== 'noFromOld' && key !== 'yesFromOld') {
@@ -44,9 +44,9 @@ class IndRecruit extends Component {
             commentersUIDList.push(key);
             redFlags.push(comments[key]['redFlags']);
             commentsList.push(comments[key]['comments']);
-            maybe += comments[key]['maybe'];
-            no += comments[key]['no'];
-            yes += comments[key]['yes'];
+            // maybe += comments[key]['maybe'];
+            // no += comments[key]['no'];
+            // yes += comments[key]['yes'];
           }
         });
         if (comments['commentsFromOld']) {
@@ -59,24 +59,24 @@ class IndRecruit extends Component {
             redFlags.push(comments['redFlagsFromOld'][key]);
           })
         }
-        if (comments['maybeFromOld']) {
-          maybe += comments['maybeFromOld']
-        }
-        if (comments['noFromOld']) {
-          no += comments['noFromOld']
-        }
-        if (comments['yesFromOld']) {
-          yes += comments['yesFromOld']
-        }
+        // if (comments['maybeFromOld']) {
+        //   maybe += comments['maybeFromOld']
+        // }
+        // if (comments['noFromOld']) {
+        //   no += comments['noFromOld']
+        // }
+        // if (comments['yesFromOld']) {
+        //   yes += comments['yesFromOld']
+        // }
         commentsList = this.handleShuffle(commentsList);
         this.setState({
           commenters: commentersList,
           commentersUID: commentersUIDList,
           commentsList: commentsList,
           redFlagsList: redFlags,
-          maybe: maybe,
-          no: no,
-          yes: yes,
+          // maybe: maybe,
+          // no: no,
+          // yes: yes,
           loading: true
         })
       }
