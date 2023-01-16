@@ -91,7 +91,8 @@ class IndRecruit extends Component {
       backgroundSize: 'cover',
       marginBottom: '2rem',
     }
-    const {commenters, commentersUID, commentsList, redFlagsList, maybe, no, yes, loading} = this.state;
+    // const {commenters, commentersUID, commentsList, redFlagsList, maybe, no, yes, loading} = this.state;
+    const {commenters, commentersUID, commentsList, redFlagsList, loading} = this.state;
     var actualCommentsList;
     var actualRedFlagsList;
     var commented = false;
