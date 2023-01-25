@@ -6,9 +6,7 @@ import './index.scss';
 import App from './components/App/index';
 import Landing from './components/Landing/index';
 import Members from './components/Members';
-// This is signup code
-// import CustomForm from './components/CustomFormWrapper/index';
-// End signup code
+import CustomForm from './components/CustomFormWrapper/index';
 import Edit from './components/Edit/index';
 import IndBrother from './components/IndBrother';
 // This is recruitment code
