@@ -25,6 +25,7 @@ class Brothers extends Component {
           house: brothersList[key]['house'],
           location: brothersList[key]['location'],
           occupation: brothersList[key]['occupation'],
+          birthday: brothersList[key]['birthday'],
           personalEmail: brothersList[key]['personalEmail'],
           schoolEmail: brothersList[key]['schoolEmail'],
           phone: brothersList[key]['phone'],
