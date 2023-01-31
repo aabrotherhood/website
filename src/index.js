@@ -10,13 +10,13 @@ import CustomForm from './components/CustomFormWrapper/index';
 import Edit from './components/Edit/index';
 import IndBrother from './components/IndBrother';
 // This is recruitment code
-// import IndRecruit from './components/IndRecruit';
-// import RSignUp from './components/RecruitmentSignUp';
-// import Recruits from './components/Recruits';
-// import RecruitmentComments from './components/RecruitmentComments';
-// import Emails from './components/Emails';
-// import RecruitmentImages from './components/RecruimentImages';
-// import Meals from './components/Meals';
+import IndRecruit from './components/IndRecruit';
+import RSignUp from './components/RecruitmentSignUp';
+import Recruits from './components/Recruits';
+import RecruitmentComments from './components/RecruitmentComments';
+import Emails from './components/Emails';
+import RecruitmentImages from './components/RecruimentImages';
+import Meals from './components/Meals';
 // End recruitment code
 import * as serviceWorker from './serviceWorker';
 import * as ROUTES from './constants/routes';
