@@ -30,13 +30,13 @@ class TopBar extends Component {
             <li className="listInlineList">
               <Link className="link" to={ROUTES.MEMBERS}>Brothers</Link>
             </li>
-            <li className="listInlineList">
+            {/* <li className="listInlineList">
               <Link className="link" to={ROUTES.RECRUITMENT}>Recruits</Link>
-            </li>  */
-            <li className="listInlineList">
+            </li>  */}
+            {/* <li className="listInlineList">
               <Link className="link" to={ROUTES.RECRUITMENTCOMMENTS}>Comment</Link>
             </li> 
-            {/* <li className="listInlineList">
+            <li className="listInlineList">
               <Link className="link" to={ROUTES.MEALS}>Meals</Link>
             </li>  */}
             <li className="listInlineList">
