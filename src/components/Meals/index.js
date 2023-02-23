@@ -48,7 +48,7 @@ class Meals extends Component {
         'uh37dt05t176mkxzck765t': "Ali Khan",
         'w5g1doaefnon6356r49r8': "Atticus Lee",
         'ys8siehhxshfiyq6zztnfl': "Aidan Zhou", 
-        'yua2bcfchhdrfnqiogunz': "Lauryn Wilson",
+        'yua2bcfchhdrfnqiogunz': "Lauryn Wilson"
       }
     };
   }
