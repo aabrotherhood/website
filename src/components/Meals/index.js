@@ -54,18 +54,18 @@ class Meals extends Component {
   }
 
   componentDidMount() {
-  //   this.props.firebase.recruits().on('value', snapshot => {
-  //     const recruitsList = snapshot.val();
-  //     var recruitInfoList = Object.keys(recruitsList).map(key => ({
-  //       first: recruitsList[key]['first'],
-  //       last: recruitsList[key]['last'],
-  //       uid: key,
-  //     }));
-  //     var recruitsDict = {};
-  //   for (var recruit in recruitInfoList) {
-  //     recruitsDict[recruitInfoList[recruit].uid] = [recruitInfoList[recruit]]
-  //   }
-  // });
+    this.props.firebase.recruits().on('value', snapshot => {
+      const recruitsList = snapshot.val();
+      var recruitInfoList = Object.keys(recruitsList).map(key => ({
+        first: recruitsList[key]['first'],
+        last: recruitsList[key]['last'],
+        uid: key,
+      }));
+      var recruitsDict = {};
+      for (var recruit in recruitInfoList) {
+        recruitsDict[recruitInfoList[recruit].uid] = [recruitInfoList[recruit]]
+      }
+    });
     const currentBro = this.props.firebase.currentUser().uid;
     var commented = [];
     var noComment = []; 
