@@ -15,7 +15,6 @@ class Delibs extends Component {
         '5sh19dgh3dnnk8c7fstp': "Henry Xuan",
         '5u7vjkmkdhs8tex3f8xd9a': "Justin Liu",
         '7tp8c874unoklhbk13vdd': "Adam Mohamed",
-        '7voa5ovztsjqrzr3ususq': "Cyril Leahy",
         '88shi35m5ji82hemr7r8el': "Sean Meng",
         '8fhm29j59rhb2o1v6m84k': "Albert Shin",
         '8hzdceh877jyt8lq54417': "Dylan Rhee", 
@@ -30,7 +29,6 @@ class Delibs extends Component {
         'i6zc72qj8fjviw1d8pvim9': "Lucie Bai", 
         'i8405c2mg58wluy19tei9': "Connor Lee", 
         'irl9p0suuxjsouk4ujwwe': "Beier Nelson", 
-        'j74hhwkua8p69dd2ceel': "Jang Choe", 
         'joxmf1kaysb2lsiov4xfjb': "Victor Ghosh", 
         'khtjyhi15pgrvz5esfl8j': "Minkai Li", 
         'kwozd2fs34amzjunqu28f': "Nick Gu", 
@@ -44,11 +42,9 @@ class Delibs extends Component {
         'qds5qs4m46jmhlj84tt6al': "Derek Zheng",
         'rvmvpx4iq2nj5ndkhi7hu': "Dylan Jin-Ngo",
         'rwwqzx9aopcsw0iifqocp': "Darren Tran",
-        'ss8cgltmq5xn5a9wlpios': "Daniel Wang",
-        'uh37dt05t176mkxzck765t': "Ali Khan",
         'w5g1doaefnon6356r49r8': "Atticus Lee",
         'ys8siehhxshfiyq6zztnfl': "Aidan Zhou", 
-        'yua2bcfchhdrfnqiogunz': "Lauryn Wilson",     },
+        'yua2bcfchhdrfnqiogunz': "Lauryn Wilson",},
     };
     this.sortFunction = this.sortFunction.bind(this);
   }
