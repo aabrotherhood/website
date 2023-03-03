@@ -15,5 +15,5 @@ export const RECURITMENTIMAGES = '/recruitment/images';
 export const MEALS = '/doneMeals';
 export const FINAL = '/final';
 export const DELIBS = '/delibs';
-export const DELIBSORDER = '/delibs/order';
-export const DELIBSRECRUIT = '/delibs/order/:id';
+export const DELIBSORDER = 'order';
+export const DELIBSRECRUIT = 'order/:id';
