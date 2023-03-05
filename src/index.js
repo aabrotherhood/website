@@ -16,16 +16,16 @@ import Recruits from './components/Recruits';
 import RecruitmentComments from './components/RecruitmentComments';
 import Emails from './components/Emails';
 import RecruitmentImages from './components/RecruimentImages';
-import Meals from './components/Meals';
+// import Meals from './components/Meals';
 // End recruitment code
 import * as serviceWorker from './serviceWorker';
 import * as ROUTES from './constants/routes';
 import Firebase, { FirebaseContext } from './components/Firebase';
 // This is delibs code
-import Final from './components/Final';
-import Delibs from './components/Delibs';
-import DelibsOrder from './components/DelibsOrder';
-import DelibsRecruit from './components/DelibsRecruit';
+// import Final from './components/Final';
+// import Delibs from './components/Delibs';
+// import DelibsOrder from './components/DelibsOrder';
+// import DelibsRecruit from './components/DelibsRecruit';
 // End delibs code
 import 'bootstrap/dist/css/bootstrap.min.css';
 
@@ -46,11 +46,11 @@ ReactDOM.render(
         <Route path={ROUTES.RECRUITMENTCOMMENTS} component={RecruitmentComments}></Route>
         <Route path={ROUTES.RECRUITMENTEMAILS} component={Emails}/>
         <Route path={ROUTES.RECURITMENTIMAGES} component={RecruitmentImages}/> 
-        <Route path={ROUTES.MEALS} component={Meals}/> 
+        {/* <Route path={ROUTES.MEALS} component={Meals}/> 
         <Route path={ROUTES.FINAL} component={Final}/> 
         <Route path={ROUTES.DELIBS} component={Delibs}/>
         <Route exact path={ROUTES.DELIBSORDER} component={DelibsOrder}/>
-        <Route exact path={ROUTES.DELIBSRECRUIT} component={DelibsRecruit}/>
+        <Route exact path={ROUTES.DELIBSRECRUIT} component={DelibsRecruit}/> */}
       </App>
     </Router>
   </FirebaseContext.Provider>,
