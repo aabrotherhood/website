@@ -2,7 +2,7 @@ import React, {Component} from 'react';
 import {withRouter, Link} from 'react-router-dom';
 import {withFirebase} from '../Firebase/context';
 import {Row,Col} from 'react-bootstrap';
-import * as ROUTES from '../../constants/routes';
+// import * as ROUTES from '../../constants/routes';
 import './styles.scss';
 
 class TopBar extends Component {
