@@ -1,62 +1,172 @@
-import React from 'react';
-import ReactDOM from 'react-dom';
-import {Router, Route } from 'react-router-dom';
-import history from './history.js';
-import './index.scss';
-import App from './components/App/index';
-import Landing from './components/Landing/index';
-import Members from './components/Members';
-import CustomForm from './components/CustomFormWrapper/index';
-import Edit from './components/Edit/index';
-import IndBrother from './components/IndBrother';
-// This is recruitment code
-import IndRecruit from './components/IndRecruit';
-import RSignUp from './components/RecruitmentSignUp';
-import Recruits from './components/Recruits';
-import RecruitmentComments from './components/RecruitmentComments';
-import Emails from './components/Emails';
-import RecruitmentImages from './components/RecruimentImages';
-// import Meals from './components/Meals';
-// End recruitment code
-import * as serviceWorker from './serviceWorker';
-import * as ROUTES from './constants/routes';
-import Firebase, { FirebaseContext } from './components/Firebase';
-// This is delibs code
-//import Final from './components/Final';
-//import Delibs from './components/Delibs';
-//import DelibsOrder from './components/DelibsOrder';
-//import DelibsRecruit from './components/DelibsRecruit';
-// End delibs code
-import 'bootstrap/dist/css/bootstrap.min.css';
+import React, {Component} from 'react';
+import {Col, Form, Button, InputGroup} from 'react-bootstrap';
+import { withFirebase } from '../Firebase';
+import Loading from '../../assets/loading.gif';
+import imageCompression from 'browser-image-compression';
 
-ReactDOM.render(
-  <FirebaseContext.Provider value={new Firebase()}>
-    <Router history={history}>
-      <App>
-        <Route exact path={ROUTES.LANDING} component={Landing}></Route>
-        <Route path={ROUTES.MEMBERS} component={Members}></Route>
-        <Route path={ROUTES.LOGIN} render={() => <CustomForm type='Login'/>}></Route>
-        <Route path={ROUTES.SIGNUP} render={() => <CustomForm type='Sign Up' />}/> 
-        <Route path={ROUTES.HOME} component={Landing}></Route>
-        <Route path={ROUTES.EDIT} component={Edit}></Route>
-        <Route path={ROUTES.INDBROTHER} component={IndBrother}></Route>
-        <Route exact path={ROUTES.RECRUITMENTSIGNUP} component={RSignUp}></Route>
-        <Route path={ROUTES.RECRUITMENT} component={Recruits}></Route>
-        <Route path={ROUTES.INDRECRUIT} component={IndRecruit}></Route>
-        <Route path={ROUTES.RECRUITMENTCOMMENTS} component={RecruitmentComments}></Route>
-        <Route path={ROUTES.RECRUITMENTEMAILS} component={Emails}/>
-        <Route path={ROUTES.RECURITMENTIMAGES} component={RecruitmentImages}/> 
-{/* <Route path={ROUTES.MEALS} component={Meals}/> 
-         <Route path={ROUTES.FINAL} component={Final}/> 
-        <Route path={ROUTES.DELIBS} component={Delibs}/>
-        <Route exact path={ROUTES.DELIBSORDER} component={DelibsOrder}/>
-<Route exact path={ROUTES.DELIBSRECRUIT} component={DelibsRecruit}/> */}
-      </App>
-    </Router>
-  </FirebaseContext.Provider>,
-document.getElementById('root'));
+class RecruitmentImages extends Component {
+  constructor(props) {
+    super(props);
+    this.state = {
+      recruit: '',
+      image: null,
+      loading: false,
+      recruitInfo: null,
+      submitted: false,
+      imageURL: null,
+      imageClicked: false,
+    }
 
-// If you want your app to work offline and load faster, you can change
-// unregister() to register() below. Note this comes with some pitfalls.
-// Learn more about service workers: https://bit.ly/CRA-PWA
-serviceWorker.unregister();
+    this.handleSubmit = this.handleSubmit.bind(this);
+    this.handleChange = this.handleChange.bind(this);
+    this.handleImageUpload = this.handleImageUpload.bind(this);
+  }
+
+  componentDidMount() {
+    let currentComponent = this;
+    this.props.firebase.recruits().on('value', snapshot => {
+      const recruitsList = snapshot.val();
+      if (recruitsList) {
+        const recruitsInfoList = Object.keys(recruitsList).map(key => ({
+            first: recruitsList[key].first,
+            last: recruitsList[key].last,
+            uid: key
+        }));
+        currentComponent.setState({recruitInfo: recruitsInfoList, loading: true});
+      }   else {
+        currentComponent.setState({recruitInfo: null, loading: false})
+        }
+    });
+  }
+
+  async handleImageUpload(event) {
+ 
+    const imageFile = event.target.files[0];
+    console.log('originalFile instanceof Blob', imageFile instanceof Blob); // true
+    console.log(`originalFile size ${imageFile.size / 1024 / 1024} MB`);
+   
+    var options = {
+      maxSizeMB: 0.1,
+      maxWidthOrHeight: 1024,
+      useWebWorker: true
+    }
+    try {
+      const compressedFile = await imageCompression(imageFile, options);
+      console.log('compressedFile instanceof Blob', compressedFile instanceof Blob); // true
+      console.log(`compressedFile size ${compressedFile.size / 1024 / 1024} MB`); // smaller than maxSizeMB
+      this.setState({image: compressedFile, imageURL: URL.createObjectURL(compressedFile), imageClicked:false}, () => console.log('set image'));
+    } catch (error) {
+      console.log(error);
+    }
+  }
+
+  handleChange(event) {
+    if (event.target.files) {
+      this.setState({imageClicked: true})
+      this.handleImageUpload(event);
+    } else {
+      this.setState({[event.target.name]: event.target.value});
+    }
+  }
+
+  handleSubmit(event) {
+    event.preventDefault();
+    const recruitImageRef = this.props.firebase.currentRecruitImage(this.state.recruit);
+    if (this.state.recruit === '') {
+      alert('Pick your name!');
+      return;
+    }
+    if (this.state.image != null) {
+      this.setState({submitted: true});
+      recruitImageRef.put(this.state.image).then(() => {
+        console.log('Added image for recruit');
+        recruitImageRef.getDownloadURL().then(image => {
+          const currentRecruit = this.props.firebase.recruit(this.state.recruit);
+          currentRecruit.update({imageURL: image}, error => {
+            if (error) {
+              console.log('SOMETHING WENT WRONG', error);
+            } else {
+              console.log('SET IMAGE URL');
+              alert('Thanks!');
+              this.props.history.push('/');
+            }
+          })
+        })
+      })
+    } else {
+      alert('Pick an image!');
+      return;
+    }
+  }
+
+  render() {
+    const recruitInfo = this.state.recruitInfo;
+    const loading = this.state.loading;
+    var recruitsList;
+
+    if (loading) {
+      recruitsList = recruitInfo.map(recruit => {
+        return <option key={recruit.uid} value={recruit.uid}>{recruit.first + ' ' + recruit.last}</option>
+      })
+    }
+    const styles = {
+      width: '100px',
+      height: '100px',
+      borderRadius: '50%',
+      margin: '1em 0'
+    }
+    const stylesSpinner = {
+      width: '100px',
+      height: '100px',
+      borderRadius: '50%',
+      margin: '1em 0'
+    }
+    return (
+      <Col>
+      {this.state.submitted ? 
+        <div className="loading">
+          <img src={Loading} alt="loading gif" className="spinner"/>
+        </div> :
+        <Form noValidate onSubmit={this.handleSubmit} className="customForm">
+          <Form.Row>
+            <Form.Group controlId="exampleForm.ControlSelect1"  as={Col} md="12">
+              <Form.Label>Select Your Name</Form.Label>
+              <Form.Control as="select" onChange={this.handleChange} name="recruit">
+                <option></option>
+                {loading ? recruitsList : <option></option>}
+              </Form.Control>
+            </Form.Group>
+          </Form.Row>
+          <Form.Row>
+            <Form.Group as={Col} md="12">
+            <Form.Label>Profile Picture (please use a square image)</Form.Label>
+              <InputGroup>
+                <Form.Control
+                  type="file"
+                  name="image"
+                  onChange={this.handleChange}
+                  className="formImage"
+                  required
+                />
+                <Form.Control.Feedback type="invalid">
+                  Please enter your brother name.
+                </Form.Control.Feedback>
+              </InputGroup>
+              <InputGroup.Append>
+              {this.state.imageURL ?
+                <img src={this.state.imageURL} style={styles} alt="recruit"/> : <div></div>}
+              {this.state.imageClicked ? 
+                <div style={stylesSpinner}>
+                  <img src={Loading} alt="loading gif" className="spinner"/>
+                </div> : <div></div>}
+              </InputGroup.Append>
+            </Form.Group>
+          </Form.Row> 
+          <Button className="customButton" type="submit">Submit</Button>
+      </Form> }
+      </Col>
+    );
+  }
+};
+
+export default withFirebase(RecruitmentImages);
