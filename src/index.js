@@ -15,7 +15,7 @@ import RSignUp from './components/RecruitmentSignUp';
 import Recruits from './components/Recruits';
 import RecruitmentComments from './components/RecruitmentComments';
 import Emails from './components/Emails';
-import RecruitmentImages from './components/RecruitmentImages';
+import RecruitmentImages from './components/RecruimentImages';
 // import Meals from './components/Meals';
 // End recruitment code
 import * as serviceWorker from './serviceWorker';
@@ -45,7 +45,7 @@ ReactDOM.render(
         <Route path={ROUTES.INDRECRUIT} component={IndRecruit}></Route>
         <Route path={ROUTES.RECRUITMENTCOMMENTS} component={RecruitmentComments}></Route>
         <Route path={ROUTES.RECRUITMENTEMAILS} component={Emails}/>
-        <Route path={ROUTES.RECRUITMENTIMAGES} component={RecruitmentImages}/> 
+        <Route path={ROUTES.RECURITMENTIMAGES} component={RecruitmentImages}/> 
 {/* <Route path={ROUTES.MEALS} component={Meals}/> 
          <Route path={ROUTES.FINAL} component={Final}/> 
         <Route path={ROUTES.DELIBS} component={Delibs}/>
