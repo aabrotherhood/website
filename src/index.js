@@ -16,7 +16,7 @@ import Recruits from './components/Recruits';
 import RecruitmentComments from './components/RecruitmentComments';
 import Emails from './components/Emails';
 import RecruitmentImages from './components/RecruimentImages';
-// import Meals from './components/Meals';
+import Meals from './components/Meals';
 // End recruitment code
 import * as serviceWorker from './serviceWorker';
 import * as ROUTES from './constants/routes';
