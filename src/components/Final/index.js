@@ -9,220 +9,250 @@ class Final extends Component {
     super(props);
     this.state = {
       recruitsDict: {
-        '2zg2ucutigk9rgcwj0joxr': "Eric Li (S)",
-        '33lsglc0b621ux54n4jgb7': "Khanh Le",
-        '512fa2i0cv84a1o37gbdan': "Brandon Kwon",
-        '5sh19dgh3dnnk8c7fstp': "Henry Xuan",
-        '5u7vjkmkdhs8tex3f8xd9a': "Justin Liu",
-        '7tp8c874unoklhbk13vdd': "Adam Mohamed",
-        '88shi35m5ji82hemr7r8el': "Sean Meng",
-        '8fhm29j59rhb2o1v6m84k': "Albert Shin",
-        '8hzdceh877jyt8lq54417': "Dylan Rhee", 
-        '9m7ve4wbp6g8f68iutz42b': "Jeffrey Shi", 
-        'be1ts50h4b5ctjp5h0y96c': "Sean Yu",
-        'eeomh5olx9etzkh1qk1eec': "Hank Yang", 
-        'f53rp5ytvp5zq4z0igcqc8': "Kevin Wang",
-        'fsd3mu2axurk0deynjs8uk': "Eric Li", 
-        'gf32p5tsvwmftqd54742n': "Kyle Neeley", 
-        'gujxqelc7hjyb1z84dahp': "Matthew Kim", 
-        'h0t9714q3zsy8fnawz4td': "Josh Zhang", 
-        'i6zc72qj8fjviw1d8pvim9': "Lucie Bai", 
-        'i8405c2mg58wluy19tei9': "Connor Lee", 
-        'irl9p0suuxjsouk4ujwwe': "Beier Nelson", 
-        'joxmf1kaysb2lsiov4xfjb': "Victor Ghosh", 
-        'khtjyhi15pgrvz5esfl8j': "Minkai Li", 
-        'kwozd2fs34amzjunqu28f': "Nick Gu", 
-        'mha40ib7cmj6km15409509': "Aidan Chen",
-        'mnlwyf46ody0kxgrc91i': "Ryan Jung", 
-        'mwalfhyjo357ot3visndc': "Jane Oh", 
-        'notn3kh17obrptqqp3ltn': "Lei Hanna",
-        'o3vcfpnqd99s9dsjtyjsl': "Francis Puente",
-        'q4pdzs9av1dtlihcqoqy3k': "Kelly Nguyen",
-        'q8a1a9qk6sqtquuizop6r': "Roy Han",
-        'qds5qs4m46jmhlj84tt6al': "Derek Zheng",
-        'rvmvpx4iq2nj5ndkhi7hu': "Dylan Jin-Ngo",
-        'rwwqzx9aopcsw0iifqocp': "Darren Tran",
-        'w5g1doaefnon6356r49r8': "Atticus Lee",
-        'ys8siehhxshfiyq6zztnfl': "Aidan Zhou", 
-        'yua2bcfchhdrfnqiogunz': "Lauryn Wilson",  },
+        '0yj46hden1qt7oiziamtn': "Eli Kirtley", 
+        '1900op1wsmq7rsj46ybzge': "Vincent Lo",
+        '1lja9q7wkoxe5nrlmmaj7w': "Andrew Sima", 
+        '2r9z5c60vc76yxe05wpyrc': "Kyle Neeley",
+        '338yfagrol38arsd54d0ux': "Jason Cho",
+        '3k398odtchdpdf9552286d': "Michael Xiang",
+        '737r0qem5vabpywvlbmh8': "Gary Wu",
+        '84i62d8pyldib5tpreohuf': "Emerson Lee",
+        '8gwfmr6lwnd1gdnn0fz3sj': "Todd Zhou", 
+        '8jxv9clxsbsr3mkbaush1s': "Thomas Leeds",
+        '8urdawk3zkfrv6ta6pu4es': "Hank Yang",
+        '90l56ukmn3gxwjje9hz43': "Sam Kim",
+        'bydyjr5c5kw9y412jwqzcd': "Maxwell Lu",
+        'dwqpj42buribfqa1j3cgr': "Grant Shueh",
+        'e9vg0840pkhqy0z82bkhaa': "James Vincent Ines",
+        'epuf449tlxc5w7ejcfmlkt': "Lei Hanna",
+        'eq3m2lmksentygwv1k0fyp': "Xuanthe Nguyen",
+        'ew42fhu81xt2zflfmagum': "Sean Meng",
+        'ezuviswg2f8r4lx4vlynxe': "Raymond Qin",
+        'f2gqbbyaedkt9sl4y8ocq': "Paul Jeon",
+        'gomune2m6ucbe1hcs4thrm': "Andrew Chen",
+        'h6spnfv3qe4n1w0hw1iwd9': "Kevin Sohn",
+        'hwcgwyhcf787yu8vk8xp3p': "Jeffrey Shi",
+        'iubcmfdx4bpbbs8do8l3db': "Peter Chen",
+        'jqpxfe16gojmysp6gv5yh': "Maverick Yasuda",
+        'khmnq70l8sbcuflbj1dxj5': "Jamin Liu",
+        'kshjnmgjdf9z7d9aob34zs': "Minkai Li",
+        'kvgqrfnp5lcjy38tyhmggj': "Annabel Ma",
+        'ls5a7r2z1opn007cqk2du': "Ryan Ho",
+        'n378hr5vqkqux6cobcmmhh': "Hudson Yang",
+        'oloqdtnhmch5m5i7y5ov3o': "Matthew Vu",
+        'p7hdg8sqk8d8a1r36c82iq': "Darren Tran",
+        'p7wt9up9mqn6d3fui6u0n': "Arwen Zhang",
+        'pu4884zn26yapkffa8w7d': "Connor Yu",
+        'q5w4825if6ypg9ee0r97': "Kevin Gu",
+        'rebq3zachfnrqweadozqf': "Corwin Cheung",
+        's1oiakrsru8jcuyl189mi': "Jen Yu",
+        'v2g6ekvtleu7lowlhnq6d': "Kelly Tung",
+        'v942n2wj2lapnxq6x0onmg': "Cory Wu",
+        'ww2qwx95jlb48sasw6hz5t': "Ian Hua",
+        'wz6x332xzjadiy46eunt0c': "Aaron Arlanza",  },
         loading: false,
         'recruitVotes': {
-          '2zg2ucutigk9rgcwj0joxr': {
+          '0yj46hden1qt7oiziamtn': {
             'yes': 0,
             'no': 0,
             'maybe': 0,
           },
-          '33lsglc0b621ux54n4jgb7': {
+          '1900op1wsmq7rsj46ybzge': {
             'yes': 0,
             'no': 0,
             'maybe': 0,
           },
-          '512fa2i0cv84a1o37gbdan': {
+          '1lja9q7wkoxe5nrlmmaj7w': {
             'yes': 0,
             'no': 0,
             'maybe': 0,
           },
-          '5sh19dgh3dnnk8c7fstp': {
+          '2r9z5c60vc76yxe05wpyrc': {
             'yes': 0,
             'no': 0,
             'maybe': 0,
           },
-          '5u7vjkmkdhs8tex3f8xd9a': {
+          '338yfagrol38arsd54d0ux': {
             'yes': 0,
             'no': 0,
             'maybe': 0,
           },
-          '7tp8c874unoklhbk13vdd': {
+          '3k398odtchdpdf9552286d': {
             'yes': 0,
             'no': 0,
             'maybe': 0,
           },
-          '88shi35m5ji82hemr7r8el': {
+          '737r0qem5vabpywvlbmh8': {
             'yes': 0,
             'no': 0,
             'maybe': 0,
           },
-          '8fhm29j59rhb2o1v6m84k': {
+          '84i62d8pyldib5tpreohuf': {
             'yes': 0,
             'no': 0,
             'maybe': 0,
           },
-          '8hzdceh877jyt8lq54417': {
+          '8gwfmr6lwnd1gdnn0fz3sj': {
             'yes': 0,
             'no': 0,
             'maybe': 0,
           },
-          '9m7ve4wbp6g8f68iutz42b': {
+          '8jxv9clxsbsr3mkbaush1s': {
             'yes': 0,
             'no': 0,
             'maybe': 0,
           },
-          'be1ts50h4b5ctjp5h0y96c': {
+          '8urdawk3zkfrv6ta6pu4es': {
             'yes': 0,
             'no': 0,
             'maybe': 0,
           },
-          'eeomh5olx9etzkh1qk1eec': {
+          '90l56ukmn3gxwjje9hz43': {
             'yes': 0,
             'no': 0,
             'maybe': 0,
           },
-          'f53rp5ytvp5zq4z0igcqc8': {
+          'bydyjr5c5kw9y412jwqzcd': {
             'yes': 0,
             'no': 0,
             'maybe': 0,
           },
-          'fsd3mu2axurk0deynjs8uk': {
+          'dwqpj42buribfqa1j3cgr': {
             'yes': 0,
             'no': 0,
             'maybe': 0,
           },
-          'gf32p5tsvwmftqd54742n': {
+          'e9vg0840pkhqy0z82bkhaa': {
             'yes': 0,
             'no': 0,
             'maybe': 0,
           },
-          'gujxqelc7hjyb1z84dahp': {
+          'epuf449tlxc5w7ejcfmlkt': {
             'yes': 0,
             'no': 0,
             'maybe': 0,
           },
-          'h0t9714q3zsy8fnawz4td': {
+          'eq3m2lmksentygwv1k0fyp': {
             'yes': 0,
             'no': 0,
             'maybe': 0,
           },
-          'i6zc72qj8fjviw1d8pvim9': {
+          'ew42fhu81xt2zflfmagum': {
             'yes': 0,
             'no': 0,
             'maybe': 0,
           },
-          'i8405c2mg58wluy19tei9': {
+          'ezuviswg2f8r4lx4vlynxe': {
             'yes': 0,
             'no': 0,
             'maybe': 0,
           },
-          'irl9p0suuxjsouk4ujwwe': {
+          'f2gqbbyaedkt9sl4y8ocq': {
             'yes': 0,
             'no': 0,
             'maybe': 0,
           },
-          'joxmf1kaysb2lsiov4xfjb': {
+          'gomune2m6ucbe1hcs4thrm': {
             'yes': 0,
             'no': 0,
             'maybe': 0,
           },
-          'khtjyhi15pgrvz5esfl8j': {
+          'h6spnfv3qe4n1w0hw1iwd9': {
             'yes': 0,
             'no': 0,
             'maybe': 0,
           },
-          'kwozd2fs34amzjunqu28f': {
+          'hwcgwyhcf787yu8vk8xp3p': {
             'yes': 0,
             'no': 0,
             'maybe': 0,
           },
-          'mha40ib7cmj6km15409509': {
+          'iubcmfdx4bpbbs8do8l3db': {
             'yes': 0,
             'no': 0,
             'maybe': 0,
           },
-          'mnlwyf46ody0kxgrc91i': {
+          'jqpxfe16gojmysp6gv5yh': {
             'yes': 0,
             'no': 0,
             'maybe': 0,
           },
-          'mwalfhyjo357ot3visndc': {
+          'khmnq70l8sbcuflbj1dxj5': {
             'yes': 0,
             'no': 0,
             'maybe': 0,
           },
-          'notn3kh17obrptqqp3ltn': {
+          'kshjnmgjdf9z7d9aob34zs': {
             'yes': 0,
             'no': 0,
             'maybe': 0,
           },
-          'o3vcfpnqd99s9dsjtyjsl': {
+          'kvgqrfnp5lcjy38tyhmggj': {
             'yes': 0,
             'no': 0,
             'maybe': 0,
           },
-          'q4pdzs9av1dtlihcqoqy3k': {
+          'ls5a7r2z1opn007cqk2du': {
             'yes': 0,
             'no': 0,
             'maybe': 0,
           },
-          'q8a1a9qk6sqtquuizop6r': {
+          'n378hr5vqkqux6cobcmmhh': {
             'yes': 0,
             'no': 0,
             'maybe': 0,
           },
-          'qds5qs4m46jmhlj84tt6al': {
+          'oloqdtnhmch5m5i7y5ov3o': {
             'yes': 0,
             'no': 0,
             'maybe': 0,
           },
-          'rvmvpx4iq2nj5ndkhi7hu': {
+          'p7hdg8sqk8d8a1r36c82iq': {
             'yes': 0,
             'no': 0,
             'maybe': 0,
           },
-          'rwwqzx9aopcsw0iifqocp': {
+          'p7wt9up9mqn6d3fui6u0n': {
             'yes': 0,
             'no': 0,
             'maybe': 0,
           },
-          'w5g1doaefnon6356r49r8': {
+          'pu4884zn26yapkffa8w7d': {
             'yes': 0,
             'no': 0,
             'maybe': 0,
           },
-          'ys8siehhxshfiyq6zztnfl': {
+          'q5w4825if6ypg9ee0r97': {
             'yes': 0,
             'no': 0,
             'maybe': 0,
           },
-          'yua2bcfchhdrfnqiogunz': {
+          'rebq3zachfnrqweadozqf': {
+            'yes': 0,
+            'no': 0,
+            'maybe': 0,
+          },
+          's1oiakrsru8jcuyl189mi': {
+            'yes': 0,
+            'no': 0,
+            'maybe': 0,
+          },
+          'v2g6ekvtleu7lowlhnq6d': {
+            'yes': 0,
+            'no': 0,
+            'maybe': 0,
+          },
+          'v942n2wj2lapnxq6x0onmg': {
+            'yes': 0,
+            'no': 0,
+            'maybe': 0,
+          },
+          'ww2qwx95jlb48sasw6hz5t': {
+            'yes': 0,
+            'no': 0,
+            'maybe': 0,
+          },
+          'wz6x332xzjadiy46eunt0c': {
             'yes': 0,
             'no': 0,
             'maybe': 0,

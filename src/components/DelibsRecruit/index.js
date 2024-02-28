@@ -44,10 +44,12 @@ class DelibsRecruit extends Component {
     var commentersList = [];
     var notGottenMeals = [];
     var brothers = [
-      'Brandon Kim','Adam Park','Sam Carter','Andrew Cheng','Ethan Taotafa','Charlie Yang','Ibraheem Khan'
-      ,'Jason Oh','Richard Kim','Jennifer Chu','Kyle Lee','Howie Guo','Noah Lee','Matthew Chang'
-      ,'Brandon Won','Paul Song','Ray Noh','Ricky Lam','Alex Zhu','SeoYoung Ha'
-      ,'Adam Xiao','Lilia Gonzales','Tyler Masuyama','Amia Ross','Ben Chun','Chris Ma']
+      'Ilyas Mardin', 'Francis Puente', 'Brandon Kim', 'Alex Zhu', 'Brandon Kwon', 
+      'Paul Song', 'Charlie Yang', 'Derek Zheng', 'Jennifer Chu', 'Adam Xiao', 
+      'Lilia Gonzales', 'Ray "Top 1 Fatass" Noh', 'Matthew Kim', 'Roy Han', 'Justin Liu', 
+      'Andrew Cheng', 'Kelly Nguyen', 'Aidan Zhou', 'Dylan Jin-Ngo', 'Aidan Chen', 'Lucie Bai',
+      'Connor "Bot" Lee'
+    ]
     if (loading) {
       if (commenters) {
         brothers.forEach((brother, indx) => {
