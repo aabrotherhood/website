@@ -46,9 +46,9 @@ class DelibsRecruit extends Component {
     var brothers = [
       'Ilyas Mardin', 'Francis Puente', 'Brandon Kim', 'Alex Zhu', 'Brandon Kwon', 
       'Paul Song', 'Charlie Yang', 'Derek Zheng', 'Jennifer Chu', 'Adam Xiao', 
-      'Lilia Gonzales', 'Ray "Top 1 Fatass" Noh', 'Matthew Kim', 'Roy Han', 'Justin Liu', 
+      'Lilia Gonzales', 'Ray Noh', 'Matthew Kim', 'Roy Han', 'Justin Liu', 
       'Andrew Cheng', 'Kelly Nguyen', 'Aidan Zhou', 'Dylan Jin-Ngo', 'Aidan Chen', 'Lucie Bai',
-      'Connor "Bot" Lee'
+      'Connor Lee'
     ]
     if (loading) {
       if (commenters) {

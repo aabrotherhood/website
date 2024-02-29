@@ -10,6 +10,7 @@ class Delibs extends Component {
     this.state = {
       recruitsDict: {
         '0yj46hden1qt7oiziamtn': "Eli Kirtley", 
+        '00aa4h0djucpc7360ae0dlkt': "Derek Yuan",
         '1900op1wsmq7rsj46ybzge': "Vincent Lo",
         '1lja9q7wkoxe5nrlmmaj7w': "Andrew Sima", 
         '2r9z5c60vc76yxe05wpyrc': "Kyle Neeley",
